@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jared Zoneraich</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="cosmo-bootstrap.min.css" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="jquery.plusanchor.js"></script>
+	<script type="text/javascript" src="bootstrap-scrollspy.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('body').plusAnchor({
+			easing: 'easeInOutExpo',
+			speed:1000
+		});
+
+		var id = window.location.hash.substring(1);
+		if (id) {activate(window.location.hash.substring(1));}
+	});
+
+	var shown = false;
+	function populate() {
+		$.get('soundsculptr-tweets.txt', function(data) {
+			$('#soundsculptr-tweets').empty();
+			$('#soundsculptr-tweets').append(data);
+		});
+	}
+
+	var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36906134-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+	<div id="navbar-scroll" data-scrollspy="scrollspy" class="navbar navbar-inverse black-navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#about" onclick="activate('about');">Jared Zoneraich</a>
+        </div>
+        <div class="collapse navbar-collapse bs-js-navbar-scrollspy">
+          <ul class="nav navbar-nav">
+				<li id="aboutnav"><a href="#about">About Me</a></li>
+				<li id="projectsnav"><a href="#projects">Projects</a></li>
+				<li id="educationnav"><a href="#education">Education</a></li>
+				<li id="experiencenav"><a href="#experience">Experience</a></li>
+				<li id="contactnav"><a href="#contact">Contact/Links</a></li>
+			</ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<!-- 
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner" style="-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#about" onclick="activate('about');">Jared Zoneraich</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li class="black-navbar-active active" id="aboutnav"><a href="#about" onclick="activate('about');">About Me</a></li>
+						<li id="projectsnav"><a href="#projects" onclick="activate('projects');">Projects</a></li>
+						<li id="experiencenav"><a href="#education" onclick="activate('education');">Education</a></li>
+						<li id="experiencenav"><a href="#experience" onclick="activate('experience');">Experience</a></li>
+						<li id="contactnav"><a href="#contact" onclick="activate('contact');">Contact/Links</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	
+	<div class="aboutme" id="about">
+		<br/><br/><br/>
+		<div class="container">
+			<br/>
+			<div class="jumbotron">
+				<h1>I'm Jared Zoneraich<small style="color: #808080; font-size: 20px;"> - Hacker, Nerd, Student, Entrepreneur</small></h1><br/>
+				<p>
+					<span class="intro-text">
+					I am currently a student at <a href="http://bcts.bergen.org/index.php/bergen-county-academies?layout=blog">Bergen County Academies High School</a>, and I am enrolled in the Academy for Technologies and Computer Science (ATCS).
+					<br/><br/>
+					I love computers! I spend most of my time <a href="#projects" onclick="activate('projects');">programming</a> or <a href="#education" onclick="activate('education');">learning</a> more about computers.
+					</span>
+					<hr class="abouthr">
+					<span style="font-size: 150%; color: gray;">Programming Languages I Use: </span>
+					<div class="row list-i-use">
+						<div class="col-md-1">&nbsp;</div>
+						<div class="col-md-3">
+							<h3>Most Proficient:</h3>
+							<ul>
+								<li>Python</li>
+								<li>HTML, CSS</li>
+								<li>Java</li>
+								<li>Javascript (jQuery)</li>
+								<li>PHP</li>
+							</ul>
+						</div>
+						<div class="col-md-1">&nbsp;</div>
+						<div class="col-md-3">
+							<h3>Familiar:</h3>
+							<ul>
+								<li>Objective-C (iOS SDK)</li>
+								<li>C++</li>
+							</ul>
+						</div>
+						<div class="col-md-4">&nbsp;</div>
+					</div>
+					<hr class="abouthr">
+					<span style="font-size: 150%; color: gray;">Technologies I Use: </span>
+					<div class="row list-i-use">
+						<div class="col-md-1">&nbsp;</div>
+						<div class="col-md-3">
+							<h3>Most Proficient:</h3>
+							<ul>
+								<li>Google App Engine</li>
+								<li>Git</li>
+								<li>Twitter Bootstrap</li>
+								<li>Jinja2</li>
+							</ul>
+						</div>
+						<div class="col-md-1">&nbsp;</div>
+						<div class="col-md-3">
+							<h3>Familiar:</h3>
+							<ul>
+								<li>Vim</li>
+								<li>LEAP Motion SDK</li>
+								<li>Heroku</li>
+								<li>OpenShift</li>
+								<li>MongoDB</li>
+								<li>Flask</li>
+								<li>Django</li>
+								<li>GM Dashboard SDK</li>
+								<li>SQL</li>
+								<li>RabbitMQ</li>
+							</ul>
+						</div>
+						<div class="col-md-3">
+							<h3>&nbsp;</h3>
+							<ul>
+								<li>Nagios</li>
+								<li>iOS SDK</li>
+								<li>Yii</li>
+								<li>MySQL</li>
+								<li>PostgreSQL</li>
+								<li>SQLAlchemy</li>
+								<li>Node.js</li>
+							</ul>
+						</div>
+						<div class="col-md-1">&nbsp;</div>
+					</div>
+					<!-- <hr class="abouthr">
+					<span class="intro-text">
+					When I'm not programming, you can find me reading <a href="http://gizmodo.com">Gizmodo</a>, <a href="http://lifehacker.com">Lifehacker</a>, <a href="http://codinghorror.com">Coding Horror</a>, <a href="http://joel.is/">Joel.is</a>, or <a href="http://news.ycombinator.com">Hacker News</a>.</span> -->
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="projects" id="projects">
+		<br/><br/>
+		<div class="container">
+			<br/>
+			<div class="jumbotron">
+				<h1>Projects</h1>
+				<br/><br/><br/>
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/><br/><br/><br/><br/><a href="http://pennapps.challengepost.com/submissions/17306-screenshades"><img src="screenshades.png" width="300" height="300" alt="ScreenShades Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<a href="http://pennapps.challengepost.com/submissions/17306-screenshades" style="color: black;"><h3><strong>ScreenShades</strong></a><small style="color: gray;"> - 2013</small></h3>
+						<p>
+							<span style="font-size: 80%"><span style="color: gray; font-size: 120%;">Technologies used - </span> HTML, CSS, Javascript, NodeJS, jQuery, Google Prediction API, MongoDB</span>
+							<hr class="projects-divider-hr">
+							At the 2013 PennApps Fall Hackathon (September 6-8, 2013), I helped create ScreenShades. ScreenShades is a Chrome extension that stops your friends from spoiling TV shows for you. It monitors your Netflix activity and knows how far you are in each show. Using machine learning, it classifies and blurs out tweets that contain spoilers for the shows you watch. The beauty of ScreenShades is that it works seemlessly without constant input needed from the user (e.g., what shows to block). Once it is installed, it will do the rest!
+							<br/><br/>
+							ScreenShades made it into the top 20 hacks at this hackathon. That is, top 20 out of 204 hacks that were submitted and the biggest college hackathon, ever (as of the September 8th). In addition, we won the Best Hack in Media/Entertainment award from Comcast, Most Creative Use of Google's Prediction API award from Google, Best Use of MongoDB award from MongoDB, Inc., and we were nominated for Best Hack That Makes Life So Easy award from Venmo. Check out our demo video <a href="http://www.youtube.com/watch?v=vMIPosvZiUg">here</a> and some of the articles that mention ScreenShades: <a href="http://www.thedp.com/article/2013/09/pennapps-2013-fall-final-demos">here</a> and <a href="http://www.50onred.com/icymi-best-moments-pennapps-hackathon/">here</a>!
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/><br/><br/><br/><a href="http://class-match.appspot.com/"><img src="cmlogo.png" width="300" height="300" alt="ClassMatch Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<a href="http://class-match.appspot.com/" style="color: black;"><h3><strong>ClassMatch</strong></a><small style="color: gray;"> - 2013</small></h3>
+						<p>
+							<span style="font-size: 80%"><span style="color: gray; font-size: 120%;">Technologies used - </span> HTML, CSS, Python, GQL, Google App Engine, Javascript, Twitter Bootstrap</span>
+							<hr class="projects-divider-hr">
+							At my high school, each student receives their classes for the upcoming year on the penultimate day of school. Subsequently, students begin to post their schedules on Facebook, to determine their classmates for the following year. Paras Modi, Edmon Berry, and I remembered how inefficient this was from our freshman year, and decided to hack together a solution the weekend before schedules were released (we did not have much of a chance to scale).
+							<br/><br/>
+							We released it on the day students received their schedules. Within the hour we surpassed the free Google App Engine quota, and the site was down. Frantically, we upgraded to a premium account and were back online. The first day brought 858 visits to the site, in our school alone!
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/><br/><br/><br/><img src="parallel.png" width="200" height="200" alt="Parallel Park">
+					</div>
+					<div class="col-md-7">
+						<h3><strong>Learn to Drive</strong></a><small style="color: gray;"> - 2013</small></h3>
+						<p>
+							<span style="font-size: 80%"><span style="color: gray; font-size: 120%;">Technologies used - </span> HTML, CSS, GM Dashboard SDK, Python, GQL/SQL, Google App Engine, Javascript, Twitter Bootstrap</span>
+							<hr class="projects-divider-hr">
+							At the 2013 TechCrunch NYC Disrupt Hackathon (April 27-28, 2013), I helped create Learn to Drive. Learn to Drive is an app, to be placed in the dashboard of automobiles, that aids in the process of learning to drive. It also gathers statistics such as hours driven, maneuvers practiced, etc.
+							<br/><br/>
+							We came in 2<sup>nd</sup> place at this hackathon, and we were one of the three teams to win General Motor's award for the best app to use their API! We were also the only team of high school students. Check out our presentation at the end of the hackathon <a href="http://www.youtube.com/watch?v=8PNtnE-2akA">here</a>! We were even <a href="http://www.youtube.com/watch?v=ZfaPgZpzTxg">interviewed</a> after the presentation! In addition, our team spoke at the TechCrunch Disrupt!
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/><br/><br/><br/><br/><br/><br/><a href="http://soundsculptor.herokuapp.com/"><img src="soundsculptr.png" alt="SoundSculptr Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<a href="http://soundsculptor.herokuapp.com/" style="color: black;"><h3><strong>SoundSculptr</strong></a><small style="color: gray;"> - 2013</small></h3>
+						<p>
+							<span style="font-size: 80%"><span style="color: gray; font-size: 120%;">Technologies used - </span> Python, Flask, LEAP Motion, Heroku, OpenShift (ported it), Javascript, jQuery, Twitter Bootstrap, SoundCloud API</span>
+							<hr class="projects-divider-hr">
+							During the <a href="http://2013s.pennapps.com/">2013 Spring PennApps Hackathon</a> (January 18-20, 2013), I helped create <a href="http://soundsculptor.herokuapp.com/">SoundSculptr</a>. We were the only team comprised of only high school students at this college hackathon. In addition, we made it into the top 20 apps and won the award for the "Most Quotidian Hack" (from <a href="http://quotidianventures.com/">Quotidian Ventures</a>). <a onclick="$('#soundsculptrMentions').toggle('slow');if(!shown){populate();shown=true;};" href="#" style="color: #107C03">Click here to view reactions to SoundSculptr!</a>
+							<div id="soundsculptrMentions" style="display:none;text-align:center">
+								<br/>
+								<h3>Articles:</h3>
+								<ul style="list-style-type: none;">
+									<li><a href="http://developers.soundcloud.com/blog/pennapps-recap">SoundCloud at PennApps</a></li>
+									<li><a href="http://www.thedp.com/article/2013/01/hackathon-attracts-over-500-hackers-from-all-over-the-world">Hackathon attracts over 500 hackers from all over the world</a></li>
+								</ul>
+								<h3>Tweets:</h3>
+								<ul id="soundsculptr-tweets" style="list-style-type: none;">
+									Loading...
+								</ul>
+							</div>
+							<br/><br/>
+							SoundSculptr is a new way to create music. Using only their hands <small>(we used a developer copy of the <a href="http://leapmotion.com">LEAP Motion</a> for this)</small>, a user is able to "sculpt" music and then export their music. If you don't have a LEAP Motion, you can still watch a <a href="http://www.youtube.com/watch?v=J5c0htimgWc">demo</a> of SoundSculptr! 
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/><a href="http://projectalexa.com/"><img src="palogo.jpg" width="251.6" height="281.6" alt="Project Alexandria Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<a href="http://projectalexa.com/" style="color: black;"><h3><strong>Project Alexandria</strong></a><small style="color: gray;"> - 2012 to Present</small></h3>
+						<p>
+							<span style="font-size: 80%"><span style="color: gray; font-size: 120%;">Technologies used - </span> Python, GQL/SQL, Google App Engine, Javascript, jQuery, Twitter Bootstrap</span>
+							<hr class="projects-divider-hr">
+							<b>Study Efficiently, Study Smarter, Study Together</b>
+							<br/>
+							Find, share, and collaborate on study guides.
+							<br/><br/>
+							Project Alexandria was created to help students study more efficiently. To do this, easy sharing and collaboration of study guides is allowed. Students can upload, vote on, edit, create, and comment on study guides.
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/><br/>
+						<a href="http://codeforamerica.org/"><img src="cfalogo.png" alt="Code for America Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<a href="http://codeforamerica.org/" style="color: black;"><h3><strong>Code for America</a>  club at School</strong><small style="color: gray;"> - 2012 to Present</small></h3>
+						<p>
+							I started a <a href="http://codeforamerica.org/">Code for America</a> club/brigade at my high school.
+							<br/><br/>
+							<a href="https://www.youtube.com/watch?feature=player_detailpage&v=k47O2vwBqBw#t=362s">Here is a clip (the relevant section starts at 6:02)</a> of Kevin Curry from Code for America speaking about me and the club.
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/><br/><br/><br/>
+						<p><a href="http://citywords.heroku.com/" class="btn btn-primary btn-large">AdCity &raquo;</a></p>
+					</div>
+					<div class="col-md-7">
+						<a href="http://citywords.heroku.com/" style="color: black;"><h3><strong>AdCity</strong><small style="color: gray;"></a> - 2012</small></h3>
+						<p>
+							<span style="font-size: 80%"><span style="color: gray; font-size: 120%;">Technologies used - </span> Python, Django, Javascript, jQuery, Twitter Bootstrap</span>
+							<hr class="projects-divider-hr">
+							During the 2012 TechCrunch Disrupt NYC Hackathon (on May 19-20, 2012), I helped create <a href="http://citywords.heroku.com/">AdCity</a>. I was also <a href="http://techcrunch.com/2012/05/19/meet-the-disrupt-ny-2012-hackathon-hackers/">interviewed</a> there!
+							<br/><br/>
+							It is a simple service that provides a JavaScript widget which displays relevant advertisements for local businesses based on content analysis of the page where the widget is located.
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/>
+						<img src="rpslogo.png" alt="Rock Paper Scissors App Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<h3><strong>Rock Paper Scissors App for iOS</strong><small style="color: gray;"> - 2011</small></h3>
+						<p>
+							<span style="font-size: 80%"><span style="color: gray; font-size: 120%;">Technologies used - </span> Objective-C, iOS SDK</span>
+							<hr class="projects-divider-hr">
+							While I never released it, I created a small iOS app while at <a href="#education" onclick="activate('education');">ID Tech Camp.</a>
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<a href="http://www.kingdomofthesunpro.com/"><img src="ksplogo.png" width="164" height="200.8" alt="Kingdom of the Sun Pro Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<a href="http://www.kingdomofthesunpro.com/" style="color: black;"><h3><strong>Kingdom of the Sun Pro</a></strong><small style="color: gray;"> - 2010 to Present</small></h3></a>
+						<p>
+							<span style="font-size: 80%"><span style="color: gray; font-size: 120%;">Technologies used - </span> HTML, CSS, Photoshop</span>
+							<hr class="projects-divider-hr">
+							Kingdom of the Sun Pro was the first website that I made. After taking a <a href="#education" onclick="activate('education');">CTY course</a> on HTML and CSS, I decided to put my newly-learned skills to the test. I created a website for my small montage, tech support, etc. business.
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="projectshr">
+				<h2><center>Check out my <a href="https://github.com/jzone3">Github profile</a> for smaller projects!</center></h2>
+			</div>
+		</div>
+	</div>
+	<div class="education" id="education">
+		<br/><br/><br/>
+		<div class="container">
+			<br/>
+			<div class="jumbotron">
+				<h1>Education</h1>
+				<br/>
+				
+				<blockquote>
+					<p>I have never let my schooling interfere with my education.<small style="color: #A6A6A6;">Mark Twain</small></p>
+				</blockquote>
+
+				<h3><span style="color: gray;">High School: </span><strong> Bergen County Academies <small style="color: #A6A6A6;"> The Academy for Technologies and Computer Science</small></strong></h3>
+				
+				<hr class="educationhr">
+				<h3 style="color: gray;">Courses:</h3>
+				<div class="row">
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-4">
+						<h3><a href="http://udacity.com">Udacity:</a></h3>
+						<strong style="padding-left: 2em;">CS253:</strong> How to Build a Blog <small style="color: gray;"> (2012)</small>
+					</div>
+					<div class="col-md-4">
+						<h3><a href="http://bcts.bergen.org/index.php/bergen-county-academies?layout=blog">Bergen County Academies:</a></h3>
+						<span style="padding-left: 2em;">Python Programming <small style="color: gray;"> (2012)</small></span><br/>
+						<span style="padding-left: 2em;">AP Computer Science <small style="color: gray;"> (2013)</small></span><br/>
+						<span style="padding-left: 2em;">Data Structures <small style="color: gray;"> (in progress)</small></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-4">
+						<h3><a href="http://www.internaldrive.com/">ID Tech Camp:</a></h3>
+						<span style="padding-left: 2em;">Intro to C++ <small style="color: gray;"> (2010)</small></span><br/>
+						<span style="padding-left: 2em;">Intro to Robotics <small style="color: gray;"> (2010)</small></span><br/>
+						<span style="padding-left: 2em;">Intro to iOS Development <small style="color: gray;"> (2011)</small></span><br/>
+					</div>
+					<div class="col-md-4">
+						<h3><a href="http://cty.jhu.edu/ctyonline/">CTY Online:</a></h3>
+						<span style="padding-left: 2em;">Intro to Web Development <small style="color: gray;"> (2011)</small></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="experience" id="experience">
+		<br/><br/><br/>
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Experience</h1>
+				<br/><br/><br/>
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<br/>
+						<a href="http://www.warbyparker.com/"><img src="wplogo.jpg" width="251.6" height="281.6" alt="Project Alexandria Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<h3><strong>Internship at <a href="http://www.warbyparker.com/">Warby Parker</a> <small style="color: gray;"> - Summer 2013</small></strong></h3>
+						<p>
+							<span style="color: gray; font-size: 120%;">Technologies used - </span> Python, Nagios, MySQL, Postgres, Git, RabbitMQ
+							<br/><br/><br/>
+							
+							I had an awesome internship during my sophomore summer at high school. I was the "Technology Intern" at one of the most awesome companies to work for: Warby Parker. It was a great experience, and I definitely learned a lot (specifically how code is handled in a "larger" organization). I do not think a better internship exists!
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="experiencehr">
+				<br/>
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<a href="http://www.projectalexa.com/"><img src="palogo.jpg" width="251.6" height="281.6" alt="Project Alexandria Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<h3><strong>Co-Founder of <a href="http://www.projectalexa.com/">Project Alexandria</a> <small style="color: gray;"> - 2012 to Present</small></strong></h3>
+						<p>
+							<span style="color: gray; font-size: 120%;">Technologies used - </span> Python, GQL/SQL, Google App Engine, Javascript, jQuery, Twitter Bootstrap, Git
+							<br/><br/><br/>
+							Project Alexandria was created to help students study more efficiently. To do this, easy sharing and collaboration of study guides is allowed. Students can upload, vote on, edit, create, and comment on study guides.
+						</p>
+					</div>
+				</div>
+				<br/>
+				<hr class="experiencehr">
+				<br/>
+				<div class="row cenetered">
+					<div class="col-md-3">
+						<a href="http://www.newlio.com/"><img src="newliologo.jpeg" width="232" height="250" alt="Newlio Logo"></a>
+					</div>
+					<div class="col-md-7">
+						<h3><strong>Internship at <a href="http://www.newlio.com/">Newlio</a> <small style="color: gray;"> - Summer 2012</small></strong></h3>
+						<p>
+							<span style="color: gray; font-size: 120%;">Technologies used - </span> PHP, MongoDB, Yii, Javascript, Git
+							<br/><br/><br/>
+							During my freshman year of high school, I had to choose what to do over the summer. I (correctly) thought an internship would greatly help my education. So I made a few posts on Reddit, and sure enough I got an internship at Newlio! It was very exciting and surprising, given that I was a freshman in high school. Ultimately, I learned a lot and met awesome people!
+						</p>
+					</div>
+				</div>
+				<br/>
+			</div>
+		</div>
+	</div>
+	<div class="contact" id="contact">
+		<br/><br/><br/>
+		<div class="container">
+			<br/>
+			<div class="jumbotron">
+				<h1>Contact Me <span style="font-size: 70%;">/ Miscellaneous Links</span></h1><br/><br/>
+				<div class="row">
+					<div class="col-md-2">
+						<h2>Email</h2>
+					</div>
+					<div class="col-md-5">
+						<h2><a href="mailto:me@imjaredz.com">me@imjaredz.com</a></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<h2>Blog</h2>
+					</div>
+					<div class="col-md-5">
+						<h2><a href="http://blog.imjaredz.com/">blog.imjaredz.com</a></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<h2>Resum&eacute;</h2>
+					</div>
+					<div class="col-md-5">
+						<h2><a href="resume.pdf">imjaredz.com/resume.pdf</a></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<h2>LinkedIn</h2>
+					</div>
+					<div class="col-md-5">
+						<h2><a href="http://www.linkedin.com/in/imjaredz">linkedin.com/in/imjaredz</a></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<h2>Github</h2>
+					</div>
+					<div class="col-md-5">
+						<h2><a href="https://github.com/jzone3">github.com/jzone3</a></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<h2>Twitter</h2>
+					</div>
+					<div class="col-md-5">
+						<h2><a href="https://twitter.com/imjaredz">twitter.com/imjaredz</a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
