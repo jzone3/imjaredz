@@ -18,40 +18,29 @@ body, html{
 	padding-right: 0;
 }
 
-.black-navbar {
-	background-color: rgb(8, 8, 8);
-	border-bottom: none;
-}
-
-.black-navbar-active {
-	/*background-color: rgba(255, 255, 255, 0.5);*/
-	background-color: #0059b3;
-}
-
 .aboutme {
-	/*background-color: red;*/
-	background-color: #e74c3c;
+	/*background-color: #FF6363;*/
+	background-color: red;
 }
 
 .projects {
-	/*background-color: green;*/
-	background-color: #f1c40f;
+	/*background-color: #7DFF7D;*/
+	background-color: green;
 }
 
 .education {
-	/*background-color: #00EDED;*/
-	/*background-color: #f1c40f;*/
-	background-color: #2ecc71;
+	/*background-color: #A1F2FF;*/
+	background-color: #00EDED;
 }
 
 .experience {
-	/*background-color: #2E2EFF;*/
-	background-color: #3498db;
+	/*background-color: #6E9CFF;*/
+	background-color: #2E2EFF;
 }
 
 .contact {
-	/*background-color: purple;*/
-	background-color: #9b59b6;
+	/*background-color: #B485FF;*/
+	background-color: purple;
 }
 
 /* Flaired edges, by Tomas Theunissen */
@@ -118,12 +107,4 @@ hr.educationhr {
 
 .cenetered {
 	text-align: center;
-}
-
-.list-i-use ul li {
-	font-size: 13pt;
-}
-
-.intro-text {
-	font-size: 14pt;
 }
