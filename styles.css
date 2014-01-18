@@ -1,13 +1,107 @@
+@font-face {
+	font-family: "ProximaNova";
+	src: url('ProximaNova-Light.otf') format("opentype");
+}
+@font-face {
+	font-family: "ProximaNova";
+	src: url('ProximaNova-Bold.otf') format("opentype");
+	font-weight: bold
+}
+
 body, html{
+	font-family: ProximaNova, Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	height:100%;
 }
 
+.indent {
+	padding-left: 2em;
+}
+
+@media screen and (max-width: 570px) {
+	.jumbotron h1 {
+		font-size: 45px;
+	}
+
+	#header-break-line {
+		display: block;
+	}
+
+	.contact-row h2 {
+		font-size: 27px;
+	}
+
+	.contact-row a {
+		font-size: 19px;
+	}
+}
+
+@media screen and (min-width: 570px) {
+	.jumbotron h1 {
+		font-size: 50px;
+	}
+
+	#header-break-line {
+		display: block;
+	}
+
+}
+
+@media screen and (min-width: 705px) {
+	.jumbotron h1 {
+		font-size: 65.5px;
+	}
+
+	#header-break-line {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	#new-line {
+		display: block !important;
+		font-size: 5px;
+	}
+	#school-name {
+		padding-left: 20px;
+	}
+	.school {
+		font-size: 22px;
+	}
+}
+
+.logo {
+	max-height: 135px;
+	margin-bottom: 30px;
+}
 
 /*.navbar {
 	position: absolute;
 		top: 0;
 	width: 100%;
 }*/
+/*
+.explanation {
+	font-size: 5px;
+}*/
+
+.explanation-text {
+	font-size: 18px;
+	line-height: 1.7em;
+}
+
+.section-icon {
+	display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.section-icon img {
+	vertical-align: middle;
+	width: 100%;
+	max-width: 233px;
+	/*margin-top: auto;*/
+	/*margin-bottom: auto;*/
+}
 
 .aboutme, .projects, .experience, .contact, .education {
 	width: 100%;
@@ -18,29 +112,40 @@ body, html{
 	padding-right: 0;
 }
 
+.black-navbar {
+	background-color: rgb(8, 8, 8);
+	border-bottom: none;
+}
+
+.black-navbar-active {
+	/*background-color: rgba(255, 255, 255, 0.5);*/
+	background-color: #0059b3;
+}
+
 .aboutme {
-	/*background-color: #FF6363;*/
-	background-color: red;
+	/*background-color: red;*/
+	background-color: #e74c3c;
 }
 
 .projects {
-	/*background-color: #7DFF7D;*/
-	background-color: green;
+	/*background-color: green;*/
+	background-color: #f1c40f;
 }
 
 .education {
-	/*background-color: #A1F2FF;*/
-	background-color: #00EDED;
+	/*background-color: #00EDED;*/
+	/*background-color: #f1c40f;*/
+	background-color: #2ecc71;
 }
 
 .experience {
-	/*background-color: #6E9CFF;*/
-	background-color: #2E2EFF;
+	/*background-color: #2E2EFF;*/
+	background-color: #3498db;
 }
 
 .contact {
-	/*background-color: #B485FF;*/
-	background-color: purple;
+	/*background-color: purple;*/
+	background-color: #9b59b6;
 }
 
 /* Flaired edges, by Tomas Theunissen */
@@ -68,43 +173,73 @@ hr.projectshr:before { /* Not really supposed to work, but does */
 hr.abouthr {
     border: 0;
     height: 1px;
-    background: red;
-    background-image: -webkit-linear-gradient(left, #ccc, red, #ccc); 
-    background-image:    -moz-linear-gradient(left, #ccc, red, #ccc); 
-    background-image:     -ms-linear-gradient(left, #ccc, red, #ccc); 
-    background-image:      -o-linear-gradient(left, #ccc, red, #ccc); 
+    background: #e74c3c;
+    background-image: -webkit-linear-gradient(left, #ccc, #e74c3c, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #e74c3c, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #e74c3c, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #e74c3c, #ccc); 
 }		
 
 hr.experiencehr {
     border: 0;
     height: 1px;
-    background: #2E2EFF;
-    background-image: -webkit-linear-gradient(left, #ccc, #2E2EFF, #ccc); 
-    background-image:    -moz-linear-gradient(left, #ccc, #2E2EFF, #ccc); 
-    background-image:     -ms-linear-gradient(left, #ccc, #2E2EFF, #ccc); 
-    background-image:      -o-linear-gradient(left, #ccc, #2E2EFF, #ccc); 
+    background: #3498db;
+    background-image: -webkit-linear-gradient(left, #ccc, #3498db, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #3498db, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #3498db, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #3498db, #ccc); 
 }
 
 hr.projects-divider-hr {
     border: 0;
     height: 1px;
-    background: green;
-    background-image: -webkit-linear-gradient(left, #ccc, green, #ccc); 
-    background-image:    -moz-linear-gradient(left, #ccc, green, #ccc); 
-    background-image:     -ms-linear-gradient(left, #ccc, green, #ccc); 
-    background-image:      -o-linear-gradient(left, #ccc, green, #ccc); 
+    background: #f1c40f;
+    background-image: -webkit-linear-gradient(left, #ccc, #f1c40f, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #f1c40f, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #f1c40f, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #f1c40f, #ccc); 
 }
 
 hr.educationhr {
     border: 0;
     height: 1px;
-    background: #00DDFF;
-    background-image: -webkit-linear-gradient(left, #ccc, #00DDFF, #ccc); 
-    background-image:    -moz-linear-gradient(left, #ccc, #00DDFF, #ccc); 
-    background-image:     -ms-linear-gradient(left, #ccc, #00DDFF, #ccc); 
-    background-image:      -o-linear-gradient(left, #ccc, #00DDFF, #ccc); 
+    background: #2ecc71;
+    background-image: -webkit-linear-gradient(left, #ccc, #2ecc71, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #2ecc71, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #2ecc71, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #2ecc71, #ccc); 
 }
 
 .cenetered {
 	text-align: center;
+}
+
+.list-i-use ul li {
+	font-size: 13pt;
+}
+
+.intro-text {
+	font-size: 14pt;
+}
+
+.education-text {
+	font-size: 19px;
+}
+
+blockquote {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.technologies-used {
+	color: gray;
+	font-size: 120%;
+}
+
+.tech {
+	font-size: 80%;
+}
+
+.logo {
+	max-width: 90%;
 }
