@@ -1,0 +1,23 @@
+{
+  "name": "Jared",
+  "version": "0.0.0",
+  "description": "landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jzone3/imjaredz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jzone3/imjaredz/issues"
+  },
+  "homepage": "https://github.com/jzone3/imjaredz",
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-gh-pages": "~0.5.4"
+  }
+}
