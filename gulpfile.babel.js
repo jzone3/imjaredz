@@ -7,6 +7,7 @@ import gulp			from 'gulp';
 import jshint		from 'gulp-jshint';
 import less			from 'gulp-less';
 import uglify		from 'gulp-uglify';
+import browserSync	from 'browser-sync';
 
 /**
  * Push build to gh-pages
@@ -32,14 +33,25 @@ gulp.task('build_less', () => {
 });
 
 gulp.task('build_templates', () => {
+	gulp.src('./dist/**/*.html').pipe(gulp.dest('./build/templates'));
 	// do templates stuff
 });
 
 gulp.task('watch', () => {
-	gulp.watch('./dist/templates/*', ['build']);
+	gulp.watch('./dist/**/*', ['build']);
 });
 
 gulp.task('build', ['minify_js', 'build_templates', 'build_less']);
+
+gulp.task('browser-sync', ['build'], () => {
+	var files = ['./build/**/*'];
+
+	browserSync.init(files, {
+		server: {
+			baseDir: './build/templates'
+		}
+	});
+});
 
 gulp.task('deploy', () =>  {
   return gulp.src("./dist/**/*")
