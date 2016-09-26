@@ -98,17 +98,6 @@ gulp.task('buildHTML', () => {
 	// do templates stuff
 });
 
-
-gulp.task('browser-sync', ['build'], () => {
-	var files = ['./build/**/*'];
-
-	browserSync.init(files, {
-		server: {
-			baseDir: './build/templates'
-		}
-	});
-});
-
 /**
  * Push build to gh-pages
  */
