@@ -1,29 +1,30 @@
 'use strict';
 
-import gulp 				from 'gulp';
-import uglify 			from 'gulp-uglify';
+import gulp 		from 'gulp';
+import uglify 		from 'gulp-uglify';
 import htmlreplace 	from 'gulp-html-replace';
-import source 			from 'vinyl-source-stream';
+import source 		from 'vinyl-source-stream';
 import browserify 	from 'browserify';
-import watchify 		from 'watchify';
-import reactify 		from 'reactify';
-import babelify 		from 'babelify';
-import babel 				from 'gulp-babel';
-import streamify 		from 'gulp-streamify';
-import autoprefix		from 'gulp-autoprefixer';
-import less					from 'gulp-less';
-import deploy				from 'gulp-gh-pages';
+import watchify 	from 'watchify';
+import reactify 	from 'reactify';
+import babelify 	from 'babelify';
+import babel 		from 'gulp-babel';
+import streamify 	from 'gulp-streamify';
+import autoprefix	from 'gulp-autoprefixer';
+import less			from 'gulp-less';
+import cssmin		from 'gulp-cssmin';
+import deploy		from 'gulp-gh-pages';
 
 const PATH = {
 	HTML: 'src/index.html',
-	LESS: 'src/less/*/**.less',
+	LESS: 'src/less/styles.less',
 	CNAME: 'src/CNAME',
 	MINIFIED_OUT: 'build.min.js',
 	OUT: 'build.js',
 	DEST: 'dist',
 	DEST_SRC: 'dist/src',
 	DEST_BUILD: 'dist/build',
-	DEST_CSS: 'dist/src/css',
+	DEST_CSS: 'dist/src',
 	ENTRY_POINT: 'src/js/App.js'
 }
 
@@ -89,8 +90,9 @@ gulp.task('replaceHTML', () => {
 
 gulp.task('buildCSS', () => {
 	gulp.src(PATH.LESS)
-		.pipe(less())
+		.pipe(less().on('error', (err) => console.log(err)))
 		.pipe(autoprefix('last 2 version', 'ie 8', 'ie 9'))
+		.pipe(cssmin().on('error', (err) => console.log(err)))
 		.pipe(gulp.dest(PATH.DEST_CSS));
 });
 
