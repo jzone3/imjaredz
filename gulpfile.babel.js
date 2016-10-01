@@ -17,6 +17,8 @@ import deploy		from 'gulp-gh-pages';
 
 const PATH = {
 	HTML: 'src/index.html',
+	BOOTSTRAP: ['src/bootstrap/bootstrap.min.css', 'src/bootstrap/bootstrap.min.js'],
+	JQUERY: 'src/jquery/jquery-3.1.1.min.js',
 	LESS: 'src/less/styles.less',
 	CNAME: 'src/CNAME',
 	MINIFIED_OUT: 'build.min.js',
@@ -24,13 +26,15 @@ const PATH = {
 	DEST: 'dist',
 	DEST_SRC: 'dist/src',
 	DEST_BUILD: 'dist/build',
+	DEST_BOOTSTRAP: 'dist/bootstrap',
+	DEST_JQUERY: 'dist/jquery',
 	DEST_CSS: 'dist/src',
 	ENTRY_POINT: 'src/js/App.js'
 }
 
 gulp.task('default', ['watch']);
 
-gulp.task('watch', ['copy', 'buildCSS'], () => {
+gulp.task('watch', ['copy', 'copyLibraries', 'buildCSS'], () => {
 	gulp.watch(PATH.HTML, ['copy']);
 	gulp.watch(PATH.LESS, ['buildCSS']);
 
@@ -62,9 +66,15 @@ gulp.task('copy', () => {
 		.pipe(gulp.dest(PATH.DEST))
 });
 
+gulp.task('copyLibraries', () => {
+	gulp.src(PATH.BOOTSTRAP)
+		.pipe(gulp.dest(PATH.DEST_BOOTSTRAP));
+	gulp.src(PATH.JQUERY)
+		.pipe(gulp.dest(PATH.DEST_JQUERY));
+});
 
 
-gulp.task('prod', ['replaceHTML', 'build', 'buildCSS']);
+gulp.task('prod', ['replaceHTML', 'copyLibraries', 'build', 'buildCSS']);
 
 gulp.task('build', () => {
 	browserify({

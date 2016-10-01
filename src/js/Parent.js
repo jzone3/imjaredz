@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React 	from 'react';
-import Child 	from './Child.js';
+import Child 	from './Child';
 
 var Parent = React.createClass({
   render: function(){
