@@ -3,22 +3,21 @@ import React 	from 'react';
 
 var Item = React.createClass({
 	propTypes: {
-		img: React.PropTypes.String.isRequired;
-		title: React.PropTypes.String.isRequired;
-		selected: React.PropTypes.bool.isRequired;
-		onclick: React.PropTypes.func.isRequired;
-		key: React.PropTypes.String.isRequired;
-		title: React.PropTypes.object.isRequired,
-		items: React.PropTypes.object.isRequired
+		img: React.PropTypes.string.isRequired,
+		title: React.PropTypes.string.isRequired,
+		selected: React.PropTypes.bool.isRequired,
+		onclick: React.PropTypes.func.isRequired,
+		itemId: React.PropTypes.string.isRequired
 	},
 	render: function(){
 		return (
-			<div className="wrapper">
+			<div className={{"itemWrapper": true, "expanded": this.props.selected}}>
+				<div className="title">{ this.props.title }</div>
 			</div>
 		)
 	},
 	_onclick() {
-		this.props.onclick(this.props.key);
+		this.props.onclick(this.props.itemId);
 	}
 });
 

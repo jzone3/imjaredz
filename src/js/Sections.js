@@ -1,46 +1,35 @@
 import ReactDOM from 'react-dom';
 import React 	from 'react';
-import Item from './Item';
+import Section from './Section';
 
 var Sections = React.createClass({
 	propTypes: {
-		title: React.PropTypes.object.isRequired,
-		items: React.PropTypes.object.isRequired
-		/*
-			{"HACKATHONS": 
-				{title: "Hackathons",
-				img: "img/SDFSDF.jpg",
-				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."}
-			}
-		*/
+		data: React.PropTypes.array.isRequired
+		// [{"title": "Projects", "items": {"HACKATHONS" : {...}, "GAPYEAR" : {...}}},...];
 	},
 	getInitialState() {
 		return {
-			closed: Object.keys(this.props.items),
 			selected: null
 		};
 	},
+	componentWillReceiveProps(nextProps) {
+		this.setState({selected: null});
+	},
 	render(){
-		return (
-			<div className="sectionTitle">{this.props.title}</div>
-			{_render_section_items()}
-		)
+		var sections = this.props.data.map((sec, i) => (
+			<Section
+				items={sec.items}
+				title={sec.title}
+				sectionId={i}
+				key={i}
+				isSelected={this.state.selected == i}
+				onclick={this._section_click_handler} />
+		));
+
+		return <div>{ sections }</div>;
 	},
-	_render_section_items() {
-		return items.map((k, v) => {
-			<Item
-				img={v.img}
-				title={v.title}
-				selected={selected == k}
-				onclick={_item_onclick}
-				key={k} />
-		})
-	},
-	_item_onclick(new_key) {
-		var updated_closed = this.state.closed.slice();
-		updated_closed.push(new_key);
-		updated_closed.pop(this.state.selected);
-		this.setState({selected: new_key, closed: updated_closed});
+	_section_click_handler(sectionId) {
+		this.setState({selected: sectionId});
 	}
 });
 
