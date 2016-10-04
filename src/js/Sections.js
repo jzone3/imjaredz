@@ -26,7 +26,7 @@ var Sections = React.createClass({
 				onclick={this._section_click_handler} />
 		));
 
-		return <div>{ sections }</div>;
+		return <div className="container">{ sections }</div>;
 	},
 	_section_click_handler(sectionId) {
 		console.log(sectionId);

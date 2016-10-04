@@ -29,8 +29,10 @@ var Section = React.createClass({
 	},
 	render(){
 		return (<div>
-			<div className="sectionTitle">{this.props.title}</div>,
-			{ this._render_section_items() }
+			<h2 className="sectionTitle">{this.props.title}</h2>
+			<div className="row">
+				{ this._render_section_items() }
+			</div>
 		</div>);
 	},
 	_render_section_items() {

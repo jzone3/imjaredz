@@ -25,11 +25,33 @@
 	}
 }
 
+h1.sectionTitle {
+
+}
+
 .itemWrapper {	
+	.item {
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		border: 1px solid black;
+	}
+
 	&.item- {
 		&thumbnail {
+			.item {
+				width: 90%;
+				min-height: 100px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+
 			.title {
 				text-decoration: underline;
+				font-size: 25px;
+				text-align: center;
 			}
 
 			.description {
@@ -38,11 +60,24 @@
 		}
 
 		&expanded {
+			margin-top: 20px;
+			margin-bottom: 20px;
+
+			.item {
+				width: 90%;
+				min-height: 500px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
 			.title {text-transform: uppercase; font-weight: bold;}
 
 			.description {
 				display: block;
 			}
 		}
+	}
+
+	.item {
 	}
 }

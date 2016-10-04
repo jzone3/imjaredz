@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import React 	from 'react';
 import IntroText from './IntroText';
-import Parent from './Parent';
 import Divider from './Divider';
 import BootstrapWrapper from './BootstrapWrapper';
 import Sections from './Sections';

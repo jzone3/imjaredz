@@ -13,9 +13,17 @@ var Item = React.createClass({
 	},
 	render: function(){
 		return (
-			<div className={classNames("itemWrapper", {"item-expanded": this.props.isSelected, "item-thumbnail": !this.props.isSelected})} onClick={this._onclick} >
-				<div className="title">{ this.props.title }</div>
-				<div className="description">{ this.props.desc }</div>
+			<div 
+				onClick={this._onclick}
+				className={classNames("itemWrapper", {
+					"item-expanded": this.props.isSelected,
+					"col-md-12": this.props.isSelected,
+					"col-md-4": !this.props.isSelected,
+					"item-thumbnail": !this.props.isSelected})} >
+				<div className="item">
+					<div className="title">{ this.props.title }</div>
+					<div className="description">{ this.props.desc }</div>
+				</div>
 			</div>
 		)
 	},
