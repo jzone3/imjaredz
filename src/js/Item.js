@@ -8,12 +8,14 @@ var Item = React.createClass({
 		title: React.PropTypes.string.isRequired,
 		isSelected: React.PropTypes.bool.isRequired,
 		onclick: React.PropTypes.func.isRequired,
-		itemId: React.PropTypes.string.isRequired
+		itemId: React.PropTypes.string.isRequired,
+		desc: React.PropTypes.string.isRequired
 	},
 	render: function(){
 		return (
 			<div className={classNames("itemWrapper", {"item-expanded": this.props.isSelected, "item-thumbnail": !this.props.isSelected})} onClick={this._onclick} >
 				<div className="title">{ this.props.title }</div>
+				<div className="description">{ this.props.desc }</div>
 			</div>
 		)
 	},

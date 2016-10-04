@@ -39,6 +39,7 @@ var Section = React.createClass({
 			return (<Item
 				img={v.img}
 				title={v.title}
+				desc={v.desc}
 				isSelected={this.state.selected === k}
 				onclick={this._item_onclick}
 				key={k}

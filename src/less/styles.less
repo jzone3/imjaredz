@@ -25,18 +25,24 @@
 	}
 }
 
-.itemWrapper {
+.itemWrapper {	
 	&.item- {
 		&thumbnail {
 			.title {
-				font-weight: bold;
+				text-decoration: underline;
+			}
+
+			.description {
+				display: none;
 			}
 		}
 
 		&expanded {
-			.title {text-transform: uppercase;}
+			.title {text-transform: uppercase; font-weight: bold;}
 
-			font-size: 200%;
+			.description {
+				display: block;
+			}
 		}
 	}
 }
