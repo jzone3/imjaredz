@@ -5,11 +5,9 @@ import Parent from './Parent';
 import Divider from './Divider';
 import BootstrapWrapper from './BootstrapWrapper';
 import Sections from './Sections';
+import DATA from './DATA';
 
-var DATA = [
-{"title": "Projects1", "items": {"HACKATHONS" : {title: "Hackathons",img: "img/SDFSDF.jpg",desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."}, "GAPYEAR" : {title: "Hackathons",img: "img/SDFSDF.jpg",desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."}}},
-{"title": "Projects2", "items": {"HACKATHONS" : {title: "Hackathons",img: "img/SDFSDF.jpg",desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."}, "GAPYEAR" : {title: "Hackathons",img: "img/SDFSDF.jpg",desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."}}}
-];
+
 // var DATA = [{"title": "Projects", "items": {"HACKATHONS" : {...}, "GAPYEAR" : {...}}},...];
 
 ReactDOM.render((

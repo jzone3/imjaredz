@@ -19,12 +19,13 @@ var Section = React.createClass({
 	},
 	getInitialState() {
 		return {
-			closed: this._get_all_keys(this.props.items),
 			selected: null
 		};
 	},
 	componentWillReceiveProps(nextProps) {
-		this.setState({selected: null, closed: this._get_all_keys(nextProps.items)});
+		if (!nextProps.isSelected) {
+			this.setState({selected: null});
+		}
 	},
 	render(){
 		return (<div>
@@ -38,7 +39,7 @@ var Section = React.createClass({
 			return (<Item
 				img={v.img}
 				title={v.title}
-				selected={this.state.selected === k}
+				isSelected={this.state.selected === k}
 				onclick={this._item_onclick}
 				key={k}
 				itemId={k} />);
@@ -46,9 +47,7 @@ var Section = React.createClass({
 	},
 	_item_onclick(newSelected) {
 		this.props.onclick(this.props.sectionId);
-		var updated_closed = this._get_all_keys(nextProps.items);
-		updated_closed.pop(newSelected);
-		this.setState({selected: newSelected, closed: updated_closed});
+		this.setState({selected: newSelected});
 	},
 	_get_all_keys(items) {
 		return items ? Object.keys(items) : [];

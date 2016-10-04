@@ -37,6 +37,7 @@
     "babel-preset-react": "~6.11.1",
     "react": "~15.3.2",
     "react-dom": "~15.3.2",
-    "gulp-cssmin": "~0.1.7"
+    "gulp-cssmin": "~0.1.7",
+    "classnames": "~2.2.5"
   }
 }
