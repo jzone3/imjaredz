@@ -9,16 +9,22 @@ var Item = React.createClass({
 		isSelected: React.PropTypes.bool.isRequired,
 		onclick: React.PropTypes.func.isRequired,
 		itemId: React.PropTypes.string.isRequired,
+		itemNumber: React.PropTypes.number.isRequired,
 		desc: React.PropTypes.string.isRequired
+	},
+	getInitialState() {
+	    return {
+	          selected: false
+	    };
 	},
 	render: function(){
 		return (
 			<div 
 				onClick={this._onclick}
-				className={classNames("itemWrapper", {
+				className={classNames("itemWrapper", "col-md-4", {
 					"item-expanded": this.props.isSelected,
-					"col-md-12": this.props.isSelected,
-					"col-md-4": !this.props.isSelected,
+					// "col-md-12": this.props.isSelected,
+					// "col-md-4": !this.props.isSelected,
 					"item-thumbnail": !this.props.isSelected})} >
 				<div className="item">
 					<div className="image"><img src="http://placekitten.com/300/200"/></div>
@@ -30,7 +36,8 @@ var Item = React.createClass({
 	},
 	_onclick() {
 		console.log("CLICK!");
-		this.props.onclick(this.props.itemId);
+		this.props.onclick(!this.props.isSelected, this.props.itemId, this.props.itemNumber);
+		// this.setState({selected: !this.state.selected});
 	}
 });
 

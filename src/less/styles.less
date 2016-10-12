@@ -51,6 +51,13 @@ h1.sectionTitle {
 				margin-right: auto;
 				margin-top: 10px;
 				margin-bottom: 10px;
+				opacity: .9;
+				transition: opacity 0.3s ease;
+			}
+
+			.item:hover {
+				opacity: 1;
+				transition: opacity 0.3s ease;
 			}
 
 			.image {
@@ -60,6 +67,7 @@ h1.sectionTitle {
 				img {
 					width: 210px;
 					height: 140px;
+					transition: width .5s ease;
 				}
 			}
 
@@ -75,13 +83,13 @@ h1.sectionTitle {
 		}
 
 		&expanded {
-			margin-top: 20px;
-			margin-bottom: 20px;
+			// margin-top: 20px;
+			// margin-bottom: 20px;
 			text-align: center;
 
 			.item {
 				width: 90%;
-				min-height: 500px;
+				// min-height: 500px;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -89,6 +97,7 @@ h1.sectionTitle {
 			.image {
 				img {
 					width: 70%;
+				    transition: width .5s ease;
 				}
 			}
 
@@ -99,7 +108,7 @@ h1.sectionTitle {
 			}
 
 			.description {
-				display: block;
+				display: none;
 				text-align: left;
 				padding-right: 10%; 
 				padding-left: 10%; 
@@ -108,5 +117,22 @@ h1.sectionTitle {
 	}
 
 	.item {
+	}
+}
+
+.rowExpander {
+	background-color: yellow;
+	transition: all 1s ease;
+
+	&.hidden {
+		display: none;
+		height: 0;
+		transition: all 1s ease;
+	}
+
+	&.expanded {
+		display: block;
+		min-height: 400px;
+		transition: all 1s ease;
 	}
 }
