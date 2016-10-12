@@ -83,10 +83,9 @@ var Section = React.createClass({
 	},
 	_item_onclick(expand, newSelected, itemNumber) {
 		this.props.onclick(this.props.sectionId);
-		if (expand)
-			this.setState({selectedId: newSelected, selectedItem: itemNumber});
-		else
-			this.setState({selectedId: null, selectedItem: null});
+		this.setState({
+			selectedId: expand ? newSelected : null,
+			selectedItem: expand ? itemNumber : null});
 	},
 	_get_all_keys(items) {
 		return items ? Object.keys(items) : [];

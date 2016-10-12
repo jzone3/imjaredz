@@ -123,6 +123,7 @@ h1.sectionTitle {
 .rowExpander {
 	background-color: yellow;
 	transition: all 1s ease;
+	text-align: center;
 
 	&.hidden {
 		display: none;
@@ -134,5 +135,25 @@ h1.sectionTitle {
 		display: block;
 		min-height: 400px;
 		transition: all 1s ease;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
+
+	.image {
+		img {
+			width: 50%;
+		}
+	}
+
+	.title {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 50px;
+	}
+
+	.description {
+		padding-right: 10%; 
+		padding-left: 10%; 
+	}
+
 }
