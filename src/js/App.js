@@ -11,8 +11,7 @@ import DATA from './DATA';
 
 ReactDOM.render((
 	<BootstrapWrapper>
-		<IntroText />
-		<Divider />
-		<Sections data={DATA} />
+		<IntroText data={DATA[0]} />
+		<Sections data={DATA[1]} />
 	</BootstrapWrapper>
 ), document.getElementById('app'));

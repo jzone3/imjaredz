@@ -7,7 +7,7 @@ var IntroText = React.createClass({
       <div className="fullPage">
         <div className="centeredText">
         	<span className="firstLine">{"Hi, I'm Jared Zoneraich. "}</span>
-        	{"My name is Jared Zoneraich. My name is Jared Zoneraich. My name is Jared Zoneraich. My name is Jared Zoneraich. My name is Jared Zoneraich."}
+        	<span dangerouslySetInnerHTML={{__html: this.props.data.text}} />
         </div>
       </div>
     )

@@ -30,13 +30,11 @@ var Section = React.createClass({
 		}
 	},
 	render(){
-		return (<div>
+		return (<div className="section">
 			<h2 className="sectionTitle">{this.props.title}</h2>
 			{ this._render_section_items().map((items, i) => (
 				<div key={i + "row"}>
-					<div className="row">
-						{items}
-					</div>
+					<div className="row">{items}</div>
 					{ this._render_row_expander(i) }
 				</div>
 				)) }

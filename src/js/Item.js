@@ -29,7 +29,6 @@ var Item = React.createClass({
 				<div className="item">
 					<div className="image"><img src="http://placekitten.com/300/200"/></div>
 					<div className="title">{ this.props.title }</div>
-					<div className="description">{ this.props.desc }</div>
 				</div>
 			</div>
 		)
