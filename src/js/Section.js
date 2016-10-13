@@ -68,14 +68,16 @@ var Section = React.createClass({
 	},
 	_render_row_expander(i) {
 		var expanded = this.props.isSelected && i == Math.floor(this.state.selectedItem/3) && this.state.selectedId;
-		console.log(this.state.selectedId);
+		var item = this.props.items[this.state.selectedId];
+		if (this.state.selectedId != null)
+			var title = item.longTitle ? item.longTitle : item.title;
 		return (
 			<div className={classNames("rowExpander", {
 					"expanded": expanded, "hidden": !expanded})}>
 				{ this.state.selectedId != null ? (<div>
-				<div className="image"><img src="http://placekitten.com/300/200"/></div>
-				<div className="title">{ this.props.items[this.state.selectedId].title }</div>
-				<div className="description">{ this.props.items[this.state.selectedId].desc }</div>
+				<div className="image"><img src={"img/" + item.img} /></div>
+				<div className="title">{ title }</div>
+				<div className="description">{ item.desc }</div>
 				</div>) : null}
 			</div>);
 	},

@@ -10,17 +10,17 @@ module.exports = [{
 		"items": {
 			"COLLEGE" : {
 				title: "University", 
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"GAPYEAR" : {
 				title: "Gap Year",
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"HACKATHONS" : {
 				title: "Hackathons",
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			}
 		}
@@ -30,32 +30,32 @@ module.exports = [{
 		"items": {
 			"IMPLISIT" : {
 				title: "Implisit", 
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"HACKCONSULT" : {
 				title: "Hackathon Consulting",
-				img: "img/SDFSDF.jpg",
+				img: "hackbcalogo.jpg",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"MLH" : {
 				title: "Major League Hacking",
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"REDDIT" : {
 				title: "reddit", 
-				img: "img/SDFSDF.jpg",
+				img: "redditlogo.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"WARBY" : {
 				title: "Warby Parker",
-				img: "img/SDFSDF.jpg",
+				img: "wplogo.jpg",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"NEWLIO" : {
 				title: "Newlio",
-				img: "img/SDFSDF.jpg",
+				img: "newliologo.jpeg",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			}
 		}
@@ -65,12 +65,12 @@ module.exports = [{
 		"items": {
 			"HACKBCA" : {
 				title: "hackBCA", 
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"PROJALEX" : {
 				title: "Project Alexandria",
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			}
 		}
@@ -80,22 +80,22 @@ module.exports = [{
 		"items": {
 			"CLASSMATCH" : {
 				title: "ClassMatch", 
-				img: "img/SDFSDF.jpg",
+				img: "classmatch.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"RETENTION" : {
 				title: "Retention",
-				img: "img/SDFSDF.jpg",
+				img: "retention.jpg",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"BETSON" : {
 				title: "BetsOn",
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"WHODAT" : {
 				title: "WhoDat",
-				img: "img/SDFSDF.jpg",
+				img: "whodat-big.jpg",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 		}
@@ -105,22 +105,23 @@ module.exports = [{
 		"items": {
 			"CAL" : {
 				title: "UC Berkeley", 
-				img: "img/SDFSDF.jpg",
+				longTitle: "University of California-Berkeley",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"BCA" : {
 				title: "Bergen County Academies", 
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"ONLINE" : {
 				title: "Udacity & CTY Online",
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			},
 			"ID Tech Camp" : {
 				title: "ID Tech Camp",
-				img: "img/SDFSDF.jpg",
+				img: "betson.png",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
 			}
 		}

@@ -27,7 +27,7 @@ var Item = React.createClass({
 					// "col-md-4": !this.props.isSelected,
 					"item-thumbnail": !this.props.isSelected})} >
 				<div className="item">
-					<div className="image"><img src="http://placekitten.com/300/200"/></div>
+					<div className="image"><img src={"img/" + this.props.img}/></div>
 					<div className="title">{ this.props.title }</div>
 				</div>
 			</div>

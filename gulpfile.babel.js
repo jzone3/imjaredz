@@ -18,6 +18,7 @@ import deploy		from 'gulp-gh-pages';
 const PATH = {
 	HTML: 'src/index.html',
 	BOOTSTRAP: ['src/bootstrap/bootstrap.min.css', 'src/bootstrap/bootstrap.min.js'],
+	IMG: 'src/img/*',
 	JQUERY: 'src/jquery/jquery-3.1.1.min.js',
 	LESS: 'src/less/styles.less',
 	CNAME: 'src/CNAME',
@@ -27,6 +28,7 @@ const PATH = {
 	DEST_SRC: 'dist/src',
 	DEST_BUILD: 'dist/build',
 	DEST_BOOTSTRAP: 'dist/bootstrap',
+	DEST_IMG: 'dist/img',
 	DEST_JQUERY: 'dist/jquery',
 	DEST_CSS: 'dist/src',
 	ENTRY_POINT: 'src/js/App.js'
@@ -71,6 +73,8 @@ gulp.task('copyLibraries', () => {
 		.pipe(gulp.dest(PATH.DEST_BOOTSTRAP));
 	gulp.src(PATH.JQUERY)
 		.pipe(gulp.dest(PATH.DEST_JQUERY));
+	gulp.src(PATH.IMG)
+		.pipe(gulp.dest(PATH.DEST_IMG));
 });
 
 
