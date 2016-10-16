@@ -116,26 +116,9 @@ module.exports = [{
 					+ "try using different technologies like MongoDB this time. Within a day, "
 					+ "ClassMatch 2 had 522 users sign up and over 1,000 classes joined!"
 			},
-			"CLASSMATCH" : {
-				title: "ClassMatch", 
-				img: "classmatch.png",
-				date: "2013",
-				technologies: "HTML, CSS, Python, GQL, Google App Engine, Javascript, Twitter Bootstrap",
-				desc: "At my high school, each student receives their classes for the upcoming year "
-					+ "on the penultimate day of school. Subsequently, students begin to post their "
-					+ "schedules on Facebook, to determine their classmates for the following year. "
-					+ "Paras Modi, Edmon Berry, and I remembered how inefficient this was from our "
-					+ "freshman year, and decided to hack together a solution the weekend before "
-					+ "schedules were released (we did not have much of a chance to scale)."
-					+ "<br><br>" 
-					+ "We released it on the day students received their schedules. Within the "
-					+ "hour we surpassed the free Google App Engine quota, and the site was down. "
-					+ "Frantically, we upgraded to a premium account and were back online. "
-					+ "The first day brought 858 visits to the site, in our school alone!"
-			},
 			"RETENTION" : {
 				title: "Retention",
-				img: "retention.jpg",
+				img: "retention.png",
 				technologies: "HTML, CSS, Javascript, MongoDB, Python, Flask, SendGrid, Twilio, Cron",
 				date: "2014",
 				desc: "Retention (created at the 2014 Spring hackNY Hackathon app on April 5-6, "
@@ -185,6 +168,15 @@ module.exports = [{
 					+ "<a href='http://imjaredz.com/whodat-flowchart.pdf'>imjaredz.com/whodat-flowchart.pdf</a>"
 					+ ". This app was created at the 2014 Winter MHacks III Hackathon (January 17-19, 2014)."
 			},
+			"KXL" : {
+				title: "Keystone XL",
+				longTitle: "Keystone XL Microsite",
+				link: "http://www.thekeystonexl.com",
+				img: "thekeystonexlcom.png",
+				technologies: "HTML, CSS, Javascript, jQuery",
+				date: "2013",
+				desc: "WRITE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+			},
 			"FRAMES" : {
 				title: "Frames",
 				img: "frames.png",
@@ -220,6 +212,114 @@ module.exports = [{
 					+ "above and some of the articles that mention ScreenShades: "
 					+ "<a href='http://www.thedp.com/article/2013/09/pennapps-2013-fall-final-demos'>here</a> "
 					+ "and <a href='http://www.50onred.com/icymi-best-moments-pennapps-hackathon/'>here</a>!"
+			},
+			"CLASSMATCH" : {
+				title: "ClassMatch", 
+				img: "classmatch.png",
+				date: "2013",
+				technologies: "HTML, CSS, Python, GQL, Google App Engine, Javascript, Twitter Bootstrap",
+				desc: "At my high school, each student receives their classes for the upcoming year "
+					+ "on the penultimate day of school. Subsequently, students begin to post their "
+					+ "schedules on Facebook, to determine their classmates for the following year. "
+					+ "Paras Modi, Edmon Berry, and I remembered how inefficient this was from our "
+					+ "freshman year, and decided to hack together a solution the weekend before "
+					+ "schedules were released (we did not have much of a chance to scale)."
+					+ "<br><br>" 
+					+ "We released it on the day students received their schedules. Within the "
+					+ "hour we surpassed the free Google App Engine quota, and the site was down. "
+					+ "Frantically, we upgraded to a premium account and were back online. "
+					+ "The first day brought 858 visits to the site, in our school alone!"
+			},
+			"LEARNTODRIVE" : {
+				title: "Learn to Drive", 
+				img: "learntodrive.png",
+				date: "2013",
+				hideImageOnExpand: true,
+				videoId: "8PNtnE-2akA",
+				technologies: "HTML, CSS, GM Dashboard SDK, Python, GQL/SQL, Google App Engine, Javascript, Twitter Bootstrap",
+				desc: "At the 2013 TechCrunch NYC Disrupt Hackathon (April 27-28, 2013), I helped "
+					+ "create Learn to Drive. Learn to Drive is an app, to be placed in the dashboard "
+					+ "of automobiles, that aids in the process of learning to drive. It also gathers "
+					+ "statistics such as hours driven, maneuvers practiced, etc."
+					+ "<br><br>"
+					+ "We came in 2<sup>nd</sup> place at this hackathon, and we were one of the three teams to "
+					+ "win General Motor's award for the best app to use their API! We were also the only "
+					+ "team of high school students. Check out our presentation at the end of the hackathon "
+					+ "<a href='https://www.youtube.com/watch?v=ZfaPgZpzTxg'>above</a>! We were even "
+					+ "<a href='http://www.youtube.com/watch?v=ZfaPgZpzTxg'>interviewed</a> "
+					+ "and <a href='http://techcrunch.com/2013/04/28/hackathon-learn-to-drive/'>written about</a> "
+					+ "after the presentation! In addition, our team spoke at the TechCrunch Disrupt!"
+			},
+			"SOUNDSCULPTR" : {
+				title: "SoundSculptr", 
+				img: "soundsculptr.png",
+				date: "2013",
+				hideImageOnExpand: true,
+				videoId: "J5c0htimgWc",
+				technologies: "Python, Flask, LEAP Motion, Heroku, OpenShift (ported it), Javascript, jQuery, Twitter Bootstrap, SoundCloud API",
+				desc: "During the <a href='http://2013s.pennapps.com/'>2013 Spring PennApps Hackathon</a> "
+					+ "(January 18-20, 2013), I helped create "
+					+ "SoundSculptr. We were the only team comprised of only high school students at this "
+					+ "college hackathon. In addition, we made it into the top 20 apps and won the award "
+					+ "for the \"Most Quotidian Hack\" (from <a href='http://www.quotidian.co/'>Quotidian "
+					+ "Ventures</a>). <a href='#'>Click here to view reactions to SoundSculptr!</a>"
+					+ "<br><br>"
+					+ "SoundSculptr is a new way to create music. Using only their hands (we used a "
+					+ "developer copy of the <a href='http://leapmotion.com/'>LEAP Motion</a> for "
+					+ "this), a user is able to \"sculpt\" music and then export their music. "
+					+ "If you don't have a LEAP Motion, you can still watch a "
+					+ "<a href='http://www.youtube.com/watch?v=J5c0htimgWc'>demo</a> of SoundSculptr!"
+			},
+			"CODEFORAMERICA" : {
+				title: "Code for America", 
+				longTitle: "Code for America Club at High School",
+				img: "cfalogo.png",
+				date: "2012 to 2013",
+				hideImageOnExpand: true,
+				technologies: "Python, Flask, LEAP Motion, Heroku, OpenShift (ported it), Javascript, jQuery, Twitter Bootstrap, SoundCloud API",
+				desc: "I started a <a href='http://codeforamerica.org/'>Code for America</a> "
+					+ "brigade club at my high school.<br><br>"
+					+ "Above is a <a href='https://www.youtube.com/watch?feature=player_detailpage&v=k47O2vwBqBw#t=362s'>clip</a> "
+					+ "(the relevant section starts at 6:02) of Kevin Curry from Code for America speaking "
+					+ "about me and the club."
+			},
+			"ADCITY" : {
+				title: "AdCity", 
+				img: "adcity.jpg",
+				date: "2012",
+				technologies: "Python, Django, Javascript, jQuery, Twitter Bootstrap",
+				desc: "During the 2012 TechCrunch Disrupt NYC Hackathon (on May 19-20, 2012), "
+					+ "I helped create AdCity. I was also "
+					+ "<a href='http://techcrunch.com/2012/05/19/meet-the-disrupt-ny-2012-hackathon-hackers/'>"
+					+ "interviewed</a> there!<br><br>"
+					+ "It is a simple service that provides a JavaScript widget which displays relevant "
+					+ "advertisements for local businesses based on content analysis of the page where the widget is located."
+			},
+			"ROCKPAPERSCI" : {
+				title: "Rock Paper Scissors", 
+				longTitle: "Rock Paper Scissors App for iOS",
+				img: "rpslogo.png",
+				hideImageOnExpand: true,
+				date: "2011",
+				technologies: "Objective-C, iOS SDK",
+				desc: "While I never released it, I created a small iOS app while at ID Tech Camp."
+			},
+			"KSP" : {
+				title: "KSP", 
+				longTitle: "Kingdom of the Sun Pro",
+				img: "ksplogo.png",
+				hideImageOnExpand: true,
+				date: "2010",
+				technologies: "HTML, CSS, Photoshop",
+				desc: "Kingdom of the Sun Pro was the first website! After taking a CTY course "
+					+ "on HTML and CSS, I decided to put my newly-learned skills to the test. "
+					+ "I created a website for my small montage, tech support, etc. business."
+			},
+			"GITHUB" : {
+				title: "More...", 
+				img: "github.png",
+				hideImageOnExpand: true,
+				desc: "<h3>Check out my <a href='https://github.com/jzone3/'>Github profile</a> for smaller projects!</h3>"
 			},
 		}
 	},
