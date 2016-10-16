@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import React 	from 'react';
+// import Youtube from 'react-youtube';
 import Item from './Item';
 import classNames from 'classnames';
 
@@ -69,17 +70,36 @@ var Section = React.createClass({
 	_render_row_expander(i) {
 		var expanded = this.props.isSelected && i == Math.floor(this.state.selectedItem/3) && this.state.selectedId;
 		var item = this.props.items[this.state.selectedId];
-		if (this.state.selectedId != null)
-			var title = item.longTitle ? item.longTitle : item.title;
 		return (
-			<div className={classNames("rowExpander", {
-					"expanded": expanded, "hidden": !expanded})}>
+			<div className={classNames("rowExpander", {"expanded": expanded, "hidden": !expanded})}>
 				{ this.state.selectedId != null ? (<div>
-				<div className="image"><img src={"img/" + item.img} /></div>
-				<div className="title">{ title }</div>
-				<div className="description">{ item.desc }</div>
+					{ this._render_image(item) }
+					{ this._render_title(item) }
+					{ this._render_date(item) }
+					{ this._render_technologies(item) }
+					{ this._render_description(item) }
 				</div>) : null}
 			</div>);
+	},
+	_render_image(item) {
+		var image = item.expandedImg ? item.expandedImg : item.img;
+		// var video = item.videoId ? <Youtube videoId={item.videoId}> : null;
+		var video = null;
+		image = item.hideImageOnExpand ? null : (<div className="image"><img src={"img/" + image} /></div>);
+		return image ? video : image;
+	},
+	_render_title(item) {
+		var title = item.longTitle ? item.longTitle : item.title;
+		return <div className="title">{ item.link ? <a href={item.link}>{item.title}</a> : item.title }</div>;
+	},
+	_render_date(item) {
+		return item.date ? <div className="date">{ item.date }</div> : null;
+	},
+	_render_technologies(item) {
+		return item.technologies ? <div className="technologies">{ item.technologies }</div> : null;
+	},
+	_render_description(item) {
+		return <div className="description" dangerouslySetInnerHTML={{__html: item.desc}} />
 	},
 	_item_onclick(expand, newSelected, itemNumber) {
 		this.props.onclick(this.props.sectionId);

@@ -18,6 +18,7 @@ var Item = React.createClass({
 	    };
 	},
 	render: function(){
+		// <img src={"img/" + this.props.img}/>
 		return (
 			<div 
 				onClick={this._onclick}
@@ -27,7 +28,7 @@ var Item = React.createClass({
 					// "col-md-4": !this.props.isSelected,
 					"item-thumbnail": !this.props.isSelected})} >
 				<div className="item">
-					<div className="image"><img src={"img/" + this.props.img}/></div>
+					<div className="image" style={{backgroundImage: 'url(img/' + this.props.img + ')'}}></div>
 					<div className="title">{ this.props.title }</div>
 				</div>
 			</div>
