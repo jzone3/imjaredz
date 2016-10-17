@@ -10,7 +10,8 @@ var Section = React.createClass({
 		onclick: React.PropTypes.func.isRequired,
 		title: React.PropTypes.string.isRequired,
 		sectionId: React.PropTypes.number.isRequired,
-		items: React.PropTypes.object.isRequired
+		items: React.PropTypes.object.isRequired,
+		colored: React.PropTypes.bool
 		/*
 			{"HACKATHONS": 
 				{title: "Hackathons",
@@ -31,14 +32,15 @@ var Section = React.createClass({
 		}
 	},
 	render(){
-		return (<div className="section">
-			<h2 className="sectionTitle">{this.props.title}</h2>
+		return (<div className={classNames("section", {"colored": this.props.colored})}>
+			<div className="sectionTitle"><span>{this.props.title}</span></div>
 			{ this._render_section_items().map((items, i) => (
 				<div key={i + "row"}>
 					<div className="row">{items}</div>
 					{ this._render_row_expander(i) }
 				</div>
 				)) }
+			<hr className="divider"/>
 		</div>);
 	},
 	_render_section_items() {
