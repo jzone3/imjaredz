@@ -1,8 +1,11 @@
 module.exports = [{
-	"text": "I am a freshman at <a href='#'>UC Berkeley</a>, majoring in Electrical Engineering and Computer Science (Class of 2020). " + 
-		"I started one of the first and largest high school hackathons: <a href='#'>hackBCA</a>." + 
-		" Previously, I have interned at <a href='#'>Implisit</a> (<a href='#'>acquired by Salesforce</a>), <a href='#'>reddit</a>" +
-		", <a href='#'>Warby Parker</a>, and <a href='#'>Newlio</a>."
+	"text": "I just returned from a gap year of backpacking, working abroad, and drinking coffee. "
+		+ "I'm now a freshman at <a href='#'>UC Berkeley</a>, "
+		+ "majoring in Electrical Engineering and Computer Science. "
+		+ "I attend too many hackathons and started one of the <a href='www.hackbca.com'>first high school hackathons</a>. "
+		+ "Previously, I have interned with <a href='#'>Implisit</a> (<a href='http://www.businessinsider.com/salesforce-buys-implisit-insights-2016-5'>acquired "
+		+ "by Salesforce</a>), <a href='#'>reddit</a>, <a href='#'>Major League Hacking</a>"
+		+ ", <a href='#'>Warby Parker</a>, and <a href='#'>Newlio</a>. Currently a Campus Associate for <a href='#'>Alsop Louie Partners</a>."
 },
 [
 	{
@@ -25,7 +28,7 @@ module.exports = [{
 				title: "Hackathons",
 				img: "hackathons.jpg",
 				expandedImg: "lhdphoto.jpg",
-				desc: "WRITE STUFF HERE!"
+				desc: "LINK TO HACKCON TALKS!! WRITE STUFF HERE!"
 			}
 		}
 	},
