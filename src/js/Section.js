@@ -74,7 +74,8 @@ var Section = React.createClass({
 		var item = this.props.items[this.state.selectedId];
 		return (
 			<div className={classNames("rowExpander", {"expanded": expanded, "hidden": !expanded})}>
-				{ this.state.selectedId != null ? (<div>
+				{ this.state.selectedId != null ? (<div id={'expandedItem' + this.state.selectedId}>
+					<span id='closeBtn' onClick={ this._close_btn_onclick } />
 					{ this._render_image(item) }
 					{ this._render_title(item) }
 					{ this._render_date(item) }
@@ -107,7 +108,11 @@ var Section = React.createClass({
 		this.props.onclick(this.props.sectionId);
 		this.setState({
 			selectedId: expand ? newSelected : null,
-			selectedItem: expand ? itemNumber : null});
+			selectedItem: expand ? itemNumber : null},
+			() => {window.location.hash = '#expandedItem' + newSelected;}); //fix this
+	},
+	_close_btn_onclick() {
+		this.setState({selectedId: null, selectedItem: null});
 	},
 	_get_all_keys(items) {
 		return items ? Object.keys(items) : [];

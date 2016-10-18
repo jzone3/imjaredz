@@ -8,7 +8,7 @@ var IntroText = React.createClass({
         <div className="centeredText">
         	<span className="firstLine">{"Hi, I'm Jared Zoneraich. "}</span>
         	<span dangerouslySetInnerHTML={{__html: this.props.data.text}} />
-          <br/><br/><br/>
+          <br/><br/>
           <div className="contactIcons row">
             <div className="col-md-2 col-md-offset-1"><a href="mailto:me@imjaredz.com">Email</a></div>
             <div className="col-md-2"><a href="http://imjaredz.com/resume.pdf">Resume</a></div>
