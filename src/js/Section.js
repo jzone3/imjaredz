@@ -98,7 +98,7 @@ var Section = React.createClass({
 		return item.date ? <div className="date">{ item.date }</div> : null;
 	},
 	_render_technologies(item) {
-		return item.technologies ? <div className="technologies">{ item.technologies }</div> : null;
+		return item.technologies ? <div className="technologies"><b>Technologies used: </b>{ item.technologies }</div> : null;
 	},
 	_render_description(item) {
 		return <div className="description" dangerouslySetInnerHTML={{__html: item.desc}} />

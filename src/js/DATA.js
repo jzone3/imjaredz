@@ -60,6 +60,7 @@ module.exports = [{
 			},
 			"REDDIT" : {
 				title: "reddit", 
+				longTitle: "Intern for Alexis Ohanian",
 				img: "redditlogo.png",
 				hideImageOnExpand: true,
 				date: "2014 to 2015",
@@ -89,6 +90,7 @@ module.exports = [{
 			},
 			"NEWLIO" : {
 				title: "Newlio",
+				longTitle: "Intern at Newlio",
 				img: "newliologo.jpeg",
 				hideImageOnExpand: true,
 				date: "Summer 2012",
@@ -120,7 +122,7 @@ module.exports = [{
 			},
 			"PROJALEX" : {
 				title: "Project Alexandria",
-				expandedImg: false,
+				hideImageOnExpand: true,
 				img: "palogo.jpg",
 				technologies: "Python, GQL/SQL, Google App Engine, Javascript, jQuery, Twitter Bootstrap, Git",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
