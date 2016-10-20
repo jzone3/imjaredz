@@ -39,6 +39,7 @@ module.exports = [{
 				title: "Alsop Louie Partners", 
 				longTitle: "Campus Associate at Alsop Louie Partners",
 				img: "alsoplogo.png",
+				link: "http://www.alsop-louie.com/",
 				hideImageOnExpand: true,
 				date: "2016 to present",
 				desc: "WRITE STUFF HERE!"
@@ -55,6 +56,7 @@ module.exports = [{
 				title: "Major League Hacking",
 				longTitle: "Intern at Major League Hacking",
 				expandedImg: "mlhguide.png",
+				link: "https://mlh.io/",
 				date: "Summer 2015",
 				img: "mlh-logo-color.png",
 				desc: "WRITE STUFF HERE!"
@@ -62,6 +64,7 @@ module.exports = [{
 			"REDDIT" : {
 				title: "reddit", 
 				longTitle: "Intern for Alexis Ohanian",
+				link: "https://www.reddit.com/",
 				img: "redditlogo.png",
 				hideImageOnExpand: true,
 				date: "2014 to 2015",
@@ -80,6 +83,7 @@ module.exports = [{
 				title: "Warby Parker",
 				longTitle: "Software Engineering Internship at Warby Parker",
 				img: "wplogo.jpg",
+				link: "http://www.warbyparker.com/",
 				expandedImg: "warbyparkerhackathon.jpg",
 				date: "Summer 2013 & Summer 2014",
 				technologies: "Python, Nagios, MySQL, Postgres, Git, RabbitMQ",
@@ -92,6 +96,7 @@ module.exports = [{
 			"NEWLIO" : {
 				title: "Newlio",
 				longTitle: "Intern at Newlio",
+				link: "https://newlio.com/",
 				img: "newliologo.jpeg",
 				hideImageOnExpand: true,
 				date: "Summer 2012",
@@ -110,6 +115,7 @@ module.exports = [{
 			"HACKBCA" : {
 				title: "hackBCA", 
 				img: "hackbcaiilogo.png",
+				link: "http://www.hackbca.com/",
 				expandedImg: "hackbca1.jpg",
 				altImg: "hackbcateam.jpg",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
@@ -124,6 +130,7 @@ module.exports = [{
 			"PROJALEX" : {
 				title: "Project Alexandria",
 				hideImageOnExpand: true,
+				link: "http://www.projectalexa.com/",
 				img: "palogo.jpg",
 				technologies: "Python, GQL/SQL, Google App Engine, Javascript, jQuery, Twitter Bootstrap, Git",
 				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
@@ -136,6 +143,7 @@ module.exports = [{
 			"CLASSMATCH2" : {
 				title: "ClassMatch 2", 
 				img: "classmatch2.png",
+				link: "http://www.bcaclassmatch.com/",
 				date: "2014",
 				technologies: "HTML, CSS, Python, Flask, MongoDB, Javascript, Twitter Bootstrap",
 				desc: "Paras Modi and I decided to rewrite and update ClassMatch to a newer and "
@@ -148,6 +156,7 @@ module.exports = [{
 			"RETENTION" : {
 				title: "Retention",
 				img: "retention.png",
+				link: "http://getretention.herokuapp.com/",
 				technologies: "HTML, CSS, Javascript, MongoDB, Python, Flask, SendGrid, Twilio, Cron",
 				date: "2014",
 				desc: "Retention (created at the 2014 Spring hackNY Hackathon app on April 5-6, "
@@ -184,6 +193,7 @@ module.exports = [{
 			"WHODAT" : {
 				title: "WhoDat",
 				img: "whodat-big.jpg",
+				link: "http://www.getwhodat.com/",
 				technologies: "HTML, CSS, Javascript, jQuery, Python, Flask, Threading",
 				date: "2014",
 				desc: "WhoDat is a webapp and Chrome extension that allows you to find any "
@@ -220,6 +230,7 @@ module.exports = [{
 			"SCREENSHADES" : {
 				title: "ScreenShades",
 				img: "screenshades.png",
+				link: "https://pennapps.devpost.com/submissions/17306-screenshades",
 				hideImageOnExpand: true,
 				videoId: "vMIPosvZiUg",
 				technologies: "HTML, CSS, Javascript, NodeJS, jQuery, Google Prediction API, MongoDB",
@@ -245,6 +256,7 @@ module.exports = [{
 			"CLASSMATCH" : {
 				title: "ClassMatch", 
 				img: "classmatch.png",
+				link: "http://class-match.appspot.com/",
 				date: "2013",
 				technologies: "HTML, CSS, Python, GQL, Google App Engine, Javascript, Twitter Bootstrap",
 				desc: "At my high school, each student receives their classes for the upcoming year "
@@ -336,6 +348,7 @@ module.exports = [{
 			"KSP" : {
 				title: "KSP", 
 				longTitle: "Kingdom of the Sun Pro",
+				link: "http://www.kingdomofthesunpro.com/",
 				img: "ksplogo.png",
 				hideImageOnExpand: true,
 				date: "2010",
