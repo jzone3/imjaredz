@@ -11,6 +11,7 @@ var Section = React.createClass({
 		title: React.PropTypes.string.isRequired,
 		sectionId: React.PropTypes.number.isRequired,
 		items: React.PropTypes.object.isRequired,
+		isLastItem: React.PropTypes.bool,
 		colored: React.PropTypes.bool
 		/*
 			{"HACKATHONS": 
@@ -40,7 +41,7 @@ var Section = React.createClass({
 					{ this._render_row_expander(i) }
 				</div>
 				)) }
-			<hr className="divider"/>
+			{ this.props.isLastItem ? null : <hr className="divider"/> }
 		</div>);
 	},
 	_render_section_items() {
@@ -73,8 +74,9 @@ var Section = React.createClass({
 		var expanded = this.props.isSelected && i == Math.floor(this.state.selectedItem/3) && this.state.selectedId;
 		var item = this.props.items[this.state.selectedId];
 		return (
-			<div className={classNames("rowExpander", {"expanded": expanded, "hidden": !expanded})}>
-				{ this.state.selectedId != null ? (<div id={'expandedItem' + this.state.selectedId}>
+			<div className={classNames("expandedItemWrapper", {"wrapperExpanded": expanded})}>
+			<div className={classNames("rowExpander", {"expanded": expanded, "notExpanded": !expanded})}>
+				{ this.state.selectedId != null && expanded ? (<div id={'expandedItem' + this.state.selectedId}>
 					<span id='closeBtn' onClick={ this._close_btn_onclick } />
 					{ this._render_image(item) }
 					{ this._render_title(item) }
@@ -82,6 +84,7 @@ var Section = React.createClass({
 					{ this._render_technologies(item) }
 					{ this._render_description(item) }
 				</div>) : null}
+			</div>
 			</div>);
 	},
 	_render_image(item) {
@@ -108,8 +111,8 @@ var Section = React.createClass({
 		this.props.onclick(this.props.sectionId);
 		this.setState({
 			selectedId: expand ? newSelected : null,
-			selectedItem: expand ? itemNumber : null},
-			() => {window.location.hash = '#expandedItem' + newSelected;}); //fix this
+			selectedItem: expand ? itemNumber : null});
+		$('html, body').animate({scrollTop: $("#" + newSelected).offset().top}, 500);
 	},
 	_close_btn_onclick() {
 		this.setState({selectedId: null, selectedItem: null});

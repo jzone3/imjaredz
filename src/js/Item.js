@@ -26,7 +26,8 @@ var Item = React.createClass({
 					"item-expanded": this.props.isSelected,
 					// "col-md-12": this.props.isSelected,
 					// "col-md-4": !this.props.isSelected,
-					"item-thumbnail": !this.props.isSelected})} >
+					"item-thumbnail": !this.props.isSelected})}
+				id={this.props.itemId} >
 				<div className="item">
 					<div className="image" style={{backgroundImage: 'url(img/' + this.props.img + ')'}}></div>
 					<div className="title">{ this.props.title }</div>

@@ -24,6 +24,7 @@ var Sections = React.createClass({
 				key={i}
 				colored={i % 2 != 0}
 				isSelected={this.state.selected == i}
+				isLastItem={i == this.props.data.length - 1}
 				onclick={this._section_click_handler} />
 		));
 

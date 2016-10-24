@@ -167,7 +167,7 @@ body {
 #closeBtn {
 	height: 50px;
 	width: 50px;
-	background-image: url('/img/x.png');
+	background-image: url('/img/noun_407106.png');
 	background-size: contain;
 	float: right;
 	display: inline-block;
@@ -175,22 +175,33 @@ body {
 	cursor: pointer;
 }
 
+// .expandedItemWrapper {
+// 	transition: max-height 1s ease;
+// 	max-height: 0;
+
+// 	&.wrapperExpanded {
+// 		max-height: 1000px;
+// 	}
+// }
+
 .rowExpander {
 	background-color: #ecf0f1;
-	transition: all 1s ease;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
+	// transition: max-height 1s ease;
+	// max-height: 0;
 
-	&.hidden {
+	&.notExpanded {
 		display: none;
-		height: 0;
-		transition: all 1s ease;
+		// height: 0;
+		// max-height: 0;
+		// transition: max-height 1s ease;
 	}
 
 	&.expanded {
+		// transition: max-height 1s ease;
+		// max-height: 1000px;
 		display: block;
-		// min-height: 400px;
-		transition: all 1s ease;
 		padding: 20px 0 40px 0;
 		margin-bottom: 40px;
 	}
