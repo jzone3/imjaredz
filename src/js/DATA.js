@@ -13,22 +13,70 @@ module.exports = [{
 		"items": {
 			"COLLEGE" : {
 				title: "University", 
+				longTitle: "EECS Major at the University of California-Berkeley",
 				img: "berkeleylogo.png",
-				date: "2016 to present",
+				date: "Class of 2020",
 				expandedImg: "berkeleysign.jpg",
-				desc: "WRITE STUFF HERE!"
+				desc: "I am a Electrical Engineering and Computer Science Major at "
+					+ "the UC Berkeley. EECS is a single combined major at UC "
+					+ "Berkeley, and thus I will be specializing in both EE and "
+					+ "CS. At school, I play an active part in planning our "
+					+ "hackathon (<a href='http://calhacks.io/'>Cal Hacks</a>). "
+					+ "I am also a member of other clubs such as: Kairos "
+					+ "(a club for student entrepreneurs and makers), "
+					+ "Hackers@Berkeley, Tikvah, and Bears for Israel."
 			},
 			"GAPYEAR" : {
 				title: "Gap Year",
 				img: "eiffel.jpg",
 				date: "2015 to 2016",
-				desc: "WRITE STUFF HERE!"
+				desc: "Prior to starting school at UC Berkeley, I decided to take a year off. "
+					+ "Having almost no responsibilities at the time, I thought that it was one "
+					+ "of the best times in my life to explore the world. I spent the summer "
+					+ "after high school interning at Major League Hacking in New York City. "
+					+ "Right after, I hopped on a plane across the world and moved to Tel Aviv, "
+					+ "Israel for half a year. I spent my time in Tel Aviv working at Implisit, "
+					+ "eating hummus, drinking coffee, and trying to learn Hebrew. I returned home "
+					+ "(New Jersey) in April to attend the third iteration of hackBCA (no longer "
+					+ "run by me this time). After hackBCA III, I got on another flight to Europe. "
+					+ "There I spent three months backpacking through 12 different countries and "
+					+ "eating some of the best food I have ever tasted."
 			},
 			"HACKATHONS" : {
 				title: "Hackathons",
 				img: "hackathons.jpg",
 				expandedImg: "lhdphoto.jpg",
-				desc: "LINK TO HACKCON TALKS!! WRITE STUFF HERE!"
+				desc: "Ever since I attended my first hackathon during my freshman year of high "
+					+ "school, I have been hooked. My father drove me to that fateful hackathon "
+					+ "in 2012. After registration, I walked around trying to find a team to join, "
+					+ "and noticed that most of the attendees were of college age or older. While "
+					+ "weaving through rows of tables piled high with laptops, chargers, and snacks, "
+					+ "I decided that there was no harm in just asking a team if I could join them. "
+					+ "Despite my minimal knowledge of website development, my teammates guided me, "
+					+ "had me tackle small, modular programming tasks, and most importantly made me "
+					+ "feel like I was useful."
+					+ "<br><br>"
+					+ "Soon after, I ramped up my hackathon participation and found myself flying "
+					+ "across the country to attend dozens of collegiate hackathons. While they changed "
+					+ "my life, I learned first-hand how intimidating collegiate hackathons can be to "
+					+ "high schoolers. It was scary to stay at an unfamiliar campus surrounded by 20-year-old "
+					+ "computer science majors, at an event I had needed an age exemption to attend. "
+					+ "This inspired me to start hackBCA, a hackathon for high school students (see below "
+					+ "for more information). I devoted my last two years of high school to working tirelessly "
+					+ "to make sure hackBCA enabled hundreds of high schoolers to reach their potential and "
+					+ "come to the realization that they had the power to change the world. I also helped start "
+					+ "an online community for high school hackers, now with over 6,000 members."
+					+ "<br><br>"
+					+ "Instead of spending most of my time hacking at hackathons, I now devote "
+					+ "much of my time to helping the hackathon community. From working at Major League "
+					+ "Hacking (see below), advising countless aspiring high school hackathon organizers, "
+					+ "helping to plan UC Berkeley's hackathon, advising companies on hackathon strategy, "
+					+ "and giving talks on hackathon planning and programming "
+					+ "(<a href='https://www.youtube.com/watch?v=q44l5Hd87TQ'>Fundraising for High School Hackathons</a>, "
+					+ "<a href='https://www.youtube.com/watch?v=q6X1WShIIXM'>How to Inspire Absolute Beginners</a>, "
+					+ "<a href='https://www.youtube.com/watch?v=NGg_ItIKL68'>Securing Awesome Judges for your "
+					+ "Hackathon</a>, and <a href='https://www.youtube.com/watch?v=VxKisEkHluw'>Intro to HTML and "
+					+ "CSS</a>), I strive to share the super power of programming with as many people as I can."
 			}
 		}
 	},
@@ -42,7 +90,11 @@ module.exports = [{
 				link: "http://www.alsop-louie.com/",
 				hideImageOnExpand: true,
 				date: "2016 to present",
-				desc: "WRITE STUFF HERE!"
+				desc: "I am the Campus Associate for Alsop Louie Partners at UC Berkeley. "
+					+ "My responsibilities include, but are not limited to, finding Berkeley "
+					+ "students working on startups and identifying trends in the student "
+					+ "developer world. If you are a Berkeley student working at a startup, "
+					+ "shoot me an email! Would love to hear about it!"
 			},
 			"IMPLISIT" : {
 				title: "Implisit", 
@@ -50,7 +102,19 @@ module.exports = [{
 				img: "implisit.png",
 				date: "2015 to 2016",
 				expandedImg: "implisithummus.jpg",
-				desc: "WRITE STUFF HERE!"
+				desc: "Before I began my university studies, I spent half a year living "
+					+ "in Tel Aviv, Israel and working at Implisit. I really loved working "
+					+ "as a full-time software engineer in a small team of extremeley "
+					+ "talented and friendly individuals. At Implisit, I worked closely "
+					+ "with one other developer on the front-end. I mostly focussed on "
+					+ "refactoring the code base into React, as well as adding features "
+					+ "and fixing bugs. Shortly after I left, Implisit was "
+					+ "<a href='http://www.businessinsider.com/salesforce-buys-implisit-insights-2016-5'>acquired "
+					+ "by Salesforce</a> and now powers "
+					+ "<a href='https://www.salesforce.com/products/einstein/overview/'>Salesforce Einstein</a>. "
+					+ "I am extremely glad I was able to join this rocketship as it was taking off. "
+					+ "However, the biggest skill I acquired from this experience was a discerning "
+					+ "taste for hummus."
 			},
 			"MLH" : {
 				title: "Major League Hacking",
@@ -59,7 +123,21 @@ module.exports = [{
 				link: "https://mlh.io/",
 				date: "Summer 2015",
 				img: "mlh-logo-color.png",
-				desc: "WRITE STUFF HERE!"
+				desc: "During the summer after I graduated from high school, "
+					+ "I interned at Major League Hacking. I love spending "
+					+ "my time helping inspire students through hackathons, "
+					+ "and what better way to do that than to work for the "
+					+ "company that devotes itself to helping and empowering "
+					+ "student hackathons. At MLH, I spent most of my time either "
+					+ "taking calls with high school hackathon organizers to give them "
+					+ "advice or building a definitive guide to hackathons. The hackathon "
+					+ "<a href='https://mlh.io/college-administrator-hackathon-guide'>guides</a> "
+					+ "that I created focus on explaining hackathons to school "
+					+ "administrators and parents. I noticed a major problem for "
+					+ "students trying to start hackathons was explaining what a "
+					+ "hackathon is and its benefits to their administrators. The "
+					+ "guide includes resources for students to use to present and "
+					+ "inform their administrators and parents as to the merits of hackathons."
 			},
 			"REDDIT" : {
 				title: "reddit", 
@@ -114,26 +192,72 @@ module.exports = [{
 		"items": {
 			"HACKBCA" : {
 				title: "hackBCA", 
+				longTitle: "Founder and Director of hackBCA",
 				img: "hackbcaiilogo.png",
+				date: "2013 to 2015",
 				link: "http://www.hackbca.com/",
 				expandedImg: "hackbca1.jpg",
 				altImg: "hackbcateam.jpg",
-				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+				desc: "hackBCA is one of the first ever student-run high school hackathons! "
+					+ "It was hosted at my high school in Hackensack, New Jersey. A hackathon "
+					+ "is an event in which teams spend the weekend building something awesome "
+					+ "and then demo it. After I had attended and competed in many collegiate "
+					+ "hackathons, I wondered why there were no hackathons for high school students. "
+					+ "Thus hackBCA was born."
+					+ "<br><br>"
+					+ "The first hackBCA hackathon attracted 400 students to spend the night coding, "
+					+ "with help by mentors like Stephen Wolfram. 290 students (120 of whom have never "
+					+ "programmed before) attended a hackathon for the first time. A year later we ran "
+					+ "hackBCA II, with a much larger team. 470 high school hackers arrived: 60% "
+					+ "attending their first hackathon, 57% programming for the first time, 35% female "
+					+ "hackers, and about a 1:10 mentor to student ratio. We also partnered with Intel "
+					+ "to offer a scholarship to 30 underserved students where we provided transportation "
+					+ "and laptops to help provide these students with the tools they needed to create "
+					+ "their future. "
+					+ "<br><br>"
+					+ "I had no idea how powerful high school hackathons can actually be when I started "
+					+ "hackBCA. hackBCA aims to inspire high school students and show them that they have "
+					+ "the power to transform their ideas into reality... the power to build the future. "
+					+ "Hundreds of students have left hackBCA with a newfound desire to learn how to code "
+					+ "and with the ability to change the world. Programmers have the power to mold the "
+					+ "future and share ideas in an unprecedented way, and I am glad we can show students "
+					+ "the power they posses. "
+					+ "<br><br>"
+					+ "hackBCA is an annual event, although I have passed on the torch. "
+					+ "I am looking forward to upcoming iterations!"
 			},
 			"HACKCONSULT" : {
 				title: "Hackathon Consulting",
 				img: "Intel-logo.svg.png",
 				date: "2015 to 2016",
 				expandedImg: "proposal.png",
-				desc: "WRITE STUFF HERE!"
+				desc: "One thing I noticed through running hackathons and being "
+					+ "very involved with the hackathon community is that many "
+					+ "companies do not reap their maximum potetial return on "
+					+ "investment for sponsoring hackathon. Having been on both "
+					+ "the attendee and organizer side of hackathons, I started "
+					+ "to notice trends and techniques, used by sponsors to meet "
+					+ "their full potential, that worked or did not work. Student "
+					+ "hackathons are, in my opinion, the number one most effective "
+					+ "method to recruit student developers. I worked on a large "
+					+ "project with Intel to create a plan for them to develop a "
+					+ "structured student developer evangelism program and become "
+					+ "a key player in the student developer community."
 			},
 			"PROJALEX" : {
 				title: "Project Alexandria",
-				hideImageOnExpand: true,
+				expandedImg: "projalexascreenshot.png",
 				link: "http://www.projectalexa.com/",
 				img: "palogo.jpg",
 				technologies: "Python, GQL/SQL, Google App Engine, Javascript, jQuery, Twitter Bootstrap, Git",
-				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+				desc: "The first large project I worked on was Project Alexandria. "
+					+ "Project Alexandria was created to help students study more "
+					+ "efficiently. To do this, we facilitated easy sharing and "
+					+ "collaboration on study guides. Students could upload, vote "
+					+ "on, edit, create, and comment on study guides. Working with "
+					+ "a few other students, we created our first 'real' web application. "
+					+ "We also tried marketing tricks like creating fake users and "
+					+ "mailing beta invites to entice our classmates to start using the site. "
 			}
 		}
 	},
@@ -214,7 +338,11 @@ module.exports = [{
 				img: "thekeystonexlcom.png",
 				technologies: "HTML, CSS, Javascript, jQuery",
 				date: "2013",
-				desc: "WRITE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+				desc: "I created a small one-page microsite to try to illustrate "
+					+ "the harmful effects of the Keystone XL pipeline. My goal "
+					+ "of this site was to provide a resource for anyone to "
+					+ "learn about this proposed pipeline and contact their "
+					+ "local representative."
 			},
 			"FRAMES" : {
 				title: "Frames",
@@ -370,31 +498,57 @@ module.exports = [{
 		"items": {
 			"CAL" : {
 				title: "UC Berkeley", 
-				longTitle: "Electrical Engineering and Computer Science Major at the University of California-Berkeley",
+				longTitle: "EECS Major at the University of California-Berkeley",
 				img: "berkeleylogo.png",
 				date: "Class of 2020",
 				expandedImg: "berkeleysign.jpg",
-				desc: "WRITE THIS!!"
+				desc: "I am a Electrical Engineering and Computer Science Major at "
+					+ "the UC Berkeley. EECS is a single combined major at UC "
+					+ "Berkeley, and thus I will be specializing in both EE and "
+					+ "CS. At school, I play an active part in planning our "
+					+ "hackathon (<a href='http://calhacks.io/'>Cal Hacks</a>). "
+					+ "I am also a member of other clubs such as: Kairos "
+					+ "(a club for student entrepreneurs and makers), "
+					+ "Hackers@Berkeley, Tikvah, and Bears for Israel."
 			},
 			"BCA" : {
 				title: "Bergen County Academies", 
-				longTitle: "Academy for Technologies and Computer Science at the Bergen County Academies",
+				longTitle: "Bergen County Academies",
 				img: "bcalogo.jpg",
 				date: "Class of 2015",
 				expandedImg: "bcaexpanded.jpg",
-				desc: "WRITE THIS!!"
+				desc: "I was very fortunate to attend the Academy for "
+					+ "Technologies and Computer Science at the Bergen "
+					+ "County Academies high school. Here I really "
+					+ "learned a lot about computer science, through courses "
+					+ "like: Python Programming (2012), AP Computer Science (2013), "
+					+ "Data Structures (2014), C-Programming (2014), and "
+					+ "Foundations of Computer Science (2015)."
 			},
 			"ONLINE" : {
 				title: "Udacity & CTY Online",
-				img: "udacity.png",
+				date: "2011 and 2012",
+				img: "udacitylogo.png",
 				hideImageOnExpand: true,
-				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+				desc: "I have taken two formative online courses. In 2011, "
+					+ "I took an introduction to web development course "
+					+ "through CTY Online. Here I learned the basics of web development "
+					+ "and made my first website! The next year I took "
+					+ "CS253: How to Build a Blog on Udacity and learned about "
+					+ "dynamic websites and backends."
 			},
 			"IDTECH" : {
 				title: "ID Tech Camp",
-				img: "idtech.png",
+				date: "2010 and 2011",
+				img: "idtech.jpg",
 				hideImageOnExpand: true,
-				desc: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+				desc: "My first ever introduction to programming was going "
+					+ "to ID Tech Camp during the summer of the 7th grade. I always had wanted "
+					+ "to learn to program, so I took an Intro to C++ course and an "
+					+ "Intro to Robotics course. I loved it and soon became obsessed with the "
+					+ "potential of this cryptic language. The next school year was full of "
+					+ "quadtratic formula calculators and other simple C++ programs. I returned "
+					+ "the next summer to take an intro to iOS Development in Objective-C course."
 			}
 		}
 	}

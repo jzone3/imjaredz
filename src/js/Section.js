@@ -112,7 +112,9 @@ var Section = React.createClass({
 		this.setState({
 			selectedId: expand ? newSelected : null,
 			selectedItem: expand ? itemNumber : null});
-		$('html, body').animate({scrollTop: $("#" + newSelected).offset().top}, 500);
+		if (expand) {
+			setTimeout(() => $('html, body').animate({scrollTop: $("#" + newSelected).offset().top}, 500), 150);
+		}
 	},
 	_close_btn_onclick() {
 		this.setState({selectedId: null, selectedItem: null});
