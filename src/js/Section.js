@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React 	from 'react';
-// import Youtube from 'react-youtube';
+import Youtube from 'react-youtube';
 import Item from './Item';
 import classNames from 'classnames';
 
@@ -89,14 +89,13 @@ var Section = React.createClass({
 	},
 	_render_image(item) {
 		var image = item.expandedImg ? item.expandedImg : item.img;
-		// var video = item.videoId ? <Youtube videoId={item.videoId}> : null;
-		var video = null;
+		var video = item.videoId ? <div className="video"><Youtube videoId={item.videoId} /></div> : null;
 		image = item.hideImageOnExpand ? null : (<div className="image"><img src={"img/" + image} /></div>);
 		return image ? image : video;
 	},
 	_render_title(item) {
-		var title = item.longTitle ? item.longTitle : item.title;
-		return <div className="title">{ item.link ? <a href={item.link}>{title}</a> : title }</div>;
+		var itemTitle = item.longTitle ? item.longTitle : item.title;
+		return <div className="title">{ item.link ? <a href={item.link}>{itemTitle}</a> : itemTitle }</div>;
 	},
 	_render_date(item) {
 		return item.date ? <div className="date">{ item.date }</div> : null;

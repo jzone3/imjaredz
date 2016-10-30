@@ -1,9 +1,6 @@
-- finish descriptions & revise
 - mobile
-- youtube
-- soundsculptr
 
-- improve titles?
+- revise descriptions
 - compress images
 
 - ask friends for color/design imporvements
@@ -11,12 +8,3 @@
 - animation
 
 
-
-
-
-
-
-
-DESCRIPTIONS TO WRITE:
-
-Gap Year : Prior to starting school at UC Berkeley, I decided to take a year off. Having almost no responsibilities at the time, I thought that it was one of the best times in my life to explore the world. I spent the summer after high school interning at Major League Hacking in New York City. Right after, I hopped on a plane across the world and moved to Tel Aviv, Israel for half a year. I spent my time in Tel Aviv working at Implisit, eating hummus, and drinking coffee. I returned home (New Jersey) in April to attend the third iteration of hackBCA (no longer run by me this time). After hackBCA III, I got on another flight to Europe. There I spent three months backpacking through 12 different countries and eating some of the best food I have ever tasted.

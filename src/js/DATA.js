@@ -431,13 +431,13 @@ module.exports = [{
 					+ "SoundSculptr. We were the only team comprised of only high school students at this "
 					+ "college hackathon. In addition, we made it into the top 20 apps and won the award "
 					+ "for the \"Most Quotidian Hack\" (from <a href='http://www.quotidian.co/'>Quotidian "
-					+ "Ventures</a>). <a href='#'>Click here to view reactions to SoundSculptr!</a>"
+					+ "Ventures</a>)."
 					+ "<br><br>"
 					+ "SoundSculptr is a new way to create music. Using only their hands (we used a "
 					+ "developer copy of the <a href='http://leapmotion.com/'>LEAP Motion</a> for "
 					+ "this), a user is able to \"sculpt\" music and then export their music. "
 					+ "If you don't have a LEAP Motion, you can still watch a "
-					+ "<a href='http://www.youtube.com/watch?v=J5c0htimgWc'>demo</a> of SoundSculptr!"
+					+ "<a href='http://www.youtube.com/watch?v=J5c0htimgWc'>demo</a> of SoundSculptr!",
 			},
 			"CODEFORAMERICA" : {
 				title: "Code for America", 
