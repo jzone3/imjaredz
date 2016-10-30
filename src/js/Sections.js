@@ -31,7 +31,6 @@ var Sections = React.createClass({
 		return <div className="container">{ sections }</div>;
 	},
 	_section_click_handler(sectionId) {
-		console.log(sectionId);
 		this.setState({selected: sectionId});
 	}
 });

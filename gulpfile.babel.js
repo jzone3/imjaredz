@@ -86,7 +86,11 @@ gulp.task('copyLibraries', () => {
 });
 
 
-gulp.task('prod', ['replaceHTML', 'copyLibraries', 'build', 'buildCSS']);
+gulp.task('prodEnvironment', () => {
+	process.env.NODE_ENV = 'production';
+});
+
+gulp.task('prod', ['prodEnvironment', 'replaceHTML', 'copyLibraries', 'build', 'buildCSS']);
 
 gulp.task('build', () => {
 	browserify({

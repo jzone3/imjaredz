@@ -18,7 +18,6 @@ var Item = React.createClass({
 	    };
 	},
 	render: function(){
-		// <img src={"img/" + this.props.img}/>
 		return (
 			<div 
 				onClick={this._onclick}
@@ -36,7 +35,6 @@ var Item = React.createClass({
 		)
 	},
 	_onclick() {
-		console.log("CLICK!");
 		this.props.onclick(!this.props.isSelected, this.props.itemId, this.props.itemNumber);
 		// this.setState({selected: !this.state.selected});
 	}
