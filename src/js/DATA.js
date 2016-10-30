@@ -196,8 +196,8 @@ module.exports = [{
 				img: "hackbcaiilogo.png",
 				date: "2013 to 2015",
 				link: "http://www.hackbca.com/",
-				expandedImg: "hackbca1.jpg",
-				altImg: "hackbcateam.jpg",
+				// expandedImg: "hackbca1.jpg",
+				expandedImg: "hackbcateam.jpg",
 				desc: "hackBCA is one of the first ever student-run high school hackathons! "
 					+ "It was hosted at my high school in Hackensack, New Jersey. A hackathon "
 					+ "is an event in which teams spend the weekend building something awesome "
@@ -316,7 +316,7 @@ module.exports = [{
 			},
 			"WHODAT" : {
 				title: "WhoDat",
-				img: "whodat-big.jpg",
+				img: "whodat.png",
 				link: "http://www.getwhodat.com/",
 				technologies: "HTML, CSS, Javascript, jQuery, Python, Flask, Threading",
 				date: "2014",
