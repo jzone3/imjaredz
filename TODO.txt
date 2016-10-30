@@ -1,10 +1,15 @@
 - mobile
+-404
 
 - revise descriptions
-- compress images
 
-- ask friends for color/design imporvements
+- ask for color/design imporvements
 - update linkedin
 - animation
 
+
+
+----------------
+FIXES:
+- if text too long on mobile can you scroll? switch to absolute?
 

@@ -19,6 +19,8 @@ const PATH = {
 	HTML: 'src/index.html',
 	BOOTSTRAP: ['src/bootstrap/bootstrap.min.css', 'src/bootstrap/bootstrap.min.js'],
 	IMG: 'src/img/*',
+	OTHER: 'src/other/*',
+	RESUME: 'src/resume.pdf',
 	JQUERY: 'src/jquery/jquery-3.1.1.min.js',
 	LESS: 'src/less/styles.less',
 	CNAME: 'src/CNAME',
@@ -29,6 +31,8 @@ const PATH = {
 	DEST_BUILD: 'dist/build',
 	DEST_BOOTSTRAP: 'dist/bootstrap',
 	DEST_IMG: 'dist/img',
+	DEST_OTHER: 'dist/other',
+	DEST_RESUME: 'dist/',
 	DEST_JQUERY: 'dist/jquery',
 	DEST_CSS: 'dist/src',
 	ENTRY_POINT: 'src/js/App.js'
@@ -75,6 +79,10 @@ gulp.task('copyLibraries', () => {
 		.pipe(gulp.dest(PATH.DEST_JQUERY));
 	gulp.src(PATH.IMG)
 		.pipe(gulp.dest(PATH.DEST_IMG));
+	gulp.src(PATH.OTHER)
+		.pipe(gulp.dest(PATH.DEST_OTHER));
+	gulp.src(PATH.RESUME)
+		.pipe(gulp.dest(PATH.DEST_RESUME));
 });
 
 

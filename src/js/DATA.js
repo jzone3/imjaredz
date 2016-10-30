@@ -1,11 +1,11 @@
 module.exports = [{
 	"text": "I just returned from a gap year of backpacking, working abroad, and drinking coffee. "
-		+ "I'm now a freshman at <a href='#'>UC Berkeley</a>, "
+		+ "I'm now a freshman at <a href='https://eecs.berkeley.edu/'>UC Berkeley</a>, "
 		+ "majoring in Electrical Engineering and Computer Science. "
-		+ "I attend too many hackathons and started one of the <a href='www.hackbca.com'>first high school hackathons</a>. "
-		+ "Previously, I have interned with <a href='#'>Implisit</a> (<a href='http://www.businessinsider.com/salesforce-buys-implisit-insights-2016-5'>acquired "
-		+ "by Salesforce</a>), <a href='#'>reddit</a>, <a href='#'>Major League Hacking</a>"
-		+ ", <a href='#'>Warby Parker</a>, and <a href='#'>Newlio</a>. Currently a Campus Associate for <a href='#'>Alsop Louie Partners</a>."
+		+ "I attend too many hackathons and started one of the <a href='http://www.hackbca.com'>first high school hackathons</a>. "
+		+ "Previously, I have interned with Implisit (<a href='http://www.businessinsider.com/salesforce-buys-implisit-insights-2016-5'>acquired "
+		+ "by Salesforce</a>), <a href='http://reddit.com/'>reddit</a>, <a href='http://mlh.io/'>Major League Hacking</a>"
+		+ ", <a href='http://www.warbyparker.com/'>Warby Parker</a>, and <a href='http://newlio.com/'>Newlio</a>. Currently a Campus Associate for <a href='http://alsop-louie.com/'>Alsop Louie Partners</a>."
 },
 [
 	{
@@ -47,9 +47,7 @@ module.exports = [{
 				img: "hackathons.jpg",
 				expandedImg: "lhdphoto.jpg",
 				desc: "Ever since I attended my first hackathon during my freshman year of high "
-					+ "school, I have been hooked. My father drove me to that fateful hackathon "
-					+ "in 2012. After registration, I walked around trying to find a team to join, "
-					+ "and noticed that most of the attendees were of college age or older. While "
+					+ "school, I have been hooked. While "
 					+ "weaving through rows of tables piled high with laptops, chargers, and snacks, "
 					+ "I decided that there was no harm in just asking a team if I could join them. "
 					+ "Despite my minimal knowledge of website development, my teammates guided me, "
@@ -76,7 +74,7 @@ module.exports = [{
 					+ "<a href='https://www.youtube.com/watch?v=q6X1WShIIXM'>How to Inspire Absolute Beginners</a>, "
 					+ "<a href='https://www.youtube.com/watch?v=NGg_ItIKL68'>Securing Awesome Judges for your "
 					+ "Hackathon</a>, and <a href='https://www.youtube.com/watch?v=VxKisEkHluw'>Intro to HTML and "
-					+ "CSS</a>), I strive to share the super power of programming with as many people as I can."
+					+ "CSS</a>), I strive to share the super-power that is programming with as many people as I can."
 			}
 		}
 	},
@@ -104,7 +102,7 @@ module.exports = [{
 				expandedImg: "implisithummus.jpg",
 				desc: "Before I began my university studies, I spent half a year living "
 					+ "in Tel Aviv, Israel and working at Implisit. I really loved working "
-					+ "as a full-time software engineer in a small team of extremeley "
+					+ "as a full-time software engineer in a small team of extremley "
 					+ "talented and friendly individuals. At Implisit, I worked closely "
 					+ "with one other developer on the front-end. I mostly focussed on "
 					+ "refactoring the code base into React, as well as adding features "
@@ -124,10 +122,8 @@ module.exports = [{
 				date: "Summer 2015",
 				img: "mlh-logo-color.png",
 				desc: "During the summer after I graduated from high school, "
-					+ "I interned at Major League Hacking. I love spending "
-					+ "my time helping inspire students through hackathons, "
-					+ "and what better way to do that than to work for the "
-					+ "company that devotes itself to helping and empowering "
+					+ "I interned at Major League Hacking. What better way to help the hackathon community "
+					+ "than to work for the company that devotes itself to helping and empowering "
 					+ "student hackathons. At MLH, I spent most of my time either "
 					+ "taking calls with high school hackathon organizers to give them "
 					+ "advice or building a definitive guide to hackathons. The hackathon "
@@ -149,12 +145,12 @@ module.exports = [{
 				desc: "Throughout my senior year of high school, I spent every Wednesday interning for Alexis Ohanian. "
 					+ "I helped Alexis with a wide variety of projects ranging from interviews for his podcasts, "
 					+ "price negotiations, securing employee discounts, and reviewing podcast episodes. In addition, "
-					+ "I created apps to help him collect emails by directing audiences to text a specific number. "
+					+ "I created apps to help him collect emails by directing audiences to text a specific phone number. "
 					+ "I also developed an extension for reddit employees to automate the conversion of reddit posts "
 					+ "to social-media-friendly images.<br><br>"
 					+ "For the first half of the year (before Alexis re-joined reddit), I worked from General Catalyst's "
 					+ "offices. There I helped examine and identify trends that are apparent in a high school and "
-					+ "college demographic.<br><br>"
+					+ "college demographics.<br><br>"
 					+ "I also spent almost every Wednesday that year trying to meet someone new!"
 			},
 			"WARBY" : {
@@ -165,11 +161,13 @@ module.exports = [{
 				expandedImg: "warbyparkerhackathon.jpg",
 				date: "Summer 2013 & Summer 2014",
 				technologies: "Python, Nagios, MySQL, Postgres, Git, RabbitMQ",
-				desc: "I had an awesome internship during my sophomore summer at high school. I was "
-					+ "the \"Technology Intern\" at one of the most awesome companies to work "
-					+ "for: Warby Parker. It was a great experience, and I definitely learned a "
-					+ "lot (specifically how code is handled in a \"larger\" organization). "
-					+ "I do not think a better internship exists!"
+				desc: "I interned at Warby Parker during my sophomore and junior summers "
+					+ "of high school. It was amazing to be able to see how much such a "
+					+ "fast-growing company can change in a year. During the first summer "
+					+ "I interned at Warby Parker, I worked on automating server monitoring "
+					+ "with Nagios and implimenting RabbitMQ. The next summer, I worked on the "
+					+ "front-end with a designer to redesign some of the pages. I loved "
+					+ "working at Warby Parker and definitely learned a lot!"
 			},
 			"NEWLIO" : {
 				title: "Newlio",
@@ -180,7 +178,7 @@ module.exports = [{
 				date: "Summer 2012",
 				technologies: "PHP, MongoDB, Yii, Javascript, Git",
 				desc: "During my freshman year of high school, I had to choose what to do over the "
-					+ "summer. I (correctly) thought an internship would greatly help my education. "
+					+ "summer. I thought an internship would greatly help my education. "
 					+ "So I made a few posts on Reddit, and sure enough I got an internship at Newlio! "
 					+ "It was very exciting and surprising, given that I was a freshman in high school. "
 					+ "Ultimately, I learned a lot and met awesome people!"
@@ -220,7 +218,7 @@ module.exports = [{
 					+ "the power to transform their ideas into reality... the power to build the future. "
 					+ "Hundreds of students have left hackBCA with a newfound desire to learn how to code "
 					+ "and with the ability to change the world. Programmers have the power to mold the "
-					+ "future and share ideas in an unprecedented way, and I am glad we can show students "
+					+ "future and share ideas in an unprecedented way, and I am glad we were able to show students "
 					+ "the power they posses. "
 					+ "<br><br>"
 					+ "hackBCA is an annual event, although I have passed on the torch. "
@@ -275,7 +273,7 @@ module.exports = [{
 					+ "we wrote the backend in Flask and focussed on improving the design, along "
 					+ "with fixing the scaling issues we had the year before. We also got to "
 					+ "try using different technologies like MongoDB this time. Within a day, "
-					+ "ClassMatch 2 had 522 users sign up and over 1,000 classes joined!"
+					+ "ClassMatch 2 had 522 classmates sign up and over 1,000 classes joined!"
 			},
 			"RETENTION" : {
 				title: "Retention",
@@ -283,9 +281,9 @@ module.exports = [{
 				link: "http://getretention.herokuapp.com/",
 				technologies: "HTML, CSS, Javascript, MongoDB, Python, Flask, SendGrid, Twilio, Cron",
 				date: "2014",
-				desc: "Retention (created at the 2014 Spring hackNY Hackathon app on April 5-6, "
-					+ "2014) uses spaced-repetition (an algorithm that reminds one in varying "
-					+ "intervals of time to maximize memorization and minimize time spent "
+				desc: "Retention (created at the 2014 Spring hackNY Hackathon on April 5-6, "
+					+ "2014) uses spaced-repetition (an algorithm that sends reminders at varying "
+					+ "intervals of time used to maximize memorization and minimize time spent "
 					+ "memorizing) to help a user memorize names of people from one's Facebook groups. "
 					+ "A user can either create flashcards from members of a Facebook group, or "
 					+ "create custom flashcards. In addition, a user can even create \"smart "
@@ -328,7 +326,7 @@ module.exports = [{
 					+ "is determined (mostly one's profession and employer) and an email "
 					+ "is found by checking various permutations of an email address. "
 					+ "A flowchard of the process is available here: "
-					+ "<a href='http://imjaredz.com/whodat-flowchart.pdf'>imjaredz.com/whodat-flowchart.pdf</a>"
+					+ "<a href='http://imjaredz.com/other/whodat-flowchart.pdf'>imjaredz.com/other/whodat-flowchart.pdf</a>"
 					+ ". This app was created at the 2014 Winter MHacks III Hackathon (January 17-19, 2014)."
 			},
 			"KXL" : {
@@ -371,9 +369,9 @@ module.exports = [{
 					+ "it works seamlessly without constant input needed from the user (e.g., what shows "
 					+ "to block). Once it is installed, it will do the rest!"
 					+ "<br><br>"
-					+ "ScreenShades made it into the top 20 hacks at this hackathon. That is, top 20 out "
-					+ "of 204 hacks that were submitted at the biggest college hackathon, ever (as of the "
-					+ "September 8th). In addition, we won the Best Hack in Media/Entertainment award "
+					+ "ScreenShades made it into the top 20 hacks at this hackathon, out "
+					+ "of 204 hacks that were submitted at one of the biggest college hackathons. "
+					+ "In addition, we won the Best Hack in Media/Entertainment award "
 					+ "from Comcast, Most Creative Use of Google's Prediction API award from Google, "
 					+ "Best Use of MongoDB award from MongoDB, Inc., and we were nominated for "
 					+ "Best Hack That Makes Life So Easy award from Venmo. Check out our demo video "
@@ -392,7 +390,7 @@ module.exports = [{
 					+ "schedules on Facebook, to determine their classmates for the following year. "
 					+ "Paras Modi, Edmon Berry, and I remembered how inefficient this was from our "
 					+ "freshman year, and decided to hack together a solution the weekend before "
-					+ "schedules were released (we did not have much of a chance to scale)."
+					+ "schedules were released."
 					+ "<br><br>" 
 					+ "We released it on the day students received their schedules. Within the "
 					+ "hour we surpassed the free Google App Engine quota, and the site was down. "
@@ -457,7 +455,7 @@ module.exports = [{
 				img: "adcity.jpg",
 				date: "2012",
 				technologies: "Python, Django, Javascript, jQuery, Twitter Bootstrap",
-				desc: "During the 2012 TechCrunch Disrupt NYC Hackathon (on May 19-20, 2012), "
+				desc: "During my first hackathon, the 2012 TechCrunch Disrupt NYC Hackathon (on May 19-20, 2012), "
 					+ "I helped create AdCity. I was also "
 					+ "<a href='http://techcrunch.com/2012/05/19/meet-the-disrupt-ny-2012-hackathon-hackers/'>"
 					+ "interviewed</a> there!<br><br>"
@@ -481,7 +479,7 @@ module.exports = [{
 				hideImageOnExpand: true,
 				date: "2010",
 				technologies: "HTML, CSS, Photoshop",
-				desc: "Kingdom of the Sun Pro was the first website! After taking a CTY course "
+				desc: "Kingdom of the Sun Pro was my first website! After taking a CTY course "
 					+ "on HTML and CSS, I decided to put my newly-learned skills to the test. "
 					+ "I created a website for my small montage, tech support, etc. business."
 			},
