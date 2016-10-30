@@ -119,7 +119,7 @@ module.exports = [{
 			"MLH" : {
 				title: "Major League Hacking",
 				longTitle: "Intern at Major League Hacking",
-				expandedImg: "mlhguide.png",
+				expandedImg: "mlhguide.jpg",
 				link: "https://mlh.io/",
 				date: "Summer 2015",
 				img: "mlh-logo-color.png",
@@ -230,7 +230,7 @@ module.exports = [{
 				title: "Hackathon Consulting",
 				img: "Intel-logo.svg.png",
 				date: "2015 to 2016",
-				expandedImg: "proposal.png",
+				expandedImg: "proposal.jpg",
 				desc: "One thing I noticed through running hackathons and being "
 					+ "very involved with the hackathon community is that many "
 					+ "companies do not reap their maximum potetial return on "
@@ -246,7 +246,7 @@ module.exports = [{
 			},
 			"PROJALEX" : {
 				title: "Project Alexandria",
-				expandedImg: "projalexascreenshot.png",
+				expandedImg: "projalexascreenshot.jpg",
 				link: "http://www.projectalexa.com/",
 				img: "palogo.jpg",
 				technologies: "Python, GQL/SQL, Google App Engine, Javascript, jQuery, Twitter Bootstrap, Git",
@@ -266,7 +266,7 @@ module.exports = [{
 		"items": {
 			"CLASSMATCH2" : {
 				title: "ClassMatch 2", 
-				img: "classmatch2.png",
+				img: "classmatch2.jpg",
 				link: "http://www.bcaclassmatch.com/",
 				date: "2014",
 				technologies: "HTML, CSS, Python, Flask, MongoDB, Javascript, Twitter Bootstrap",
@@ -279,7 +279,7 @@ module.exports = [{
 			},
 			"RETENTION" : {
 				title: "Retention",
-				img: "retention.png",
+				img: "retention.jpg",
 				link: "http://getretention.herokuapp.com/",
 				technologies: "HTML, CSS, Javascript, MongoDB, Python, Flask, SendGrid, Twilio, Cron",
 				date: "2014",
@@ -297,7 +297,7 @@ module.exports = [{
 			},
 			"BETSON" : {
 				title: "BetsOn",
-				img: "betson.png",
+				img: "betson.jpg",
 				link: "http://devpost.com/software/betson",
 				technologies: "HTML, CSS, Javascript, jQuery, Python, Flask, Pebble SDK",
 				date: "2014",
@@ -316,7 +316,7 @@ module.exports = [{
 			},
 			"WHODAT" : {
 				title: "WhoDat",
-				img: "whodat.png",
+				img: "whodat.jpg",
 				link: "http://www.getwhodat.com/",
 				technologies: "HTML, CSS, Javascript, jQuery, Python, Flask, Threading",
 				date: "2014",
@@ -335,7 +335,7 @@ module.exports = [{
 				title: "Keystone XL",
 				longTitle: "Keystone XL Microsite",
 				link: "http://www.thekeystonexl.com",
-				img: "thekeystonexlcom.png",
+				img: "thekeystonexlcom.jpg",
 				technologies: "HTML, CSS, Javascript, jQuery",
 				date: "2013",
 				desc: "I created a small one-page microsite to try to illustrate "
@@ -383,7 +383,7 @@ module.exports = [{
 			},
 			"CLASSMATCH" : {
 				title: "ClassMatch", 
-				img: "classmatch.png",
+				img: "classmatch.jpg",
 				link: "http://class-match.appspot.com/",
 				date: "2013",
 				technologies: "HTML, CSS, Python, GQL, Google App Engine, Javascript, Twitter Bootstrap",
