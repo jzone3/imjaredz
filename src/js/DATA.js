@@ -102,7 +102,7 @@ module.exports = [{
 				expandedImg: "implisithummus.jpg",
 				desc: "Before I began my university studies, I spent half a year living "
 					+ "in Tel Aviv, Israel and working at Implisit. I really loved working "
-					+ "as a full-time software engineer in a small team of extremley "
+					+ "as a full-time software engineer in a small team of extremely "
 					+ "talented and friendly individuals. At Implisit, I worked closely "
 					+ "with one other developer on the front-end. I mostly focussed on "
 					+ "refactoring the code base into React, as well as adding features "
@@ -165,7 +165,7 @@ module.exports = [{
 					+ "of high school. It was amazing to be able to see how much such a "
 					+ "fast-growing company can change in a year. During the first summer "
 					+ "I interned at Warby Parker, I worked on automating server monitoring "
-					+ "with Nagios and implimenting RabbitMQ. The next summer, I worked on the "
+					+ "with Nagios and implementing RabbitMQ. The next summer, I worked on the "
 					+ "front-end with a designer to redesign some of the pages. I loved "
 					+ "working at Warby Parker and definitely learned a lot!"
 			},
