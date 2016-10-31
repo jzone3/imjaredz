@@ -1,3 +1,4 @@
+- scroll covers close 'x'
 - 404
 
 - ask for color/design imporvements
