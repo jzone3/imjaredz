@@ -1,8 +1,8 @@
-- mobile
--404
+- 404
 
 - ask for color/design imporvements
 - update linkedin
 - animation
+- mobile
 
 

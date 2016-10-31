@@ -28,7 +28,6 @@ body {
 }
 
 .centeredText {
-	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 	// margin-top: 20vh;
@@ -36,6 +35,17 @@ body {
 	font-size: 30px;
 	letter-spacing: 0.5px;
 	font-family: 'Didact Gothic', cursive;
+	width: 50%;
+
+	@media screen and (max-width: 990px) {
+		width: 90%;
+		font-size: 35px;
+	}
+
+	@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+		width: 90%;
+		font-size: 40px;
+	}
 
 	.firstLine {
 		// font-size: 200%;
@@ -63,6 +73,12 @@ body {
 
 		@media screen and (max-width: 990px) {
 			text-align: center;
+			font-size: 25px;
+		}
+
+		@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+			text-align: center;
+			font-size: 25px;
 		}
 	}
 }
@@ -92,6 +108,10 @@ body {
 
 			@media screen and (max-width: 990px) {
 				display: block;
+			}
+
+			@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+				font-size: 50px;
 			}
 		}
 	}
@@ -132,6 +152,14 @@ body {
 
 		img {
 			min-height: 175px;
+		}
+
+		@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+			min-height: 300px;
+
+			img {
+				min-height: 300px;
+			}
 		}
 	}
 
@@ -185,6 +213,11 @@ body {
 	display: inline-block;
 	margin-top: -20px;
 	cursor: pointer;
+
+	@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+		height: 100px;
+		width: 100px;
+	}
 }
 
 // .expandedItemWrapper {
@@ -236,6 +269,10 @@ body {
 	.image {
 		img {
 			width: 50%;
+
+			@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+				width: 90%;
+			}
 		}
 	}
 
@@ -246,6 +283,10 @@ body {
 		font-size: 40px;
 		padding-top: 10px;
 		padding-bottom: 10px;
+
+		@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+			font-size: 60px;
+		}
 	}
 
 	.date {
@@ -254,18 +295,30 @@ body {
 		font-weight: bold;
 		color: #7f8c8d;
 		font-size: 15px;
+
+		@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+			font-size: 25px;
+		}
 	}
 
 	.description {
 		padding: 1em 10% 10px 10%;
 		text-align: left;
 		font-size: 20px;
+
+		@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+			font-size: 40px;
+		}
 	}
 
 	.technologies {
 		padding: 0 10% 0 10%;
 		text-align: left;
 		font-size: 17px;
+
+		@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+			font-size: 27px;
+		}
 	}
 
 	.video {
