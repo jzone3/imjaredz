@@ -14,6 +14,6 @@ ReactDOM.render((
 	<BootstrapWrapper>
 		<IntroText data={DATA[0]} />
 		<Sections data={DATA[1]} />
-		{ true ? <Footer /> : null }
+		<Footer />
 	</BootstrapWrapper>
 ), document.getElementById('app'));
