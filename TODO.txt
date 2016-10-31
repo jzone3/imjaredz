@@ -1,4 +1,16 @@
+- more white space on the landing page ... move the links bar closer to the text and put more white space at top and bottom
+- also, don't end the grey color right where the landing page ends ... leave some grey color for like ... 1/6th of a scroll before the white
+	- so put some more space between the links and the next content
+- more smooth transition animation in opening and closing the descriptions
 - scroll covers close 'x'
+- since you only use the greyish color once its kind of random so i think it would make it more balanced to add a footer of the same color at the bottom that wraps up all your experience or like thanks for visiting type thing and reiterate ur contact info and links n shit
+
+
+- linkedin and github links are really close / uneven spacing on the links bar
+
+
+- smoother closing transition
+- try blueish gray color for background?
 - 404
 
 - ask for color/design imporvements

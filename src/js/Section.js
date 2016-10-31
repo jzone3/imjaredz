@@ -74,7 +74,7 @@ var Section = React.createClass({
 		var expanded = this.props.isSelected && i == Math.floor(this.state.selectedItem/3) && this.state.selectedId;
 		var item = this.props.items[this.state.selectedId];
 		return (
-			<div className={classNames("expandedItemWrapper", {"wrapperExpanded": expanded})}>
+			<div className={classNames("expandedItemWrapper", {"wrapperExpanded": expanded})} id={"expandedWrapper" + this.props.sectionId + i}>
 			<div className={classNames("rowExpander", {"expanded": expanded, "notExpanded": !expanded})}>
 				{ this.state.selectedId != null && expanded ? (<div id={'expandedItem' + this.state.selectedId}>
 					<span id='closeBtn' onClick={ this._close_btn_onclick } />
@@ -112,7 +112,8 @@ var Section = React.createClass({
 			selectedId: expand ? newSelected : null,
 			selectedItem: expand ? itemNumber : null});
 		if (expand) {
-			setTimeout(() => $('html, body').animate({scrollTop: $("#expandedItem" + newSelected).offset().top}, 500), 150);
+			setTimeout(() => $('html, body').animate(
+				{scrollTop: $("#expandedWrapper" + this.props.sectionId + Math.floor(itemNumber/3)).offset().top}, 500), 200);
 		}
 	},
 	_close_btn_onclick() {

@@ -1,5 +1,5 @@
 module.exports = [{
-	"text": "I just returned from a gap year of backpacking, working abroad, and drinking coffee. "
+	"text": "I just returned from a gap year of backpacking, working abroad, and drinking espressos. "
 		+ "I'm now a freshman at <a href='https://eecs.berkeley.edu/'>UC Berkeley</a>, "
 		+ "majoring in Electrical Engineering and Computer Science. "
 		+ "I attend too many hackathons and started one of the <a href='http://www.hackbca.com'>first high school hackathons</a>. "
