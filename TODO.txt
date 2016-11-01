@@ -1,5 +1,8 @@
 - linkedin and github links are really close / uneven spacing on the links bar
 - footer
+- look for typos
+- mobile doesn't work on avik's iphone
+- so many logos is very overwhelming, add more whitespace
 
 
 - smoother closing transition

@@ -263,13 +263,25 @@ module.exports = [{
 		"title": "Projects",
 		"items": {
 			"CLASSMATCH2" : {
-				title: "ClassMatch 2", 
+				title: "ClassMatch", 
 				img: "classmatch2.jpg",
 				link: "http://www.bcaclassmatch.com/",
 				date: "2014",
-				technologies: "HTML, CSS, Python, Flask, MongoDB, Javascript, Twitter Bootstrap",
-				desc: "Paras Modi and I decided to rewrite and update ClassMatch to a newer and "
-					+ "better version (scroll down to read about the first version). This time "
+				technologies: "HTML, CSS, Python, Flask, MongoDB, Javascript, Twitter Bootstrap, Google App Engine",
+				desc: "At my high school, each student receives their classes for the upcoming year "
+					+ "on the penultimate day of school. Subsequently, students begin to post their "
+					+ "schedules on Facebook, to determine their classmates for the following year. "
+					+ "Paras Modi, Edmon Berry, and I remembered how inefficient this was from our "
+					+ "freshman year, and decided to hack together a solution the weekend before "
+					+ "schedules were released."
+					+ "<br><br>" 
+					+ "We released it on the day students received their schedules. Within the "
+					+ "hour we surpassed the free Google App Engine quota, and the site was down. "
+					+ "Frantically, we upgraded to a premium account and were back online. "
+					+ "The first day brought 858 visits to the site, in our school alone!"
+					+ "<br><br>"
+					+ "The next year, we rewrote and updated ClassMatch to a newer and "
+					+ "better version. This time "
 					+ "we wrote the backend in Flask and focussed on improving the design, along "
 					+ "with fixing the scaling issues we had the year before. We also got to "
 					+ "try using different technologies like MongoDB this time. Within a day, "
@@ -342,17 +354,17 @@ module.exports = [{
 					+ "learn about this proposed pipeline and contact their "
 					+ "local representative."
 			},
-			"FRAMES" : {
-				title: "Frames",
-				img: "frames.png",
-				technologies: "HTML, CSS, Javascript, jQuery, Android SDK, Google App Engine",
-				date: "2013",
-				desc: "Frames is an Android app that allows users to anonymously upload pictures "
-					+ "they have just taken on their mobile phone. When opening the app the "
-					+ "user is greeted by a feed of images taken near their current location. "
-					+ "In addition, it is possible to see \"trending places\" (or areas in "
-					+ "which many pictures are being taken). This app was made during HackRU (March 30-31, 2013)."
-			},
+			// "FRAMES" : {
+			// 	title: "Frames",
+			// 	img: "frames.png",
+			// 	technologies: "HTML, CSS, Javascript, jQuery, Android SDK, Google App Engine",
+			// 	date: "2013",
+			// 	desc: "Frames is an Android app that allows users to anonymously upload pictures "
+			// 		+ "they have just taken on their mobile phone. When opening the app the "
+			// 		+ "user is greeted by a feed of images taken near their current location. "
+			// 		+ "In addition, it is possible to see \"trending places\" (or areas in "
+			// 		+ "which many pictures are being taken). This app was made during HackRU (March 30-31, 2013)."
+			// },
 			"SCREENSHADES" : {
 				title: "ScreenShades",
 				img: "screenshades.png",
@@ -379,24 +391,24 @@ module.exports = [{
 					+ "<a href='http://www.thedp.com/article/2013/09/pennapps-2013-fall-final-demos'>here</a> "
 					+ "and <a href='http://www.50onred.com/icymi-best-moments-pennapps-hackathon/'>here</a>!"
 			},
-			"CLASSMATCH" : {
-				title: "ClassMatch", 
-				img: "classmatch.jpg",
-				link: "http://class-match.appspot.com/",
-				date: "2013",
-				technologies: "HTML, CSS, Python, GQL, Google App Engine, Javascript, Twitter Bootstrap",
-				desc: "At my high school, each student receives their classes for the upcoming year "
-					+ "on the penultimate day of school. Subsequently, students begin to post their "
-					+ "schedules on Facebook, to determine their classmates for the following year. "
-					+ "Paras Modi, Edmon Berry, and I remembered how inefficient this was from our "
-					+ "freshman year, and decided to hack together a solution the weekend before "
-					+ "schedules were released."
-					+ "<br><br>" 
-					+ "We released it on the day students received their schedules. Within the "
-					+ "hour we surpassed the free Google App Engine quota, and the site was down. "
-					+ "Frantically, we upgraded to a premium account and were back online. "
-					+ "The first day brought 858 visits to the site, in our school alone!"
-			},
+			// "CLASSMATCH" : {
+			// 	title: "ClassMatch", 
+			// 	img: "classmatch.jpg",
+			// 	link: "http://class-match.appspot.com/",
+			// 	date: "2013",
+			// 	technologies: "HTML, CSS, Python, GQL, Google App Engine, Javascript, Twitter Bootstrap",
+			// 	desc: "At my high school, each student receives their classes for the upcoming year "
+			// 		+ "on the penultimate day of school. Subsequently, students begin to post their "
+			// 		+ "schedules on Facebook, to determine their classmates for the following year. "
+			// 		+ "Paras Modi, Edmon Berry, and I remembered how inefficient this was from our "
+			// 		+ "freshman year, and decided to hack together a solution the weekend before "
+			// 		+ "schedules were released."
+			// 		+ "<br><br>" 
+			// 		+ "We released it on the day students received their schedules. Within the "
+			// 		+ "hour we surpassed the free Google App Engine quota, and the site was down. "
+			// 		+ "Frantically, we upgraded to a premium account and were back online. "
+			// 		+ "The first day brought 858 visits to the site, in our school alone!"
+			// },
 			"LEARNTODRIVE" : {
 				title: "Learn to Drive", 
 				img: "learntodrive.png",
@@ -437,19 +449,19 @@ module.exports = [{
 					+ "If you don't have a LEAP Motion, you can still watch a "
 					+ "<a href='http://www.youtube.com/watch?v=J5c0htimgWc'>demo</a> of SoundSculptr!",
 			},
-			"CODEFORAMERICA" : {
-				title: "Code for America", 
-				longTitle: "Code for America Club at High School",
-				img: "cfalogo.png",
-				date: "2012 to 2013",
-				hideImageOnExpand: true,
-				technologies: "Python, Flask, LEAP Motion, Heroku, OpenShift (ported it), Javascript, jQuery, Twitter Bootstrap, SoundCloud API",
-				desc: "I started a <a href='http://codeforamerica.org/'>Code for America</a> "
-					+ "brigade club at my high school.<br><br>"
-					+ "Above is a <a href='https://www.youtube.com/watch?feature=player_detailpage&v=k47O2vwBqBw#t=362s'>clip</a> "
-					+ "(the relevant section starts at 6:02) of Kevin Curry from Code for America speaking "
-					+ "about me and the club."
-			},
+			// "CODEFORAMERICA" : {
+			// 	title: "Code for America", 
+			// 	longTitle: "Code for America Club at High School",
+			// 	img: "cfalogo.png",
+			// 	date: "2012 to 2013",
+			// 	hideImageOnExpand: true,
+			// 	technologies: "Python, Flask, LEAP Motion, Heroku, OpenShift (ported it), Javascript, jQuery, Twitter Bootstrap, SoundCloud API",
+			// 	desc: "I started a <a href='http://codeforamerica.org/'>Code for America</a> "
+			// 		+ "brigade club at my high school.<br><br>"
+			// 		+ "Above is a <a href='https://www.youtube.com/watch?feature=player_detailpage&v=k47O2vwBqBw#t=362s'>clip</a> "
+			// 		+ "(the relevant section starts at 6:02) of Kevin Curry from Code for America speaking "
+			// 		+ "about me and the club."
+			// },
 			"ADCITY" : {
 				title: "AdCity", 
 				img: "adcity.jpg",
@@ -462,27 +474,27 @@ module.exports = [{
 					+ "It is a simple service that provides a JavaScript widget which displays relevant "
 					+ "advertisements for local businesses based on content analysis of the page where the widget is located."
 			},
-			"ROCKPAPERSCI" : {
-				title: "Rock Paper Scissors", 
-				longTitle: "Rock Paper Scissors App for iOS",
-				img: "rpslogo.png",
-				hideImageOnExpand: true,
-				date: "2011",
-				technologies: "Objective-C, iOS SDK",
-				desc: "While I never released it, I created a small iOS app while at ID Tech Camp."
-			},
-			"KSP" : {
-				title: "KSP", 
-				longTitle: "Kingdom of the Sun Pro",
-				link: "http://www.kingdomofthesunpro.com/",
-				img: "ksplogo.png",
-				hideImageOnExpand: true,
-				date: "2010",
-				technologies: "HTML, CSS, Photoshop",
-				desc: "Kingdom of the Sun Pro was my first website! After taking a CTY course "
-					+ "on HTML and CSS, I decided to put my newly-learned skills to the test. "
-					+ "I created a website for my small montage, tech support, etc. business."
-			},
+			// "ROCKPAPERSCI" : {
+			// 	title: "Rock Paper Scissors", 
+			// 	longTitle: "Rock Paper Scissors App for iOS",
+			// 	img: "rpslogo.png",
+			// 	hideImageOnExpand: true,
+			// 	date: "2011",
+			// 	technologies: "Objective-C, iOS SDK",
+			// 	desc: "While I never released it, I created a small iOS app while at ID Tech Camp."
+			// },
+			// "KSP" : {
+			// 	title: "KSP", 
+			// 	longTitle: "Kingdom of the Sun Pro",
+			// 	link: "http://www.kingdomofthesunpro.com/",
+			// 	img: "ksplogo.png",
+			// 	hideImageOnExpand: true,
+			// 	date: "2010",
+			// 	technologies: "HTML, CSS, Photoshop",
+			// 	desc: "Kingdom of the Sun Pro was my first website! After taking a CTY course "
+			// 		+ "on HTML and CSS, I decided to put my newly-learned skills to the test. "
+			// 		+ "I created a website for my small montage, tech support, etc. business."
+			// },
 			"GITHUB" : {
 				title: "More...", 
 				img: "github.png",
@@ -523,31 +535,31 @@ module.exports = [{
 					+ "Data Structures (2014), C-Programming (2014), and "
 					+ "Foundations of Computer Science (2015)."
 			},
-			"ONLINE" : {
-				title: "Udacity & CTY Online",
-				date: "2011 and 2012",
-				img: "udacitylogo.png",
-				hideImageOnExpand: true,
-				desc: "I have taken two formative online courses. In 2011, "
-					+ "I took an introduction to web development course "
-					+ "through CTY Online. Here I learned the basics of web development "
-					+ "and made my first website! The next year I took "
-					+ "CS253: How to Build a Blog on Udacity and learned about "
-					+ "dynamic websites and backends."
-			},
-			"IDTECH" : {
-				title: "ID Tech Camp",
-				date: "2010 and 2011",
-				img: "idtech.jpg",
-				hideImageOnExpand: true,
-				desc: "My first ever introduction to programming was going "
-					+ "to ID Tech Camp during the summer of the 7th grade. I always had wanted "
-					+ "to learn to program, so I took an Intro to C++ course and an "
-					+ "Intro to Robotics course. I loved it and soon became obsessed with the "
-					+ "potential of this cryptic language. The next school year was full of "
-					+ "quadtratic formula calculators and other simple C++ programs. I returned "
-					+ "the next summer to take an intro to iOS Development in Objective-C course."
-			}
+			// "ONLINE" : {
+			// 	title: "Udacity & CTY Online",
+			// 	date: "2011 and 2012",
+			// 	img: "udacitylogo.png",
+			// 	hideImageOnExpand: true,
+			// 	desc: "I have taken two formative online courses. In 2011, "
+			// 		+ "I took an introduction to web development course "
+			// 		+ "through CTY Online. Here I learned the basics of web development "
+			// 		+ "and made my first website! The next year I took "
+			// 		+ "CS253: How to Build a Blog on Udacity and learned about "
+			// 		+ "dynamic websites and backends."
+			// },
+			// "IDTECH" : {
+			// 	title: "ID Tech Camp",
+			// 	date: "2010 and 2011",
+			// 	img: "idtech.jpg",
+			// 	hideImageOnExpand: true,
+			// 	desc: "My first ever introduction to programming was going "
+			// 		+ "to ID Tech Camp during the summer of the 7th grade. I always had wanted "
+			// 		+ "to learn to program, so I took an Intro to C++ course and an "
+			// 		+ "Intro to Robotics course. I loved it and soon became obsessed with the "
+			// 		+ "potential of this cryptic language. The next school year was full of "
+			// 		+ "quadtratic formula calculators and other simple C++ programs. I returned "
+			// 		+ "the next summer to take an intro to iOS Development in Objective-C course."
+			// }
 		}
 	}
 ]];
