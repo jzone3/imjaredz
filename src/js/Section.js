@@ -33,7 +33,8 @@ var Section = React.createClass({
 		}
 	},
 	render(){
-		return (<div className={classNames("section", {"colored": this.props.colored})}>
+		return (<div className={
+			classNames("section", {"colored": this.props.colored, "firstSection": this.props.sectionId == 0})}>
 			<div className="sectionTitle"><span>{this.props.title}</span></div>
 			{ this._render_section_items().map((items, i) => (
 				<div key={i + "row"}>
