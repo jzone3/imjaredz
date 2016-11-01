@@ -43,7 +43,7 @@ body {
 
 	@media only screen and (max-device-width : 667px) {
 		width: 90%;
-		font-size: 40px;
+		font-size: 50px;
 	}
 
 	.firstLine {
@@ -127,14 +127,26 @@ body {
 		margin-right: auto !important;
 		margin-left: auto !important;
 		width: 70% !important;
+
+		@media only screen and (max-device-width : 667px) {
+			width: 100% !important;
+		}
 	}
 
 	&.firstSection {
 		.sectionTitle span {
 			font-size: 35px !important;
+
+			@media only screen and (max-device-width : 667px) {
+				font-size: 50px !important;
+			}
 		}
 
 		.row {
+			@media only screen and (max-device-width : 667px) {
+				width: 100% !important;
+			}
+
 			width: 60% !important;
 		}
 	}

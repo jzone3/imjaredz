@@ -110,7 +110,7 @@ module.exports = [{
 					+ "<a href='http://www.businessinsider.com/salesforce-buys-implisit-insights-2016-5'>acquired "
 					+ "by Salesforce</a> and now powers "
 					+ "<a href='https://www.salesforce.com/products/einstein/overview/'>Salesforce Einstein</a>. "
-					+ "I am extremely glad I was able to join this rocketship as it was taking off. "
+					+ "I am extremely glad I was able to join this rocket-ship as it was taking off. "
 					+ "However, the biggest skill I acquired from this experience was a discerning "
 					+ "taste for hummus."
 			},
@@ -231,7 +231,7 @@ module.exports = [{
 				expandedImg: "proposal.jpg",
 				desc: "One thing I noticed through running hackathons and being "
 					+ "very involved with the hackathon community is that many "
-					+ "companies do not reap their maximum potetial return on "
+					+ "companies do not reap their maximum potential return on "
 					+ "investment for sponsoring hackathon. Having been on both "
 					+ "the attendee and organizer side of hackathons, I started "
 					+ "to notice trends and techniques, used by sponsors to meet "
@@ -557,7 +557,7 @@ module.exports = [{
 			// 		+ "to learn to program, so I took an Intro to C++ course and an "
 			// 		+ "Intro to Robotics course. I loved it and soon became obsessed with the "
 			// 		+ "potential of this cryptic language. The next school year was full of "
-			// 		+ "quadtratic formula calculators and other simple C++ programs. I returned "
+			// 		+ "quadratic formula calculators and other simple C++ programs. I returned "
 			// 		+ "the next summer to take an intro to iOS Development in Objective-C course."
 			// }
 		}
