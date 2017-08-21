@@ -1,11 +1,11 @@
 module.exports = [{
-	"text": "I just returned from a gap year of backpacking, working abroad, and drinking espressos. "
-		+ "I'm now a freshman at <a href='https://eecs.berkeley.edu/'>UC Berkeley</a>, "
-		+ "majoring in Electrical Engineering and Computer Science. "
+	"text": "I'm a sophomore at <a href='https://eecs.berkeley.edu/'>UC Berkeley</a>, "
+		+ "majoring in Electrical Engineering and Computer Science, and "
+		+ "I'm likely drinking an espresso right now. "
 		+ "I attend too many hackathons and started one of the <a href='http://www.hackbca.com'>first high school hackathons</a>. "
-		+ "Previously, I have interned with Implisit (<a href='http://www.businessinsider.com/salesforce-buys-implisit-insights-2016-5'>acquired "
+		+ "Previously, I have interned with <a href='http://google.com'>Google</a>, Implisit (<a href='http://www.businessinsider.com/salesforce-buys-implisit-insights-2016-5'>acquired "
 		+ "by Salesforce</a>), <a href='http://reddit.com/'>reddit</a>, <a href='http://mlh.io/'>Major League Hacking</a>"
-		+ ", <a href='http://www.warbyparker.com/'>Warby Parker</a>, and <a href='http://newlio.com/'>Newlio</a>. Currently a Campus Associate for <a href='http://alsop-louie.com/'>Alsop Louie Partners</a>."
+		+ ", <a href='http://www.warbyparker.com/'>Warby Parker</a>, and <a href='http://newlio.com/'>Newlio</a>. Currently an Associate for <a href='http://alsop-louie.com/'>Alsop Louie Partners</a>."
 },
 [
 	{
@@ -22,9 +22,9 @@ module.exports = [{
 					+ "Berkeley, and thus I will be specializing in both EE and "
 					+ "CS. At school, I play an active part in planning our "
 					+ "hackathon (<a href='http://calhacks.io/'>Cal Hacks</a>). "
-					+ "I am also a member of other clubs such as: Kairos "
-					+ "(a club for student entrepreneurs and makers), "
-					+ "Hackers@Berkeley, Tikvah, and Bears for Israel."
+					+ "I am also a Campus Associate at Alsop-Louie Partners, "
+					+ "a Kairos Fellow, and an active member of both Tikvah "
+					+ "and Bears for Israel."
 			},
 			"GAPYEAR" : {
 				title: "Gap Year",
@@ -81,6 +81,35 @@ module.exports = [{
 	{
 		"title": "Work Experience",
 		"items": {
+			"GOOGLE" : {
+				title: "Google", 
+				longTitle: "Software Engineering Intern at Google",
+				img: "google.png",
+				date: "Summer 2017",
+				expandedImg: "googleandroid.jpg",
+				desc: "I spent the summer after my freshman year at UC Berkeley "
+					+ "interning as a software engineer (SWE) at Google. "
+					+ "I was hired by the JavaScript Closure Compiler team in Sunnyvale "
+					+ "(under the Language Platforms department).<br><br>"
+					+ "Google was the first large company and official internship program "
+					+ "that I took part in, and it was exciting to be a part "
+					+ "of such a gargantuan technology company. "
+					+ "Having previously only worked at small and medium sized startups, "
+					+ "I quickly was introduced to Google's massive number of internal "
+					+ "tools, detailed documentation, and myriad of perks.<br><br>"
+					+ "My manager gave me a large amount of autonomy in building my "
+					+ "internship project, dubbed \"Closure Deps Profiler.\" "
+					+ "This profiler aimed to helped other teams at Google reduce "
+					+ "the load size of their web application by analyzing its dependencies "
+					+ "and providing <i>smart</i> trimming suggestions. This process "
+					+ "was previously undocumented at Google, and I hopefully created "
+					+ "an easy, useful, and extendable tool to determine dependencies "
+					+ "to late-load or remove.<br><br>"
+					+ "Building Closure Deps Profiler from scratch required my "
+					+ "familiarization with many of Google's internal tools. In addition, "
+					+ "I was able to work on improving how I design programs. I mostly "
+					+ "worked in Java (using Guava), JavaScript, and HTML."
+			},
 			"ALSOP" : {
 				title: "Alsop Louie Partners", 
 				longTitle: "Campus Associate at Alsop Louie Partners",
