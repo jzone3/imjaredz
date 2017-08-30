@@ -330,7 +330,7 @@ module.exports = [{
 					+ "create custom flashcards. In addition, a user can even create \"smart "
 					+ "flashcards\". For example, if a user adds code to translate a word from "
 					+ "English to Spanish, the user can only input the front of a flashcard "
-					+ "and the back will be automatically generated. Repetition then sends "
+					+ "and the back will be automatically generated. Retention then sends "
 					+ "notifications from SendGrid and Twilio to remind one when to study, based "
 					+ "on the spaced repetition algorithm."
 			},
