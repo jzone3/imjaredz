@@ -366,7 +366,7 @@ module.exports = [{
 					+ "an individual is. From there, more information about the individual "
 					+ "is determined (mostly one's profession and employer) and an email "
 					+ "is found by checking various permutations of an email address. "
-					+ "A flowchard of the process is available here: "
+					+ "A flowchart of the process is available here: "
 					+ "<a href='http://imjaredz.com/other/whodat-flowchart.pdf'>imjaredz.com/other/whodat-flowchart.pdf</a>"
 					+ ". This app was created at the 2014 Winter MHacks III Hackathon (January 17-19, 2014)."
 			},
