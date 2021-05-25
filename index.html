@@ -1,28 +1,142 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  	<title>Jared Zoneraich</title>
-  	<link rel="stylesheet" type="text/css" href="src/styles.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
-    <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-36906134-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-  </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script src="build/build.min.js"></script>
-    <script src="jquery/jquery-3.1.1.min.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
-  	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+<html lang="en">
 
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Jared Zoneraich</title>
+  <meta content="Jared Zoneraich Personal Landing Page" name="description">
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36906134-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  <!-- Favicons -->
+  <link href="assets/img/coffe_favicon.png" rel="icon">
+  <link href="assets/img/coffe_favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="navbar container">
+    <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="mailto:me@imjaredz.com">Email</a></li>
+          <li><a class="nav-link" href="resume.pdf">Resume</a></li>
+          <li><a class="nav-link" href="http://www.linkedin.com/in/imjaredz">LinkedIn</a></li>
+          <li><a class="nav-link" href="https://twitter.com/imjaredz">Twitter</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+  </div>
+
+  <header id="header">
+    <div class="container">
+
+      <h1>Hi, I'm Jared Zoneraich</h1>
+      <div class="row">
+        <div class="col-lg-7">
+          <h2>Originally from New Jersey, I lived in the bay area for a little and now reside in NYC. Currently starting a company (stealth). Available for freelance work.</h2>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="background container">
+    <div class="row">
+      <div class="col-lg-5 col-md-5 left">
+        <h2>Formerly</h2>
+      </div>
+      <div class="col-lg-7 col-md-7 right">
+        <ul>
+          <li><a href="http://tecton.ai/"><span>Tecton</span></a>, Software Engineer</li>
+          <li><a href="https://alsop-louie.com/"><span>Alsop Louie Partners</span></a>, Associate</li>
+          <li><a href="https://www.facebook.com/"><span>Facebook</span></a>, Software Engineering Intern</li>
+          <li><a href="https://www.ironnet.com/"><span>IronNet Cybersecurity</span></a>, Cyber Research Intern</li>
+          <li><a href="https://www.google.com/"><span>Google</span></a>, Software Engineering Intern</li>
+
+          <li class="see-more" id="see-more-btn" onclick="$('#see-more-btn').hide(); $('#extra-experience').slideDown();">See More <i class="bi bi-chevron-down"></i></li>
+          <div style="display:none" id="extra-experience">
+            <li><a href="http://salesforce.com/"><span>Implisit (Salesforce)</span></a>, Software Engineer</li>
+            <li><a href="https://mlh.io/"><span>Major League Hacking</span></a>, Partnerships Intern</li>
+            <li><a href="https://www.reddit.com/"><span>reddit</span></a>, Intern</li>
+            <li><a href="https://www.warbyparker.com/"><span>Warby Parker</span></a>, Software Engineering Intern</li>
+            <li><a href="https://newlio.com/"><span>Newlio</span></a>, Software Engineering Intern</li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 col-md-5 left">
+        <h2>Education</h2>
+      </div>
+      <div class="col-lg-7 col-md-7 right">
+        <ul>
+          <li><a href="https://eecs.berkeley.edu/"><span>UC Berkeley</span></a>, B.S. in Electrical Engineering and Computer Science</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 col-md-5 left">
+        <h2>Projects</h2>
+      </div>
+      <div class="col-lg-7 col-md-7 right">
+        <ul>
+          <li>
+            <span>Startup Sift</span>
+            <p>Webapp to help engineers discover exciting startups to work for.</p>
+          </li>
+          <li>
+            <a href="https://hackbca.com/"><span>hackBCA</span></a>, Founder
+            <p>First ever high school hackathon hosting over 1,000 students.</p>
+          </li>
+          <li>
+            <span>Hackathon Consulting</span>
+            <p>Helping companies like Intel better reach student developers</p>
+          </li>
+          <li>
+            <span>Learn to Drive</span>, TechCrunch Disrupt 2nd Place
+            <p>In-car app to teach new drivers. <a href="https://techcrunch.com/2013/04/28/hackathon-learn-to-drive/">Featured</a> and invited to <a href="https://www.youtube.com/watch?v=8PNtnE-2akA">speak</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 col-md-5 left">
+        <h2>Talks</h2>
+      </div>
+      <div class="col-lg-7 col-md-7 right">
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=q44l5Hd87TQ"><span>Fundraising for High School Hackathons</span></a></li>
+          <li><a href="https://www.youtube.com/watch?v=q6X1WShIIXM"><span>How to Inspire Absolute Beginners</span></a></li>
+          <li><a href="https://www.youtube.com/watch?v=VxKisEkHluw"><span>Intro to HTML & CSS</span></a></li>
+        </ul>
+      </div>
+  </div>
+
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
