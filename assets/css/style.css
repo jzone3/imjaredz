@@ -29,6 +29,12 @@ body::before {
   }
 }
 
+@media (max-width: 768px) {
+  body::before {
+    background: black;
+  }
+}
+
 a {
   /*color: #18d26e;*/
   color: rgba(154, 154, 235, 1);
