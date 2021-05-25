@@ -404,6 +404,12 @@ section .container {
   text-transform: uppercase;
 }
 
+@media (max-width: 768px) {
+  .background .left {
+    text-align: left;
+  }
+}
+
 .background .left h2 {
   font-weight: 200;
   letter-spacing: 2px;
@@ -451,6 +457,27 @@ section .container {
   padding-left: 15px;
   font-size: 16px;
   font-weight: 200;
+}
+
+@media (max-width: 768px) {
+  /*.background .right li {}*/
+
+  .background .right li {
+    padding-bottom: 5px;
+    padding-left: 15px;
+    text-indent: -15px;
+  }
+
+  .background .right .see-more {
+    padding-left: 0px !important;
+    text-indent: 0px !important;
+  }
+
+  .background .right li p {
+    /*padding-bottom: 5px;*/
+    padding-left: 10px;
+    text-indent: 0;
+  }
 }
 
 .background {
