@@ -1,142 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
-  <title>Jared Zoneraich</title>
-  <meta content="Jared Zoneraich Personal Landing Page" name="description">
+    <title>Jared Zoneraich</title>
+    <meta content="Jared Zoneraich: Founder & CEO of PromptLayer" name="description">
+    <link rel="canonical" href="https://imjaredz.com/">
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36906134-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
-  <!-- Favicons -->
-  <link href="assets/img/coffe_favicon.png" rel="icon">
-  <link href="assets/img/coffe_favicon.png" rel="apple-touch-icon">
+    <!-- 3. Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://imjaredz.com/">
+    <meta property="og:title"       content="Jared Zoneraich">
+    <meta property="og:description" content="Founder & CEO of PromptLayer.">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap" rel="stylesheet">
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <!-- 4. Twitter card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@imjaredz">
+    <meta name="twitter:title"       content="Jared Zoneraich">
+    <meta name="twitter:description" content="Founder & CEO of PromptLayer.">
 
-  <link href="assets/css/style.css" rel="stylesheet">
+    
+    <!-- 5. Robots (optional; default is index/follow) -->
+    <meta name="robots" content="index,follow">
+
+    <!-- 6. Optional: Person structured data for richer results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jared Zoneraich",
+      "url": "https://imjaredz.com/",
+      "sameAs": [
+        "https://x.com/imjaredz",
+        "https://linkedin.com/in/imjaredz"
+      ],
+      "jobTitle": "Founder & CEO, PromptLayer",
+      "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" }
+    }
+    </script>
+
+    <meta property="og:site_name" content="imjaredz.com">
+    <meta name="author" content="Jared Zoneraich">
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36906134-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <!-- Favicons -->
+    <link href="assets/img/coffe_favicon.png" rel="icon">
+    <link href="assets/img/coffe_favicon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap" rel="stylesheet">
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: white;
+            color: #666;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: #f9f9f9;
+            padding: 40px 20px 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0 20px;
+        }
+        
+        .content {
+            padding: 40px 20px;
+        }
+        
+        h1, h2, h3 {
+            font-weight: normal;
+            color: #333;
+        }
+        
+        h1 {
+            margin-bottom: 15px;
+            font-size: 2em;
+            white-space: nowrap;
+        }
+        
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            padding-left: 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .project {
+            margin-bottom: 25px;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .project-description {
+            margin-top: 0;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin: 15px 0;
+            list-style-type: square;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            padding-right: 20px;
+        }
+        
+        a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+            padding-bottom: 1px;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: #4169E1;
+            border-bottom-color: #4169E1;
+        }
+        
+        .company {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .section-divider {
+            border-top: 1px solid #eee;
+            margin: 40px 0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #hidden-items li {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        
+        .more-button {
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #999;
+            font-weight: normal;
+            border-bottom: 1px solid #999;
+            padding-bottom: 1px;
+        }
+        
+        .more-button:hover {
+            text-decoration: underline;
+            color: #4169E1;
+            border-bottom-color: #4169E1;
+        }
+        
+        .more-button::after {
+            content: "›";
+            display: inline-block;
+            margin-left: 5px;
+            transform: rotate(90deg);
+        }
+        
+        .techcrunch {
+            display: inline-block;
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 2px;
+            margin-left: 0;
+            border-bottom: 1px solid #999;
+        }
+        
+        .techcrunch:hover {
+            color: #4169E1;
+            border-bottom-color: #4169E1;
+        }
+        
+        .top-project {
+            margin-bottom: 30px;
+        }
+        
+        .top-project-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .top-project-description {
+            margin-top: 0;
+            margin-bottom: 2px;
+            color: #666;
+        }
+        
+        .social-links {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .social-links a {
+            font-weight: bold;
+            margin-right: 3px;
+        }
+        
+        .dot {
+            display: inline-block;
+            margin: 0 3px;
+            color: #666;
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .header {
+                padding: 40px 20px 30px;
+                text-align: center;
+            }
+            
+            .header .container {
+                text-align: center;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            ul {
+                padding-left: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                white-space: nowrap;
+            }
+            
+            .greeting {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function toggleMore() {
+            var hiddenItems = document.getElementById('hidden-items');
+            var moreButton = document.getElementById('more-button');
+            var items = hiddenItems.querySelectorAll('li');
+            
+            if (hiddenItems.classList.contains('hidden')) {
+                hiddenItems.classList.remove('hidden');
+                moreButton.textContent = 'See less';
+                moreButton.style.transform = 'rotate(180deg)';
+                moreButton.style.transition = 'transform 0.5s ease, color 0.3s ease';
+                
+                // Animate each item appearing with a slight delay between each
+                items.forEach(function(item, index) {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(10px)';
+                    item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    setTimeout(function() {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 100 * index);
+                });
+            } else {
+                hiddenItems.classList.add('hidden');
+                moreButton.textContent = 'See more';
+                moreButton.style.transform = 'rotate(0deg)';
+                moreButton.style.transition = 'transform 0.5s ease, color 0.3s ease';
+            }
+        }
+    </script>
 </head>
-
 <body>
-  <div class="navbar container">
-    <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link" href="mailto:me@imjaredz.com">Email</a></li>
-          <li><a class="nav-link" href="resume.pdf">Resume</a></li>
-          <li><a class="nav-link" href="http://www.linkedin.com/in/imjaredz">LinkedIn</a></li>
-          <li><a class="nav-link" href="https://twitter.com/imjaredz">Twitter</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-  </div>
-
-  <header id="header">
-    <div class="container">
-
-      <h1>Hi, I'm Jared Zoneraich</h1>
-      <div class="row">
-        <div class="col-lg-8">
-          <h2>Building <a href="https://www.magniv.io/">Magniv</a>. Wearing <a href="https://www.presidiojeans.com/">Presidio Jeans</a>. Originally from Jersey, I lived in the bay area for a little and now reside in NYC.</h2>
+    <div class="header">
+        <div class="container">
+            <h1><span class="greeting">Hi, </span>I'm Jared Zoneraich</h1>
+            <div class="social-links">
+                <a href="https://x.com/imjaredz">X</a>
+                <span class="dot">•</span>
+                <a href="https://linkedin.com/in/imjaredz">LinkedIn</a>
+                <span class="dot">•</span>
+                <a href="mailto:me@imjaredz.com">Email</a>
+            </div>
+            <p>🇺🇸 New York, NY</p>
         </div>
-      </div>
-
     </div>
-  </header>
-
-  <div class="background container">
-    <div class="row">
-      <div class="col-lg-5 col-md-5 left">
-        <h2>Formerly</h2>
-      </div>
-      <div class="col-lg-7 col-md-7 right">
+    
+    <div class="container content">
+        <div class="top-project">
+            <div class="top-project-title"><a href="https://promptlayer.com">PromptLayer</a>, Founder & CEO</div>
+            <p class="top-project-description">The first prompt engineering platform. We're hiring, reach out! 👋</p>
+            <a href="https://techcrunch.com/2025/02/07/promptlayer-is-building-tools-to-put-non-techies-in-the-drivers-seat-of-ai-app-development/" class="techcrunch">(TechCrunch coverage)</a>
+        </div>
+        
+        <h2>FORMERLY</h2>
         <ul>
-          <li><a href="http://tecton.ai/"><span>Tecton</span></a>, Software Engineer</li>
-          <li><a href="https://alsop-louie.com/"><span>Alsop Louie Partners</span></a>, Associate</li>
-          <li><a href="https://www.facebook.com/"><span>Facebook</span></a>, Software Engineering Intern</li>
-          <li><a href="https://www.ironnet.com/"><span>IronNet Cybersecurity</span></a>, Cyber Research Intern</li>
-          <li><a href="https://www.google.com/"><span>Google</span></a>, Software Engineering Intern</li>
-
-          <li class="see-more" id="see-more-btn" onclick="$('#see-more-btn').hide(); $('#extra-experience').slideDown();">See More <i class="bi bi-chevron-down"></i></li>
-          <div style="display:none" id="extra-experience">
-            <li><a href="http://salesforce.com/"><span>Implisit (acquired by Salesforce)</span></a>, Software Engineer</li>
-            <li><a href="https://mlh.io/"><span>Major League Hacking</span></a>, Partnerships Intern</li>
-            <li><a href="https://www.reddit.com/"><span>reddit</span></a>, Intern</li>
-            <li><a href="https://www.warbyparker.com/"><span>Warby Parker</span></a>, Software Engineering Intern</li>
-            <li><a href="https://newlio.com/"><span>Newlio</span></a>, Software Engineering Intern</li>
-          </div>
+            <li><span class="company">Tecton</span>, Software Engineer</li>
+            <li><span class="company">Alsop Louie Partners</span>, Associate</li>
+            <li><span class="company">Facebook</span>, Software Engineering</li>
+            <li><span class="company">reddit</span>, Office of the CEO</li>
+            <div id="hidden-items" class="hidden">
+                <li><span class="company">IronNet Cybersecurity</span>, Cyber Research</li>
+                <li><span class="company">Google</span>, Software Engineering</li>
+                <li><span class="company">Implisit</span> (acquired by Salesforce), Software Engineer</li>
+                <li><span class="company">Major League Hacking</span>, Partnerships</li>
+                <li><span class="company">Warby Parker</span>, Software Engineering</li>
+                <li><span class="company">Newlio</span>, Software Engineering</li>
+            </div>
         </ul>
-      </div>
+        <div id="more-button" class="more-button" onclick="toggleMore()">See more</div>
+        
+        <h2>EDUCATION</h2>
+        <ul>
+            <li><span class="company">UC Berkeley</span>, B.S. in Electrical Engineering and Computer Science</li>
+        </ul>
+        
+        <h2>PROJECTS</h2>
+        <ul>
+            <li>
+                <div class="project-title">Montalvo Analytics</div>
+                <p class="project-description">Data analytics for America's largest reform campaigns.</p>
+            </li>
+            
+            <li>
+                <div class="project-title"><a href="https://www.p-jeans.com/">Presidio Jeans</a></div>
+                <p class="project-description">Denim jeans brand made in the USA.</p>
+            </li>
+            
+            <li>
+                <div class="project-title"><a href="https://hackernoon.com/introducing-startupsift-5571c74ed240">Startup Sift</a></div>
+                <p class="project-description">Webapp to help engineers discover exciting startups to work for.</p>
+            </li>
+            
+            <li>
+                <div class="project-title"><a href="https://hackbca.com">hackBCA</a>, Founder</div>
+                <p class="project-description">First ever high school hackathon hosting over 1,000 students.</p>
+            </li>
+            
+            <li>
+                <div class="project-title">Hackathon Consulting</div>
+                <p class="project-description">Helping companies like Intel better reach student developers.</p>
+            </li>
+            
+            <li>
+                <div class="project-title">Learn to Drive, TechCrunch Disrupt Hackathon Winner</div>
+                <p class="project-description">In-car app to teach new drivers. Featured and invited to speak.</p>
+            </li>
+        </ul>
+        
+        <h2>WRITINGS</h2>
+        <ul>
+            <li><a href="https://blog.promptlayer.com/the-death-of-prompt-engineering-has-been-greatly-exaggerated/">The Death of Prompt Engineering Has Been Greatly Exaggerated </a></li>
+            <li><a href="assets/pdf/miracles_and_decay.pdf">Let's Believe in Miracles Again</a></li>
+        </ul>
     </div>
-    <div class="row">
-      <div class="col-lg-5 col-md-5 left">
-        <h2>Education</h2>
-      </div>
-      <div class="col-lg-7 col-md-7 right">
-        <ul>
-          <li><a href="https://eecs.berkeley.edu/"><span>UC Berkeley</span></a>, B.S. in Electrical Engineering and Computer Science</li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-5 col-md-5 left">
-        <h2>Projects</h2>
-      </div>
-      <div class="col-lg-7 col-md-7 right">
-        <ul>
-          <li>
-            <span>Startup Sift</span>
-            <p>Webapp to help engineers discover exciting startups to work for.</p>
-          </li>
-          <li>
-            <a href="https://hackbca.com/"><span>hackBCA</span></a>, Founder
-            <p>First ever high school hackathon hosting over 1,000 students.</p>
-          </li>
-          <li>
-            <span>Hackathon Consulting</span>
-            <p>Helping companies like Intel better reach student developers.</p>
-          </li>
-          <li>
-            <span>Learn to Drive</span>, TechCrunch Disrupt 2nd Place
-            <p>In-car app to teach new drivers. <a href="https://techcrunch.com/2013/04/28/hackathon-learn-to-drive/">Featured</a> and invited to <a href="https://www.youtube.com/watch?v=8PNtnE-2akA">speak</a>.</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-5 col-md-5 left">
-        <h2>Talks</h2>
-      </div>
-      <div class="col-lg-7 col-md-7 right">
-        <ul>
-          <li><a href="https://www.youtube.com/watch?v=q44l5Hd87TQ"><span>Fundraising for High School Hackathons</span></a></li>
-          <li><a href="https://www.youtube.com/watch?v=q6X1WShIIXM"><span>How to Inspire Absolute Beginners</span></a></li>
-          <li><a href="https://www.youtube.com/watch?v=VxKisEkHluw"><span>Intro to HTML & CSS</span></a></li>
-        </ul>
-      </div>
-  </div>
-
-  <script src="assets/js/jquery-3.6.0.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
