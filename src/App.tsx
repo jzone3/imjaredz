@@ -14,12 +14,11 @@ function App() {
         {/* About */}
         <section className="mb-14">
           <p className="leading-relaxed text-zinc-700">
-            I'm Jared. I build software for people — web apps, automations, scrapers, bug fixes, AI integrations, whatever you need.
-            I've worked at Cognition, PromptLayer, Tecton, Facebook, and Google, and studied EECS at UC Berkeley.
+            I'm Jared. I build software for people — web apps, automations, scrapers, bug fixes, whatever you need.
+            I've shipped production code at Facebook, Google, Tecton, and PromptLayer, and studied EECS at UC Berkeley.
           </p>
           <p className="leading-relaxed text-zinc-700 mt-4">
-            I use AI-accelerated development to ship faster than traditional freelancers.
-            Most jobs delivered in 1–3 days.
+            Fast turnaround. Most jobs delivered in 1–3 days.
           </p>
         </section>
 
@@ -31,7 +30,7 @@ function App() {
             <li>Custom Python scripts &amp; automation</li>
             <li>Bug fixes &amp; debugging</li>
             <li>Full-stack web development (React, Node, Python)</li>
-            <li>AI/LLM integrations</li>
+            <li>API integrations &amp; backend services</li>
             <li>CI/CD &amp; infrastructure</li>
           </ul>
         </section>
@@ -41,31 +40,23 @@ function App() {
           <h2 className="text-lg font-semibold mb-4">Some things I've built</h2>
           <ul className="space-y-4 text-zinc-700">
             <li>
-              <span className="font-medium text-zinc-900">Custom web scraper</span> — Python scraper for e-commerce price monitoring across 50+ sites. Delivered in 1 day.
+              <a href="https://github.com/jzone3/SimpleSlackBot" target="_blank" rel="noopener noreferrer" className="font-medium text-zinc-900 underline">SimpleSlackBot</a> — Open-source Python library for building Slack bots. Clean API, used by developers to spin up bots quickly.
             </li>
             <li>
-              <span className="font-medium text-zinc-900">AI support chatbot</span> — GPT-4 powered bot integrated with Slack and Zendesk. Reduced ticket volume by 40%.
+              <span className="font-medium text-zinc-900">ScreenShades</span> — Chrome extension that uses machine learning to block TV spoilers on social media. Built at PennApps, won Best Hack in Media/Entertainment (Comcast) and Best Use of Google Prediction API.
             </li>
             <li>
-              <span className="font-medium text-zinc-900">CI/CD pipeline rebuild</span> — Took deploy times from 45 min to under 5 min for a SaaS startup. Zero-downtime releases.
+              <span className="font-medium text-zinc-900">hackBCA</span> — Co-organized the first-ever high school hackathon. Built the website, registration system, and event infrastructure.
             </li>
             <li>
-              <span className="font-medium text-zinc-900">JS → TypeScript migration</span> — Converted a 50k-line codebase, added tests, set up automated linting.
+              <a href="https://github.com/jzone3/Keystone-XL-Microsite" target="_blank" rel="noopener noreferrer" className="font-medium text-zinc-900 underline">Keystone XL Microsite</a> — Informational landing page with responsive design and data visualization.
             </li>
-          </ul>
-        </section>
-
-        {/* Pricing */}
-        <section className="mb-14">
-          <h2 className="text-lg font-semibold mb-4">Pricing</h2>
-          <p className="text-zinc-700 mb-3">
-            Depends on the job. Typical ranges:
-          </p>
-          <ul className="space-y-1 text-zinc-700">
-            <li>Bug fixes — from $20</li>
-            <li>Scripts &amp; automations — from $30</li>
-            <li>Web scraping — from $50</li>
-            <li>Larger projects — let's talk</li>
+            <li>
+              <span className="font-medium text-zinc-900">ClassMatch</span> — Web app for students to compare class schedules. Hit 858 visits on launch day and crashed the free Google App Engine quota within an hour.
+            </li>
+            <li>
+              <span className="font-medium text-zinc-900">Learn to Drive</span> — In-car dashboard app for learning to drive, built with the GM Dashboard SDK. Won 2nd place at TechCrunch Disrupt NYC Hackathon.
+            </li>
           </ul>
         </section>
 
@@ -73,20 +64,13 @@ function App() {
         <section className="mb-14">
           <h2 className="text-lg font-semibold mb-4">Get in touch</h2>
           <p className="text-zinc-700 mb-4">
-            Best way to reach me is through Fiverr. You can also email me directly.
+            Best way to reach me is through Fiverr.
           </p>
-          <div className="space-y-2 text-zinc-700">
-            <p>
-              <a href="https://www.fiverr.com/devin_maxxer" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900">
-                fiverr.com/devin_maxxer
-              </a>
-            </p>
-            <p>
-              <a href="mailto:jared.zoneraich@gmail.com" className="underline hover:text-zinc-900">
-                jared.zoneraich@gmail.com
-              </a>
-            </p>
-          </div>
+          <p>
+            <a href="https://www.fiverr.com/devin_maxxer" target="_blank" rel="noopener noreferrer" className="underline text-zinc-700 hover:text-zinc-900">
+              fiverr.com/devin_maxxer
+            </a>
+          </p>
         </section>
 
         {/* Links */}
