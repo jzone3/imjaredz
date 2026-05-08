@@ -40,22 +40,22 @@ function App() {
           <h2 className="text-lg font-semibold mb-4">Some things I've built</h2>
           <ul className="space-y-4 text-zinc-700">
             <li>
-              <a href="https://github.com/jzone3/SimpleSlackBot" target="_blank" rel="noopener noreferrer" className="font-medium text-zinc-900 underline">SimpleSlackBot</a> — Open-source Python library for building Slack bots. Clean API, used by developers to spin up bots quickly.
+              <span className="font-medium text-zinc-900">PromptLayer</span> — Co-founded a developer tools platform used by engineering teams to manage, version, and evaluate their software workflows. Raised funding, grew to thousands of users.
             </li>
             <li>
-              <span className="font-medium text-zinc-900">ScreenShades</span> — Chrome extension that uses machine learning to block TV spoilers on social media. Built at PennApps, won Best Hack in Media/Entertainment (Comcast) and Best Use of Google Prediction API.
+              <span className="font-medium text-zinc-900">Montalvo Analytics</span> — Built a data analytics platform for some of America's largest reform campaigns.
             </li>
             <li>
-              <span className="font-medium text-zinc-900">hackBCA</span> — Co-organized the first-ever high school hackathon. Built the website, registration system, and event infrastructure.
+              <span className="font-medium text-zinc-900">Presidio Jeans</span> — Designed and built the e-commerce site for a denim brand manufactured in the USA.
             </li>
             <li>
-              <a href="https://github.com/jzone3/Keystone-XL-Microsite" target="_blank" rel="noopener noreferrer" className="font-medium text-zinc-900 underline">Keystone XL Microsite</a> — Informational landing page with responsive design and data visualization.
+              <span className="font-medium text-zinc-900">hackBCA</span> — Founded and organized the first-ever high school hackathon, hosting over 1,000 students. Built the website, registration system, and event infrastructure.
             </li>
             <li>
-              <span className="font-medium text-zinc-900">ClassMatch</span> — Web app for students to compare class schedules. Hit 858 visits on launch day and crashed the free Google App Engine quota within an hour.
+              <span className="font-medium text-zinc-900">ScreenShades</span> — Chrome extension that blocks TV spoilers on social media by monitoring your watch history. Top 20 at PennApps, won Best Hack in Media/Entertainment (Comcast).
             </li>
             <li>
-              <span className="font-medium text-zinc-900">Learn to Drive</span> — In-car dashboard app for learning to drive, built with the GM Dashboard SDK. Won 2nd place at TechCrunch Disrupt NYC Hackathon.
+              <span className="font-medium text-zinc-900">Learn to Drive</span> — In-car dashboard app for new drivers, built with the GM Dashboard SDK. Won 2nd place at TechCrunch Disrupt NYC Hackathon.
             </li>
           </ul>
         </section>
@@ -76,9 +76,6 @@ function App() {
         {/* Links */}
         <footer className="pt-8 border-t border-zinc-200 text-sm text-zinc-500">
           <div className="flex gap-6">
-            <a href="https://github.com/jzone3" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 underline">
-              GitHub
-            </a>
             <a href="https://linkedin.com/in/jaredzoneraich" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 underline">
               LinkedIn
             </a>
