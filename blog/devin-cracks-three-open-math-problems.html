@@ -227,6 +227,44 @@
             and a literature search confirms nobody resolved it first.</li>
         </ul>
 
+        <h2>How it actually went down</h2>
+        <p>I recorded <a href="https://x.com/imjaredz/status/2080378963831005692">a video walking through the
+        whole process</a> — here's the story.</p>
+
+        <p>The opening prompt was embarrassingly simple: <em>"Find open math problems that we can solve like this
+        together"</em>, with Dmitry's tweet pasted in. Devin curated a list of similar open problems, I made a
+        public GitHub repo, told it to put the plan there, and gave it two instructions: run everything in
+        <strong>ultra mode</strong> (the best models), and run each problem <strong>five times with slightly
+        different prompts</strong> — harness the entropy, so if one framing gets stuck in a local minimum, another
+        might not. Then I said "don't need my review on any of this, just start cooking" and left to get a
+        haircut.</p>
+
+        <p>By the time I was back, the master session had spun up wave after wave of child sessions — 15, then 30,
+        then 45, well over a hundred over the course of the run — all sandboxed, all working in parallel, with the
+        master agent checking in on the children and nudging the stuck ones ("don't stop, try a different
+        attack"). I asked it to produce a graphic and a bite-size explanation for every solution, because I'm an
+        EECS grad, not a math professor, and I needed the results in a form I could sanity-check.</p>
+
+        <p>Verification got stricter as it went: on advice from the actual mathematicians at Cognition, every
+        result also gets a <strong>Lean formalization</strong> — no <code>sorry</code>, no cheating — on top of the
+        adversarial verifier scripts, so the proofs have to compile, not just sound convincing. Devin even ranked
+        each result on a Richter scale of earth-shattering-ness (verdict: cool and genuinely open, but not
+        earth-shattering — yet).</p>
+
+        <p>Two honest caveats. First, about 30 minutes after I posted, someone on my team found a GitHub repo where
+        one of the problems had already been solved a month earlier — the literature check is now part of the
+        pipeline for exactly this reason. Second, there's a fair debate about who deserves credit: the models
+        (Fable, GPT-5.6-Sol) are doing the heavy lifting, and yes, this is "just" prompt/harness engineering. But I
+        had two meetings and a haircut during that run. I would never have left a CLI running on my laptop for
+        days. A cloud agent that keeps cooking while you live your life is the difference between "someone could do
+        this in principle" and it actually getting done.</p>
+
+        <p>And the run hasn't stopped — since the original post, the sessions have settled several more problems.
+        Follow-ups coming.</p>
+
+        <p>If you're a mathematician who wants to crank through unsolved problems like this, I'm looking for a
+        fellow to help. We're building cool stuff at <a href="https://cognition.ai">Cognition</a> — hit me up.</p>
+
         <p style="margin-top: 40px;"><a href="../index.html" class="back-link">← Back to imjaredz.com</a></p>
     </div>
 </body>
