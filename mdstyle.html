@@ -492,7 +492,7 @@
                     alive = true;
                     var level = Math.min(RAMP.length - 1,
                         Math.floor((v * 0.8 + seeds[idx] * 0.2) * RAMP.length));
-                    ctx.fillStyle = 'rgba(0, 0, 0, ' + (v * 0.12).toFixed(3) + ')';
+                    ctx.fillStyle = 'rgba(160, 160, 160, ' + (v * 0.5).toFixed(3) + ')';
                     ctx.fillText(RAMP.charAt(level), gx * CELL, gy * CELL + 16);
                 }
             }
