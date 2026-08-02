@@ -290,7 +290,6 @@
         <ul>
             <li><a href="https://x.com/imjaredz/status/2071294679824363979">The reason Devin is having such a comeback</a> <span class="year">2026</span></li>
             <li><a href="https://x.com/imjaredz/status/2080088341262033273">Solving ~40 year old open math problems</a> <span class="year">2026</span></li>
-            <li><a href="https://www.youtube.com/watch?v=ns1ifgYEGl0">How to Run 10 Devins in Parallel (Agent Fan Out Explained)</a> <span class="year">2026</span></li>
             <li><a href="assets/pdf/miracles_and_decay.pdf">Let's Believe in Miracles Again</a> <span class="year">2025</span></li>
         </ul>
 
@@ -348,7 +347,13 @@
             var off = document.createElement('canvas');
             off.width = w; off.height = h;
             var octx = off.getContext('2d', { willReadFrequently: true });
-            octx.font = '700 26px monospace';
+            var fontSize = 26;
+            octx.font = '700 ' + fontSize + 'px monospace';
+            var textW = octx.measureText("# Hi, I'm Jared Zoneraich").width;
+            if (textW > w) {
+                fontSize = Math.floor(fontSize * w / textW);
+                octx.font = '700 ' + fontSize + 'px monospace';
+            }
             octx.textBaseline = 'middle';
             octx.fillStyle = '#000';
             octx.fillText("# Hi, I'm Jared Zoneraich", 0, h / 2);
