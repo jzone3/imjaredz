@@ -102,16 +102,12 @@
         }
 
         h2 {
-            font-family: "Geist Mono", Menlo, monospace;
-            font-weight: 500;
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin: 56px 0 14px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--hairline);
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 15px;
+            margin: 44px 0 12px;
         }
-        h2::before { content: "## "; color: var(--faint); }
+        h2::before { content: "## "; color: var(--faint); font-weight: 400; }
 
         p { margin: 0 0 12px; }
 
@@ -132,60 +128,46 @@
             margin: 0;
         }
         li {
-            margin: 0 0 14px;
-            padding-left: 18px;
+            margin: 0 0 6px;
+            padding-left: 14px;
             position: relative;
         }
         li::before {
             content: "-";
             position: absolute;
             left: 0;
-            color: var(--faint);
         }
         li .desc {
             display: block;
             color: var(--faint);
-            margin-top: 1px;
         }
 
         .social-links {
-            font-family: "Geist Mono", Menlo, monospace;
-            font-size: 13px;
             margin: 4px 0 6px;
         }
         .social-links .dot { color: var(--faint); margin: 0 6px; }
 
         .locale { color: var(--faint); margin-bottom: 0; }
 
-        .now {
-            margin-top: 48px;
-            padding: 16px 18px;
-            border: 1px solid var(--ink);
-        }
+        .now { margin-top: 40px; }
         .now .now-title { font-weight: 600; }
-        .now p { margin: 2px 0 0; color: var(--faint); }
+        .now p { margin: 0; color: var(--faint); }
 
         .aside-link { color: var(--faint); font-size: 0.92em; }
 
         .hidden { display: none; }
 
         .more-button {
-            font-family: "Geist Mono", Menlo, monospace;
-            font-size: 12px;
             color: var(--faint);
             cursor: pointer;
             display: inline-block;
-            margin-top: 2px;
-            border-bottom: 1px dashed #bbb;
+            margin: 2px 0 0 14px;
         }
-        .more-button:hover { color: var(--ink); border-bottom-color: var(--ink); }
+        .more-button:hover { color: var(--ink); }
 
         footer {
             margin-top: 72px;
-            padding-top: 16px;
-            border-top: 1px solid var(--hairline);
-            font-family: "Geist Mono", Menlo, monospace;
-            font-size: 11px;
+            font-size: 13px;
             color: var(--faint);
         }
 
