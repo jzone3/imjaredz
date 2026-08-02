@@ -267,6 +267,13 @@
             <li><a href="https://www.youtube.com/watch?v=xKV8_N1b5RI">Prompt Engineering and AI Constitutions with Stephen Wolfram</a></li>
         </ul>
 
+        <h2 data-scramble>Things</h2>
+        <ul>
+            <li><a href="https://x.com/imjaredz/status/2071294679824363979">Why enterprises trust Cognition: aligned incentives on token spend</a></li>
+            <li><a href="https://x.com/imjaredz/status/2080088341262033273">Devin cracks three more unsolved math problems</a></li>
+            <li><a href="assets/pdf/miracles_and_decay.pdf">Let's Believe in Miracles Again</a></li>
+        </ul>
+
         <footer>imjaredz.com · new york</footer>
     </div>
 
@@ -298,7 +305,7 @@
         var particles = [];
         var mouse = { x: -9999, y: -9999 };
         var REPEL = 42;
-        var GAP = 3;
+        var GAP = 2;
 
         function build() {
             var rect = canvas.getBoundingClientRect();
@@ -347,7 +354,7 @@
                 p.x += p.vx;
                 p.y += p.vy;
                 ctx.fillStyle = p.faint ? '#9a9a9a' : '#000';
-                ctx.fillRect(p.x, p.y, 1.4, 1.4);
+                ctx.fillRect(p.x, p.y, 1.2, 1.2);
             }
             requestAnimationFrame(frame);
         }
