@@ -152,21 +152,25 @@
 <li><a href="https://blog.promptlayer.com/tool-calling-with-llms-how-and-when-to-use-it/"><strong>Function/Tool calling</strong></a> - This is a great idiom because models understand it's sending a message/receiving a message.</li>
 <li>
 <p><strong>Chat formats</strong> - User messages, assistant messages, system messages. If you recall the early days of GPT, we started with completion models not chat. Messages are an abstraction that model providers built. At this point, LLMs are trained so much on it that they understand this message dynamic deeply.</p>
-<h3>System</h3>
-<p>You are ChatGPT, a large-language model trained by OpenAI.
-Speak concisely and use clear, step-by-step reasoning when helpful.
-If the user asks for code, return only code inside one fenced block.</p>
-<h3>User</h3>
-<p>Write a haiku about sunrise that mentions the ocean.</p>
-<h3>Assistant</h3>
-<p>A golden path spreads<br />
-over still, murmuring waves—<br />
-dawn rinses the sky.</p>
-<h3>User</h3>
-<p>Great—please translate that haiku into French.</p>
-<h3>Assistant</h3>
 </li>
 </ul>
+<pre><code>### System
+You are ChatGPT, a large-language model trained by OpenAI.
+Speak concisely and use clear, step-by-step reasoning when helpful.
+If the user asks for code, return only code inside one fenced block.
+
+### User
+Write a haiku about sunrise that mentions the ocean.
+
+### Assistant
+A golden path spreads
+over still, murmuring waves—
+dawn rinses the sky.
+
+### User
+Great—please translate that haiku into French.
+
+### Assistant</code></pre>
 <p>The abstraction of chat models can be thought of as this simple completion-style prompt.</p>
 <h2>The Context-Switching Problem</h2>
 <p>Context-switching is hard for humans. It's hard for models too.</p>
