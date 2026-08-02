@@ -107,6 +107,25 @@
         }
         blockquote p { margin: 0; }
 
+        figure {
+            margin: 24px 0;
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        figure img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        figcaption {
+            margin-top: 10px;
+            text-align: center;
+            color: var(--faint);
+            font-size: 12px;
+        }
         img {
             max-width: 100%;
             height: auto;
@@ -144,7 +163,7 @@
 <p>If you reference "spaghetti and meatballs", it might make a human think to their mother's cooking rather than the pure definition of the word. Same thing happens for models when you talk in Markdown.</p>
 <h2>Talk Nice to Me</h2>
 <p>You want to speak in the language an LLM understands. There are certain things that exist in its world that it understands implicitly without having to re-explain or re-describe them.</p>
-<p><img alt="" src="../assets/img/writing/llm-idioms.png" /></p>
+<figure><img alt="" src="../assets/img/writing/llm-idioms.png" /></figure>
 <p>More simply, they're things like:</p>
 <ul>
 <li><strong>XML</strong> - Models are trained to understand that <code>&lt;</code> and <code>&gt;</code> signs indicate different sections of text. Use that idiom, and the model gets it's a different section.</li>

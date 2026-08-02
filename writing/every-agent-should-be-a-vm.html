@@ -107,6 +107,25 @@
         }
         blockquote p { margin: 0; }
 
+        figure {
+            margin: 24px 0;
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        figure img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        figcaption {
+            margin-top: 10px;
+            text-align: center;
+            color: var(--faint);
+            font-size: 12px;
+        }
         img {
             max-width: 100%;
             height: auto;
@@ -146,7 +165,7 @@
 </ol>
 <p>This is a term I just made up now: <strong>Human-centric agent design</strong></p>
 <p>In other words, instead of designing coding agents as complex DAGs where models route between levels to different prompts and different tools, <em>these agents are simple two layer while loops</em>.</p>
-<p><img alt="" src="../assets/img/writing/agent-loop.png" /></p>
+<figure><img alt="" src="../assets/img/writing/agent-loop.png" /></figure>
 <p>There is one master loop, the one you talk to. And it can call a few different tools.</p>
 <p>Instead of defining hundreds of specialized functions the model can access, the LLM is given access to the bash command line.</p>
 <blockquote>
@@ -160,7 +179,8 @@
 <p><em>I often see Claude Code creating and running Python scripts solely as a way to test its own code!</em></p>
 <p><strong>#2 - It’s just harder to develop DAGs. It takes more time to think through every single path, rather than just letting the model run.</strong></p>
 <p>This is really just the Zen of Python applied to agents: simple is better than complex, flat is better than nested.</p>
-<p><img alt="" src="../assets/img/writing/less-scaffolding.png" />Less scaffolding, more model</p>
+<figure><img alt="" src="../assets/img/writing/less-scaffolding.png" />
+<figcaption>Less scaffolding, more model</figcaption></figure>
 <p>I think there is another, more subtle reason, that this works well.</p>
 <p>For purposes of prompt engineering (or err... <a href="https://blog.promptlayer.com/what-is-context-engineering/">context engineering</a>), you should treat an LLM like a human. After all, it was trained on human writing.</p>
 <p>Ask yourself: how do you develop software?</p>
