@@ -458,7 +458,13 @@
         canvas.addEventListener('mouseleave', function () {
             mouse.x = -9999; mouse.y = -9999;
         });
-        window.addEventListener('resize', build);
+        var lastW = window.innerWidth;
+        window.addEventListener('resize', function () {
+            if (window.innerWidth !== lastW) {
+                lastW = window.innerWidth;
+                build();
+            }
+        });
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
         build();
         requestAnimationFrame(frame);
