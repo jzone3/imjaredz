@@ -303,11 +303,14 @@
         <h2 data-scramble>Talks &amp; Podcasts</h2>
         <ul>
             <li><a href="https://www.youtube.com/watch?v=0YeeJHYy-Vc">Building Verifiable Agents</a> (Peter Yang Podcast) <span class="year">2026</span></li>
-            <li><a href="https://www.youtube.com/watch?v=RFKCzGlAU6Q">How Claude Code Works</a> (AI Engineer Conference) <span class="year">2025</span></li>
             <li><a href="https://www.youtube.com/watch?v=sRk9c5NFGYc">The $5M Prompt Engineer</a> (The Jason Levin Show) <span class="year">2025</span></li>
-            <li><a href="https://www.youtube.com/watch?v=exzPO4hAD9s">How to Win With Prompt Engineering</a> (Dan Shipper Podcast) <span class="year">2024</span></li>
             <li><a href="https://www.youtube.com/watch?v=xKV8_N1b5RI">Prompt Engineering Conversation with Stephen Wolfram</a> <span class="year">2023</span></li>
         </ul>
+        <ul id="hidden-talks" class="hidden">
+            <li><a href="https://www.youtube.com/watch?v=RFKCzGlAU6Q">How Claude Code Works</a> (AI Engineer Conference) <span class="year">2025</span></li>
+            <li><a href="https://www.youtube.com/watch?v=exzPO4hAD9s">How to Win With Prompt Engineering</a> (Dan Shipper Podcast) <span class="year">2024</span></li>
+        </ul>
+        <span id="more-talks-button" class="more-button" onclick="toggleMoreTalks()">see more</span>
 
         <footer>made in usa 🇺🇸 new york, new york</footer>
     </div>
@@ -316,6 +319,19 @@
         function toggleMore() {
             var hiddenItems = document.getElementById('hidden-items');
             var moreButton = document.getElementById('more-button');
+            if (hiddenItems.classList.contains('hidden')) {
+                hiddenItems.classList.remove('hidden');
+                moreButton.textContent = 'see less';
+                moreButton.style.transform = 'rotate(180deg)';
+            } else {
+                hiddenItems.classList.add('hidden');
+                moreButton.textContent = 'see more';
+                moreButton.style.transform = 'rotate(0deg)';
+            }
+        }
+        function toggleMoreTalks() {
+            var hiddenItems = document.getElementById('hidden-talks');
+            var moreButton = document.getElementById('more-talks-button');
             if (hiddenItems.classList.contains('hidden')) {
                 hiddenItems.classList.remove('hidden');
                 moreButton.textContent = 'see less';
