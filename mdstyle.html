@@ -320,7 +320,7 @@
             particles = [];
             for (var y = 0; y < h; y += GAP) {
                 for (var x = 0; x < w; x += GAP) {
-                    if (data[(y * w + x) * 4 + 3] > 128 && Math.random() > 0.3) {
+                    if (data[(y * w + x) * 4 + 3] > 128) {
                         particles.push({ x: x, y: y, ox: x, oy: y, vx: 0, vy: 0, faint: x < hashW });
                     }
                 }
