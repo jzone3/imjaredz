@@ -166,7 +166,12 @@
         .now p { margin: 0; color: var(--faint); }
 
         .aside-link { color: var(--faint); font-size: 0.92em; }
-        .year { color: var(--faint); }
+        .year {
+            color: var(--faint);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        li:hover .year { opacity: 1; }
 
         .hidden { display: none; }
 
@@ -249,28 +254,28 @@
         <h2 data-scramble>Projects</h2>
         <ul>
             <li>
-                <span class="company">Montalvo Analytics</span>
-                <span class="desc">Data analytics for America's largest reform campaigns. <span class="year">(2020)</span></span>
+                <span class="company">Montalvo Analytics</span> <span class="year">(2020)</span>
+                <span class="desc">Data analytics for America's largest reform campaigns.</span>
             </li>
             <li>
-                <span class="company">Presidio Jeans</span>
-                <span class="desc">Denim jeans brand made in the USA. <span class="year">(2019)</span></span>
+                <span class="company">Presidio Jeans</span> <span class="year">(2019)</span>
+                <span class="desc">Denim jeans brand made in the USA.</span>
             </li>
             <li>
-                <span class="company">Startup Sift</span>
-                <span class="desc">Webapp to help engineers discover exciting startups to work for. <span class="year">(2017)</span></span>
+                <span class="company">Startup Sift</span> <span class="year">(2017)</span>
+                <span class="desc">Webapp to help engineers discover exciting startups to work for.</span>
             </li>
             <li>
-                <span class="company"><a href="https://hackbca.com">hackBCA</a></span>, Founder
-                <span class="desc">First ever high school hackathon hosting over 1,000 students. <span class="year">(2014)</span></span>
+                <span class="company"><a href="https://hackbca.com">hackBCA</a></span>, Founder <span class="year">(2014)</span>
+                <span class="desc">First ever high school hackathon hosting over 1,000 students.</span>
             </li>
             <li>
-                <span class="company">Hackathon Consulting</span>
-                <span class="desc">Helping companies like Intel better reach student developers. <span class="year">(2014)</span></span>
+                <span class="company">Hackathon Consulting</span> <span class="year">(2014)</span>
+                <span class="desc">Helping companies like Intel better reach student developers.</span>
             </li>
             <li>
-                <span class="company">Learn to Drive</span>, TechCrunch Disrupt Hackathon Winner
-                <span class="desc">In-car app to teach new drivers. Featured and invited to speak. <span class="year">(2013)</span></span>
+                <span class="company">Learn to Drive</span>, TechCrunch Disrupt Hackathon Winner <span class="year">(2013)</span>
+                <span class="desc">In-car app to teach new drivers. Featured and invited to speak.</span>
             </li>
         </ul>
 
