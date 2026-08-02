@@ -389,15 +389,16 @@
             canvas.style.width = '100%';
             var rect = canvas.getBoundingClientRect();
             var baseW = Math.floor(rect.width), h = Math.floor(rect.height);
+            var avail = Math.max(0, Math.floor(rect.left) - 6);
             var probe = document.createElement('canvas').getContext('2d');
             var fontSize = 26;
             probe.font = '700 ' + fontSize + 'px monospace';
-            if (probe.measureText("Hi, I'm Jared Zoneraich").width > baseW) {
-                fontSize = Math.floor(fontSize * baseW / probe.measureText("Hi, I'm Jared Zoneraich").width);
-                probe.font = '700 ' + fontSize + 'px monospace';
-            }
+            var nameW = probe.measureText("Hi, I'm Jared Zoneraich").width;
+            var hashRatio = probe.measureText('# ').width / fontSize;
+            fontSize = Math.floor(fontSize * Math.min(1, baseW / nameW, avail / (hashRatio * fontSize)));
+            probe.font = '700 ' + fontSize + 'px monospace';
             var hashW = Math.ceil(probe.measureText('# ').width);
-            var hang = Math.min(hashW, Math.floor(rect.left));
+            var hang = Math.min(hashW, avail);
             canvas.style.marginLeft = -hang + 'px';
             canvas.style.width = 'calc(100% + ' + hang + 'px)';
             rect = canvas.getBoundingClientRect();
