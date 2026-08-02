@@ -172,8 +172,15 @@
             cursor: pointer;
             display: inline-block;
             margin: 2px 0 0 2ch;
+            transition: transform 0.5s ease, color 0.3s ease;
         }
         .more-button:hover { color: var(--ink); }
+        .more-button::after {
+            content: "\203a";
+            display: inline-block;
+            margin-left: 5px;
+            transform: rotate(90deg);
+        }
 
         footer {
             margin-top: 72px;
@@ -232,7 +239,7 @@
             <li><span class="company">Warby Parker</span>, Software Engineering</li>
             <li><span class="company">Newlio</span>, Software Engineering</li>
         </ul>
-        <span id="more-button" class="more-button" onclick="toggleMore()">see more ▾</span>
+        <span id="more-button" class="more-button" onclick="toggleMore()">see more</span>
 
         <h2 data-scramble>Education</h2>
         <ul>
@@ -282,7 +289,7 @@
             <li><a href="https://www.youtube.com/watch?v=xKV8_N1b5RI">Prompt Engineering and AI Constitutions with Stephen Wolfram</a></li>
         </ul>
 
-        <footer>made in usa 🇺🇸 · new york, new york</footer>
+        <footer>made in usa 🇺🇸 new york, new york</footer>
     </div>
 
     <script>
@@ -291,10 +298,12 @@
             var moreButton = document.getElementById('more-button');
             if (hiddenItems.classList.contains('hidden')) {
                 hiddenItems.classList.remove('hidden');
-                moreButton.textContent = 'see less ▴';
+                moreButton.textContent = 'see less';
+                moreButton.style.transform = 'rotate(180deg)';
             } else {
                 hiddenItems.classList.add('hidden');
-                moreButton.textContent = 'see more ▾';
+                moreButton.textContent = 'see more';
+                moreButton.style.transform = 'rotate(0deg)';
             }
         }
     </script>
@@ -434,20 +443,18 @@
                 var p = particles[i];
                 var dx = p.x - mouse.x, dy = p.y - mouse.y;
                 var d2 = dx * dx + dy * dy;
+                var g = p.faint ? 107 : 0;
+                var size = 1;
                 if (d2 < REPEL * REPEL) {
-                    var d = Math.sqrt(d2) || 1;
-                    var f = (REPEL - d) / REPEL;
-                    p.vx += (dx / d) * f * 3.0;
-                    p.vy += (dy / d) * f * 3.0;
+                    var f = 1 - Math.sqrt(d2) / REPEL;
+                    var flicker = 0.55 + 0.45 * Math.sin((p.ox * 12.9898 + p.oy * 78.233) + performance.now() / 90);
+                    g = Math.max(0, g - 40 * f);
+                    size = 1 + f * 0.8;
+                    ctx.fillStyle = 'rgba(' + g + ',' + g + ',' + g + ',' + (0.35 + 0.65 * flicker) + ')';
+                } else {
+                    ctx.fillStyle = 'rgb(' + g + ',' + g + ',' + g + ')';
                 }
-                p.vx += (p.ox - p.x) * 0.07;
-                p.vy += (p.oy - p.y) * 0.07;
-                p.vx *= 0.85;
-                p.vy *= 0.85;
-                p.x += p.vx;
-                p.y += p.vy;
-                ctx.fillStyle = p.faint ? '#6b6b6b' : '#000';
-                ctx.fillRect(p.x, p.y, 1, 1);
+                ctx.fillRect(p.ox - (size - 1) / 2, p.oy - (size - 1) / 2, size, size);
             }
             requestAnimationFrame(frame);
         }
