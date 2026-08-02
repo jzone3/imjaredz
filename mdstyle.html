@@ -314,13 +314,14 @@
             octx.textBaseline = 'middle';
             octx.fillStyle = '#000';
             octx.fillText("# Hi, I'm Jared Zoneraich", 0, h / 2);
+            var hashW = octx.measureText('# ').width;
 
             var data = octx.getImageData(0, 0, w, h).data;
             particles = [];
             for (var y = 0; y < h; y += GAP) {
                 for (var x = 0; x < w; x += GAP) {
-                    if (data[(y * w + x) * 4 + 3] > 128) {
-                        particles.push({ x: x, y: y, ox: x, oy: y, vx: 0, vy: 0 });
+                    if (data[(y * w + x) * 4 + 3] > 128 && Math.random() > 0.3) {
+                        particles.push({ x: x, y: y, ox: x, oy: y, vx: 0, vy: 0, faint: x < hashW });
                     }
                 }
             }
@@ -329,7 +330,6 @@
         function frame() {
             var rect = canvas.getBoundingClientRect();
             ctx.clearRect(0, 0, rect.width, rect.height);
-            ctx.fillStyle = '#000';
             for (var i = 0; i < particles.length; i++) {
                 var p = particles[i];
                 var dx = p.x - mouse.x, dy = p.y - mouse.y;
@@ -346,6 +346,7 @@
                 p.vy *= 0.85;
                 p.x += p.vx;
                 p.y += p.vy;
+                ctx.fillStyle = p.faint ? '#9a9a9a' : '#000';
                 ctx.fillRect(p.x, p.y, 1.15, 1.15);
             }
             requestAnimationFrame(frame);
