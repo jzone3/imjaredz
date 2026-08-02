@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LLM Idioms — Jared Zoneraich</title>
+    <meta content="LLM Idioms, by Jared Zoneraich" name="description">
+    <link rel="canonical" href="https://imjaredz.com/writing/llm-idioms.html">
+
+    <meta property="og:type"        content="article">
+    <meta property="og:url"         content="https://imjaredz.com/writing/llm-idioms.html">
+    <meta property="og:title"       content="LLM Idioms">
+    <meta property="og:description" content="By Jared Zoneraich">
+
+    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:site"        content="@imjaredz">
+    <meta name="twitter:title"       content="LLM Idioms">
+
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="imjaredz.com">
+    <meta name="author" content="Jared Zoneraich">
+
+    <link href="../assets/img/favicon-32.png" rel="icon" sizes="32x32">
+    <link href="../assets/img/favicon.png" rel="icon" sizes="180x180">
+    <link href="../assets/img/favicon.png" rel="apple-touch-icon">
+
+    <style>
+        :root {
+            --ink: #000;
+            --faint: #6b6b6b;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: monospace;
+            background: #fff;
+            color: var(--ink);
+            margin: 8px;
+            padding: 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 72px 24px 96px;
+        }
+
+        .back {
+            display: inline-block;
+            color: var(--faint);
+            text-decoration: none;
+            margin-bottom: 36px;
+        }
+        .back::before { content: "\2190\00a0"; }
+        .back:hover { color: var(--ink); }
+
+        h1 {
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.3;
+            margin: 0 0 6px;
+        }
+        h1::before { content: "# "; font-weight: 400; color: var(--faint); }
+
+        .meta {
+            color: var(--faint);
+            margin: 0 0 32px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 13px;
+            color: var(--faint);
+            margin: 28px 0 14px;
+        }
+        h2::before { content: "## "; }
+
+        p { margin: 0 0 14px; }
+
+        a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            text-decoration-color: #bbb;
+        }
+        a:hover { text-decoration-color: var(--ink); }
+
+        b, strong { font-weight: 700; }
+
+        ul, ol { padding: 0 0 0 2ch; margin: 0 0 14px; }
+        ul { list-style: none; }
+        ul li { margin: 0 0 8px; padding-left: 2ch; position: relative; }
+        ul li::before { content: "-"; position: absolute; left: 0; }
+        ol li { margin: 0 0 8px; }
+
+        blockquote {
+            margin: 0 0 14px;
+            border-left: 3px solid #d4d4d4;
+            padding-left: 14px;
+            color: var(--faint);
+        }
+        blockquote p { margin: 0; }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 0 14px;
+        }
+
+        pre {
+            background: #f6f6f6;
+            padding: 12px 14px;
+            overflow-x: auto;
+            margin: 0 0 14px;
+        }
+        code { font-family: monospace; background: #f6f6f6; padding: 1px 4px; }
+        pre code { padding: 0; }
+
+        footer {
+            margin-top: 72px;
+            font-size: 13px;
+            color: var(--faint);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="/">back</a>
+
+        <h1>LLM Idioms</h1>
+        <p class="meta">Jared Zoneraich &middot; August 2025</p>
+
+<p>An <em>LLM idiom</em> is a pattern or format that models tend to recognize implicitly — conventions their training has reinforced and their internal representations can use without extra explanation. These are the native languages of AI systems.</p>
+<p>To me, this is one of the most important concepts in prompt engineering.</p>
+<p>I don't think there's a technical word for this concept yet, so I'll just be calling these language devices: <strong>LLM Idioms</strong>.</p>
+<p>Take JSON Prompting (<a href="https://blog.promptlayer.com/is-json-prompting-a-good-strategy/">which we discussed in detail here</a>) as an example. JSON is an idiom models deeply understand from their training data, and using it introduces <em>assumptions</em> and <em>bias</em> into a response.</p>
+<p>If you reference "spaghetti and meatballs", it might make a human think to their mother's cooking rather than the pure definition of the word. Same thing happens for models when you talk in Markdown.</p>
+<h2>Talk Nice to Me</h2>
+<p>You want to speak in the language an LLM understands. There are certain things that exist in its world that it understands implicitly without having to re-explain or re-describe them.</p>
+<p><img alt="" src="../assets/img/writing/llm-idioms.png" /></p>
+<p>More simply, they're things like:</p>
+<ul>
+<li><strong>XML</strong> - Models are trained to understand that <code>&lt;</code> and <code>&gt;</code> signs indicate different sections of text. Use that idiom, and the model gets it's a different section.</li>
+<li><strong>Markdown</strong> - Same deal. Headers, bold text, italics. The model knows what <em>italicizing</em> implies.</li>
+<li><a href="https://blog.promptlayer.com/tool-calling-with-llms-how-and-when-to-use-it/"><strong>Function/Tool calling</strong></a> - This is a great idiom because models understand it's sending a message/receiving a message.</li>
+<li>
+<p><strong>Chat formats</strong> - User messages, assistant messages, system messages. If you recall the early days of GPT, we started with completion models not chat. Messages are an abstraction that model providers built. At this point, LLMs are trained so much on it that they understand this message dynamic deeply.</p>
+<h3>System</h3>
+<p>You are ChatGPT, a large-language model trained by OpenAI.
+Speak concisely and use clear, step-by-step reasoning when helpful.
+If the user asks for code, return only code inside one fenced block.</p>
+<h3>User</h3>
+<p>Write a haiku about sunrise that mentions the ocean.</p>
+<h3>Assistant</h3>
+<p>A golden path spreads<br />
+over still, murmuring waves—<br />
+dawn rinses the sky.</p>
+<h3>User</h3>
+<p>Great—please translate that haiku into French.</p>
+<h3>Assistant</h3>
+</li>
+</ul>
+<p>The abstraction of chat models can be thought of as this simple completion-style prompt.</p>
+<h2>The Context-Switching Problem</h2>
+<p>Context-switching is hard for humans. It's hard for models too.</p>
+<p>When you prompt with JSON and expect creative writing, that's a context switch. Probabilistic pathways make this a harder task. Similarly, there have been studies showing that code generation returned inside a JSON structure isn't quite as good as just raw code output.</p>
+<p>Why? Because of how training data works and how these models are trained. The response exists in a slightly different space in the vector embedding coordinates.</p>
+<p>A model outputting JSON is <em>thinking</em> using different paths than a model writing creatively.</p>
+<p>For example:</p>
+<ul>
+<li>"Write a love note and return it in JSON with key <code>note</code>"</li>
+<li>"Write a love note"</li>
+</ul>
+<p>These are vastly different. You can think of the first example as thinking like a computer, and the second as drawing from more literary data.</p>
+<h2>When to Use What</h2>
+<p>JSON puts the model in "I'm reading/outputting code" mode. Not always what you want.</p>
+<p>If your goal is creativity, chaos, or surprise - like dream journaling, storytelling for kids, or idea generation without constraints - skip the JSON. JSON equals structure. Freeform equals chaos.</p>
+<p>But just like with programming languages - Python might be slower to compile than C, but it's quicker for developers to write. In a world where compute is cheap and developer hours are expensive, that matters. Same thing is true for prompt engineering hours. If JSON prompting can make your codebase/"<em>promptbase</em> " cleaner, it might be worth it.</p>
+<h2>Tools in Your Toolbox</h2>
+<p>LLM idioms - whether XML, Markdown, JSON, or chat formats - are tools in your toolbox.</p>
+<p>I actually use both XML and Markdown when I prompt. Many models are trained on both. Claude is famously good at XML. I often use Markdown for sections and for "human readability" and XML to denote "attachments".</p>
+<p>While <a href="https://blog.promptlayer.com/how-json-schema-works-for-structured-outputs-and-tool-integration/">structured output</a> has a lot of the context-related drawbacks, for building reliable systems, it can be invaluable. We built an AI prompt writer internally at PromptLayer, but had trouble because our structured output schema was so complicated that models would fail or timeout. We had success breaking it up into multiple prompts - one would write all the messages in plain text, then another would put them into structured output. This way, our prompt writer was not needlessly constrained by the idiom of structure.</p>
+<p><em>Speak to LLMs in ways they understand.</em></p>
+
+        <footer>made in usa 🇺🇸 new york, new york</footer>
+    </div>
+</body>
+</html>

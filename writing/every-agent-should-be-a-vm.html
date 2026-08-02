@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Every Agent Should Be a VM — Jared Zoneraich</title>
+    <meta content="Every Agent Should Be a VM, by Jared Zoneraich" name="description">
+    <link rel="canonical" href="https://imjaredz.com/writing/every-agent-should-be-a-vm.html">
+
+    <meta property="og:type"        content="article">
+    <meta property="og:url"         content="https://imjaredz.com/writing/every-agent-should-be-a-vm.html">
+    <meta property="og:title"       content="Every Agent Should Be a VM">
+    <meta property="og:description" content="By Jared Zoneraich">
+
+    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:site"        content="@imjaredz">
+    <meta name="twitter:title"       content="Every Agent Should Be a VM">
+
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="imjaredz.com">
+    <meta name="author" content="Jared Zoneraich">
+
+    <link href="../assets/img/favicon-32.png" rel="icon" sizes="32x32">
+    <link href="../assets/img/favicon.png" rel="icon" sizes="180x180">
+    <link href="../assets/img/favicon.png" rel="apple-touch-icon">
+
+    <style>
+        :root {
+            --ink: #000;
+            --faint: #6b6b6b;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: monospace;
+            background: #fff;
+            color: var(--ink);
+            margin: 8px;
+            padding: 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 72px 24px 96px;
+        }
+
+        .back {
+            display: inline-block;
+            color: var(--faint);
+            text-decoration: none;
+            margin-bottom: 36px;
+        }
+        .back::before { content: "\2190\00a0"; }
+        .back:hover { color: var(--ink); }
+
+        h1 {
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.3;
+            margin: 0 0 6px;
+        }
+        h1::before { content: "# "; font-weight: 400; color: var(--faint); }
+
+        .meta {
+            color: var(--faint);
+            margin: 0 0 32px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 13px;
+            color: var(--faint);
+            margin: 28px 0 14px;
+        }
+        h2::before { content: "## "; }
+
+        p { margin: 0 0 14px; }
+
+        a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            text-decoration-color: #bbb;
+        }
+        a:hover { text-decoration-color: var(--ink); }
+
+        b, strong { font-weight: 700; }
+
+        ul, ol { padding: 0 0 0 2ch; margin: 0 0 14px; }
+        ul { list-style: none; }
+        ul li { margin: 0 0 8px; padding-left: 2ch; position: relative; }
+        ul li::before { content: "-"; position: absolute; left: 0; }
+        ol li { margin: 0 0 8px; }
+
+        blockquote {
+            margin: 0 0 14px;
+            border-left: 3px solid #d4d4d4;
+            padding-left: 14px;
+            color: var(--faint);
+        }
+        blockquote p { margin: 0; }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 0 14px;
+        }
+
+        pre {
+            background: #f6f6f6;
+            padding: 12px 14px;
+            overflow-x: auto;
+            margin: 0 0 14px;
+        }
+        code { font-family: monospace; background: #f6f6f6; padding: 1px 4px; }
+        pre code { padding: 0; }
+
+        footer {
+            margin-top: 72px;
+            font-size: 13px;
+            color: var(--faint);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="/">back</a>
+
+        <h1>Every Agent Should Be a VM</h1>
+        <p class="meta">Jared Zoneraich &middot; December 2025</p>
+
+<p>There is no doubt that OpenAI's Codex CLI and Anthropic's Claude Code agents are order of magnitude shifts in what we can expect from coding agents.</p>
+<p>I recently did a deep dive and wrote articles exploring how <a href="https://blog.promptlayer.com/claude-code-behind-the-scenes-of-the-master-agent-loop/">Claude Code works</a> and how <a href="https://blog.promptlayer.com/how-openai-codex-works-behind-the-scenes-and-how-it-compares-to-claude-code/">OpenAI Codex works</a> behind the scenes.</p>
+<p>In short, there are two core innovations.</p>
+<ol>
+<li>Better models that are specifically good at tool calling</li>
+<li>Human-like agent design</li>
+</ol>
+<p>This is a term I just made up now: <strong>Human-centric agent design</strong></p>
+<p>In other words, instead of designing coding agents as complex DAGs where models route between levels to different prompts and different tools, <em>these agents are simple two layer while loops</em>.</p>
+<p><img alt="" src="../assets/img/writing/agent-loop.png" /></p>
+<p>There is one master loop, the one you talk to. And it can call a few different tools.</p>
+<p>Instead of defining hundreds of specialized functions the model can access, the LLM is given access to the bash command line.</p>
+<blockquote>
+<p><strong>Bash is all you need.</strong></p>
+</blockquote>
+<p>In the <em>good 'ol days</em> , we used to create small functions for each thing a model would do. For example, <code>run_test</code> or <code>create_file</code>. This is a great way to prevent loops, avoid mistakes, and steer models in the right direction. Models weren't good enough for anything else. But it has two main drawbacks.</p>
+<p><strong>#1 - Simple loops give the agent flexibility to fix their mistakes. Rigid DAGs prevent this.</strong></p>
+<p>One of our customers had <em>hundreds of nodes</em>  in their agent DAG. They claimed complexity was their IP- their competitive moat. Then Claude Code came out and broke that assumption.</p>
+<p>They’ve since rebuilt their entire stack around simple loops. The simpler you make it, the more the agent can explore and solve ambiguous problems.</p>
+<p>For example, a coding agent with bash can try different commands, redownload libraries, and think out-of-the-box.</p>
+<p><em>I often see Claude Code creating and running Python scripts solely as a way to test its own code!</em></p>
+<p><strong>#2 - It’s just harder to develop DAGs. It takes more time to think through every single path, rather than just letting the model run.</strong></p>
+<p>This is really just the Zen of Python applied to agents: simple is better than complex, flat is better than nested.</p>
+<p><img alt="" src="../assets/img/writing/less-scaffolding.png" />Less scaffolding, more model</p>
+<p>I think there is another, more subtle reason, that this works well.</p>
+<p>For purposes of prompt engineering (or err... <a href="https://blog.promptlayer.com/what-is-context-engineering/">context engineering</a>), you should treat an LLM like a human. After all, it was trained on human writing.</p>
+<p>Ask yourself: how do you develop software?</p>
+<p>You don't work in a small window. Writing one file at a time.</p>
+<p>You bounce around. You run tests while developing. You discover things don't work half-way through. You change the spec. And importantly, you probably use the command line.</p>
+<p>Just as you would, I've seen coding agents write a cURL to test a backend endpoint. It just makes sense. <em>It's the human way to do it.</em></p>
+<p><strong>Here's my prediction...</strong></p>
+<p>Soon every ChatGPT chat session, every AI chatbot, and every agent will be spun up with its own VM.</p>
+<p>It's more flexible. Agents want to create Markdown files. Agents want to save their progress, to create new folders, and explore.</p>
+<p><strong>This creates massive demand for cloud infrastructure companies.</strong></p>
+<p>If every agent needs a VM, who provides those VMs at scale? Companies like Modal, Cloudflare, Beam, Render are well-positioned for this.</p>
+<p>Think about what agents need:</p>
+<ul>
+<li><strong>Rapid cold starts</strong>  — spinning up environments in seconds, not minutes</li>
+<li><strong>File system snapshots</strong>  — persist state, fork it, replay from any point (<em>think evals</em>)</li>
+<li><strong>Sandboxing</strong>  — secure isolation so agents can run bash (<em>think evals again</em>)</li>
+<li><strong>Durable execution</strong>  — workflows that survive failures and can resume</li>
+<li><strong>Massive parallelism</strong>  — spin up 1,000 containers tear them down when done</li>
+</ul>
+<p>These are hard and important infrastructure problems.</p>
+<p>As a concrete example: I have a GitHub workflow that runs every day at 9am. It launches headless Claude Code with a simple prompt. The agent:</p>
+<ol>
+<li>Downloads our API and frontend repos</li>
+<li>Reads the last 24 hours of commits</li>
+<li>Refreshes our docs repo based on what changed</li>
+<li>Pushes a PR</li>
+<li>Ends its process</li>
+</ol>
+<p>That’s it. The file system <em>is</em>  the state. The agent reads files, writes files, and moves on.</p>
+<p>Imagine building that without a filesystem! Possible, but more than 2 hours of work for sure.</p>
+
+        <footer>made in usa 🇺🇸 new york, new york</footer>
+    </div>
+</body>
+</html>
