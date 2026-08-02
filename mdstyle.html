@@ -486,8 +486,8 @@
         document.body.appendChild(canvas);
         var ctx = canvas.getContext('2d');
         var dpr = Math.min(window.devicePixelRatio || 1, 2);
-        var CELL = 14;
-        var CHARS = '*#+·:';
+        var CELL = 18;
+        var CHARS = '*+#=%@:·';
         var cells = {};
         var raf = null;
 
@@ -495,7 +495,7 @@
             canvas.width = window.innerWidth * dpr;
             canvas.height = window.innerHeight * dpr;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            ctx.font = '11px monospace';
+            ctx.font = '15px monospace';
         }
         size();
         window.addEventListener('resize', size);
@@ -508,17 +508,23 @@
                 c.life -= 0.02;
                 if (c.life <= 0) { delete cells[key]; continue; }
                 alive = true;
-                ctx.fillStyle = 'rgba(0, 0, 0, ' + (c.life * 0.13).toFixed(3) + ')';
+                ctx.fillStyle = 'rgba(0, 0, 0, ' + (c.life * 0.22).toFixed(3) + ')';
                 ctx.fillText(c.ch, c.x, c.y);
             }
             raf = alive ? requestAnimationFrame(frame) : null;
         }
 
+        var nameCanvas = document.getElementById('name-canvas');
         window.addEventListener('mousemove', function (e) {
+            if (nameCanvas) {
+                var nr = nameCanvas.getBoundingClientRect();
+                if (e.clientX >= nr.left && e.clientX <= nr.right &&
+                    e.clientY >= nr.top && e.clientY <= nr.bottom) return;
+            }
             var cx = Math.floor(e.clientX / CELL), cy = Math.floor(e.clientY / CELL);
             for (var i = -1; i <= 1; i++) {
                 for (var j = -1; j <= 1; j++) {
-                    if (Math.random() > 0.35) continue;
+                    if (Math.random() > 0.5) continue;
                     var key = (cx + i) + ',' + (cy + j);
                     cells[key] = {
                         x: (cx + i) * CELL, y: (cy + j) * CELL + 10,
