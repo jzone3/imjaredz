@@ -156,16 +156,25 @@
             border-left: 3px solid #d4d4d4;
             padding-left: 14px;
             text-decoration: none;
+            position: relative;
+            transition: border-color 0.25s ease;
         }
         .now .now-title { font-weight: 400; }
         .now p { margin: 0; color: var(--faint); }
         .now .now-title, .now p {
             display: inline-block;
-            transition: background 0.15s ease, color 0.15s ease;
+            transition: color 0.25s ease;
         }
         .now p { display: block; width: fit-content; }
-        .now:hover .now-title, .now:hover p {
-            background: #ececec;
+        .now:hover { border-color: #0294DE; }
+        .now:hover .now-title, .now:hover .now-title strong { color: #0294DE; }
+        #now-canvas {
+            position: absolute;
+            left: -3px;
+            top: -10px;
+            width: 90px;
+            height: calc(100% + 20px);
+            pointer-events: none;
         }
 
         .aside-link { color: var(--faint); font-size: 0.92em; }
@@ -226,6 +235,7 @@
         </div>
 
         <a class="now" href="https://cognition.ai">
+            <canvas id="now-canvas" aria-hidden="true"></canvas>
             <span class="now-title"><strong>Cognition</strong>, Builder in Residence</span>
             <p>Building Devin — the first AI software engineer</p>
         </a>
@@ -401,6 +411,124 @@
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
         build();
         requestAnimationFrame(frame);
+    })();
+    </script>
+
+    <script>
+    // Cognition block: dots drift off the quote bar toward the cursor on hover.
+    (function () {
+        var block = document.querySelector('.now');
+        var canvas = document.getElementById('now-canvas');
+        if (!block || !canvas || !canvas.getContext ||
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var ctx = canvas.getContext('2d');
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var dots = [];
+        var hovering = false;
+        var mouse = { x: 0, y: 0 };
+        var raf = null;
+
+        function size() {
+            var r = canvas.getBoundingClientRect();
+            canvas.width = r.width * dpr;
+            canvas.height = r.height * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            return r;
+        }
+
+        function frame() {
+            var r = size();
+            if (hovering && dots.length < 40) {
+                dots.push({
+                    x: 1.5, y: Math.random() * r.height,
+                    vx: 0.3 + Math.random() * 0.5, vy: (Math.random() - 0.5) * 0.4,
+                    life: 1
+                });
+            }
+            ctx.clearRect(0, 0, r.width, r.height);
+            for (var i = dots.length - 1; i >= 0; i--) {
+                var d = dots[i];
+                var dx = mouse.x - d.x, dy = mouse.y - d.y;
+                var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+                d.vx += (dx / dist) * 0.05;
+                d.vy += (dy / dist) * 0.05;
+                d.x += d.vx;
+                d.y += d.vy;
+                d.life -= 0.012;
+                if (d.life <= 0 || d.x > r.width) { dots.splice(i, 1); continue; }
+                ctx.fillStyle = 'rgba(2, 148, 222, ' + (d.life * 0.55).toFixed(3) + ')';
+                ctx.fillRect(d.x, d.y, 1.5, 1.5);
+            }
+            if (dots.length || hovering) raf = requestAnimationFrame(frame);
+            else { ctx.clearRect(0, 0, r.width, r.height); raf = null; }
+        }
+
+        block.addEventListener('mouseenter', function () {
+            hovering = true;
+            if (!raf) raf = requestAnimationFrame(frame);
+        });
+        block.addEventListener('mousemove', function (e) {
+            var r = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - r.left;
+            mouse.y = e.clientY - r.top;
+        });
+        block.addEventListener('mouseleave', function () { hovering = false; });
+    })();
+    </script>
+
+    <script>
+    // Cursor trail: faint characters fade in the mouse's wake, devin.ai/cli style.
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var canvas = document.createElement('canvas');
+        canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;';
+        canvas.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(canvas);
+        var ctx = canvas.getContext('2d');
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var CELL = 14;
+        var CHARS = '*#+·:';
+        var cells = {};
+        var raf = null;
+
+        function size() {
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.font = '11px monospace';
+        }
+        size();
+        window.addEventListener('resize', size);
+
+        function frame() {
+            ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+            var alive = false;
+            for (var key in cells) {
+                var c = cells[key];
+                c.life -= 0.02;
+                if (c.life <= 0) { delete cells[key]; continue; }
+                alive = true;
+                ctx.fillStyle = 'rgba(0, 0, 0, ' + (c.life * 0.13).toFixed(3) + ')';
+                ctx.fillText(c.ch, c.x, c.y);
+            }
+            raf = alive ? requestAnimationFrame(frame) : null;
+        }
+
+        window.addEventListener('mousemove', function (e) {
+            var cx = Math.floor(e.clientX / CELL), cy = Math.floor(e.clientY / CELL);
+            for (var i = -1; i <= 1; i++) {
+                for (var j = -1; j <= 1; j++) {
+                    if (Math.random() > 0.35) continue;
+                    var key = (cx + i) + ',' + (cy + j);
+                    cells[key] = {
+                        x: (cx + i) * CELL, y: (cy + j) * CELL + 10,
+                        ch: CHARS.charAt((Math.random() * CHARS.length) | 0),
+                        life: 1
+                    };
+                }
+            }
+            if (!raf) raf = requestAnimationFrame(frame);
+        });
     })();
     </script>
 
