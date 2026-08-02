@@ -285,7 +285,7 @@
     </script>
 
     <script>
-    // Hero name: solid per-letter canvas text; letters near the cursor push away and spring back.
+    // Hero name: dense canvas particle text that scatters away from the cursor.
     (function () {
         var canvas = document.getElementById('name-canvas');
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -295,51 +295,58 @@
         }
         var ctx = canvas.getContext('2d');
         var dpr = Math.min(window.devicePixelRatio || 1, 2);
-        var letters = [];
+        var particles = [];
         var mouse = { x: -9999, y: -9999 };
-        var REPEL = 60;
-        var TEXT = "# Hi, I'm Jared Zoneraich";
-        var FONT = '700 26px monospace';
+        var REPEL = 50;
+        var GAP = 1;
 
         function build() {
             var rect = canvas.getBoundingClientRect();
             canvas.width = rect.width * dpr;
             canvas.height = rect.height * dpr;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            ctx.font = FONT;
-            ctx.textBaseline = 'middle';
-            letters = [];
-            var x = 0, mid = rect.height / 2;
-            for (var i = 0; i < TEXT.length; i++) {
-                var ch = TEXT.charAt(i);
-                letters.push({ ch: ch, x: x, y: mid, ox: x, oy: mid, vx: 0, vy: 0, faint: i < 2 });
-                x += ctx.measureText(ch).width;
+
+            var w = Math.floor(rect.width), h = Math.floor(rect.height);
+            var off = document.createElement('canvas');
+            off.width = w; off.height = h;
+            var octx = off.getContext('2d', { willReadFrequently: true });
+            octx.font = '700 26px monospace';
+            octx.textBaseline = 'middle';
+            octx.fillStyle = '#000';
+            octx.fillText("# Hi, I'm Jared Zoneraich", 0, h / 2);
+
+            var data = octx.getImageData(0, 0, w, h).data;
+            particles = [];
+            for (var y = 0; y < h; y += GAP) {
+                for (var x = 0; x < w; x += GAP) {
+                    if (data[(y * w + x) * 4 + 3] > 128) {
+                        particles.push({ x: x, y: y, ox: x, oy: y, vx: 0, vy: 0 });
+                    }
+                }
             }
         }
 
         function frame() {
             var rect = canvas.getBoundingClientRect();
             ctx.clearRect(0, 0, rect.width, rect.height);
-            ctx.font = FONT;
-            ctx.textBaseline = 'middle';
-            for (var i = 0; i < letters.length; i++) {
-                var p = letters[i];
+            ctx.fillStyle = '#000';
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
                 var dx = p.x - mouse.x, dy = p.y - mouse.y;
                 var d2 = dx * dx + dy * dy;
                 if (d2 < REPEL * REPEL) {
                     var d = Math.sqrt(d2) || 1;
                     var f = (REPEL - d) / REPEL;
-                    p.vx += (dx / d) * f * 2.6;
-                    p.vy += (dy / d) * f * 2.6;
+                    p.vx += (dx / d) * f * 3.0;
+                    p.vy += (dy / d) * f * 3.0;
                 }
-                p.vx += (p.ox - p.x) * 0.08;
-                p.vy += (p.oy - p.y) * 0.08;
-                p.vx *= 0.84;
-                p.vy *= 0.84;
+                p.vx += (p.ox - p.x) * 0.07;
+                p.vy += (p.oy - p.y) * 0.07;
+                p.vx *= 0.85;
+                p.vy *= 0.85;
                 p.x += p.vx;
                 p.y += p.vy;
-                ctx.fillStyle = p.faint ? '#6b6b6b' : '#000';
-                ctx.fillText(p.ch, p.x, p.y);
+                ctx.fillRect(p.x, p.y, 1.15, 1.15);
             }
             requestAnimationFrame(frame);
         }
