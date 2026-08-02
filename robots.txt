@@ -1,2 +1,4 @@
 User-agent: *
-Crawl-delay: 30
+Allow: /
+
+Sitemap: https://imjaredz.com/sitemap.xml
