@@ -421,7 +421,7 @@
         document.body.appendChild(canvas);
         var ctx = canvas.getContext('2d');
         var dpr = Math.min(window.devicePixelRatio || 1, 2);
-        var CELL = 18;
+        var CELL = 26;
         var RAMP = '·:+*#@';
         var RADIUS = 3.2;
         var cols = 0, rows = 0;
@@ -435,7 +435,7 @@
             canvas.width = window.innerWidth * dpr;
             canvas.height = window.innerHeight * dpr;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            ctx.font = '15px monospace';
+            ctx.font = '18px monospace';
             cols = Math.ceil(window.innerWidth / CELL);
             rows = Math.ceil(window.innerHeight / CELL);
             grid = new Float32Array(cols * rows);
@@ -488,8 +488,8 @@
                     alive = true;
                     var level = Math.min(RAMP.length - 1,
                         Math.floor((v * 0.8 + seeds[idx] * 0.2) * RAMP.length));
-                    ctx.fillStyle = 'rgba(0, 0, 0, ' + (v * 0.25).toFixed(3) + ')';
-                    ctx.fillText(RAMP.charAt(level), gx * CELL, gy * CELL + 12);
+                    ctx.fillStyle = 'rgba(0, 0, 0, ' + (v * 0.12).toFixed(3) + ')';
+                    ctx.fillText(RAMP.charAt(level), gx * CELL, gy * CELL + 16);
                 }
             }
             raf = alive ? requestAnimationFrame(frame) : null;
