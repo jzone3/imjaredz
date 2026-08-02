@@ -291,11 +291,14 @@
         <ul>
             <li><a href="https://x.com/imjaredz/status/2071294679824363979">The reason Devin is having such a comeback</a> <span class="year">2026</span></li>
             <li><a href="https://x.com/imjaredz/status/2080088341262033273">Solving ~40 year old open math problems</a> <span class="year">2026</span></li>
+            <li><a href="assets/pdf/miracles_and_decay.pdf">Let's Believe in Miracles Again</a> <span class="year">2025</span></li>
+        </ul>
+        <ul id="hidden-posts" class="hidden">
             <li><a href="writing/every-agent-should-be-a-vm.html">Every Agent Should Be a VM</a> <span class="year">2025</span></li>
             <li><a href="writing/llm-idioms.html">LLM Idioms</a> <span class="year">2025</span></li>
             <li><a href="writing/the-death-of-prompt-engineering-has-been-greatly-exaggerated.html">The Death of Prompt Engineering Has Been Greatly Exaggerated</a> <span class="year">2025</span></li>
-            <li><a href="assets/pdf/miracles_and_decay.pdf">Let's Believe in Miracles Again</a> <span class="year">2025</span></li>
         </ul>
+        <span id="more-posts-button" class="more-button" onclick="toggleMorePosts()">see more</span>
 
         <h2 data-scramble>Talks &amp; Podcasts</h2>
         <ul>
@@ -313,6 +316,19 @@
         function toggleMore() {
             var hiddenItems = document.getElementById('hidden-items');
             var moreButton = document.getElementById('more-button');
+            if (hiddenItems.classList.contains('hidden')) {
+                hiddenItems.classList.remove('hidden');
+                moreButton.textContent = 'see less';
+                moreButton.style.transform = 'rotate(180deg)';
+            } else {
+                hiddenItems.classList.add('hidden');
+                moreButton.textContent = 'see more';
+                moreButton.style.transform = 'rotate(0deg)';
+            }
+        }
+        function toggleMorePosts() {
+            var hiddenItems = document.getElementById('hidden-posts');
+            var moreButton = document.getElementById('more-posts-button');
             if (hiddenItems.classList.contains('hidden')) {
                 hiddenItems.classList.remove('hidden');
                 moreButton.textContent = 'see less';
