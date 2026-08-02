@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jared Zoneraich</title>
+    <meta content="Jared Zoneraich: Builder in Residence at Cognition" name="description">
+    <link rel="canonical" href="https://imjaredz.com/">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://imjaredz.com/">
+    <meta property="og:title"       content="Jared Zoneraich">
+    <meta property="og:description" content="Builder in Residence at Cognition.">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@imjaredz">
+    <meta name="twitter:title"       content="Jared Zoneraich">
+    <meta name="twitter:description" content="Builder in Residence at Cognition.">
+
+    <meta name="robots" content="index,follow">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jared Zoneraich",
+      "url": "https://imjaredz.com/",
+      "sameAs": [
+        "https://x.com/imjaredz",
+        "https://linkedin.com/in/imjaredz"
+      ],
+      "jobTitle": "Builder in Residence, Cognition",
+      "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" }
+    }
+    </script>
+
+    <meta property="og:site_name" content="imjaredz.com">
+    <meta name="author" content="Jared Zoneraich">
+
+    <link href="assets/img/coffe_favicon.png" rel="icon">
+    <link href="assets/img/coffe_favicon.png" rel="apple-touch-icon">
+
+    <style>
+        @font-face {
+            font-family: "NB International Pro";
+            src: url("assets/fonts/NBInternationalPro-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "STK Bureau Serif";
+            src: url("assets/fonts/STKBureauSerif-Book.woff2") format("woff2");
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "STK Bureau Serif";
+            src: url("assets/fonts/STKBureauSerif-Medium.woff2") format("woff2");
+            font-weight: 500;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Geist Mono";
+            src: url("assets/fonts/GeistMono-Variable.woff2") format("woff2");
+            font-weight: 100 900;
+            font-display: swap;
+        }
+
+        :root {
+            --ink: #000;
+            --faint: #6b6b6b;
+            --hairline: #e5e5e5;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: monospace;
+            background: #fff;
+            color: var(--ink);
+            margin: 8px;
+            padding: 0;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 1.4;
+            margin: 0 0 16px;
+            position: relative;
+        }
+        h1::before { content: "# "; font-weight: 400; }
+
+        h2 {
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 13px;
+            margin: 28px 0 14px;
+        }
+        h2::before { content: "## "; font-weight: 400; }
+
+        p { margin: 0 0 14px; }
+
+        a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            text-decoration-color: #bbb;
+        }
+        a:hover { text-decoration-color: var(--ink); }
+
+        b, strong, .company { font-weight: 700; }
+        .company::before, .company::after { content: "**"; color: var(--faint); font-weight: 400; }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin: 0 0 8px;
+            padding-left: 2ch;
+            position: relative;
+        }
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+        }
+        li .desc {
+            display: block;
+            color: var(--faint);
+        }
+
+        .social-links {
+            margin: 4px 0 6px;
+        }
+        .social-links .dot { color: var(--faint); margin: 0 6px; }
+
+        .locale { color: var(--faint); margin-bottom: 0; }
+
+        .now { margin-top: 28px; margin-bottom: 28px; }
+        .now .now-title { font-weight: 700; }
+        .now p { margin: 0; color: var(--faint); }
+
+        .aside-link { color: var(--faint); font-size: 0.92em; }
+
+        .hidden { display: none; }
+
+        .more-button {
+            color: var(--faint);
+            cursor: pointer;
+            display: inline-block;
+            margin: 2px 0 0 2ch;
+        }
+        .more-button:hover { color: var(--ink); }
+
+        footer {
+            margin-top: 72px;
+            font-size: 13px;
+            color: var(--faint);
+        }
+
+        /* hero canvas (particle name) */
+        #name-canvas {
+            display: block;
+            width: 100%;
+            height: 40px;
+            margin: 0 0 8px;
+            cursor: default;
+        }
+        h1.fallback { display: none; }
+        .no-canvas h1.fallback { display: block; }
+        .no-canvas #name-canvas { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <canvas id="name-canvas" aria-hidden="true"></canvas>
+        <h1 class="fallback">Hi, I'm Jared Zoneraich</h1>
+
+        <div class="social-links">
+            <a href="https://x.com/imjaredz">X</a>
+            <span class="dot">·</span>
+            <a href="https://linkedin.com/in/imjaredz">LinkedIn</a>
+            <span class="dot">·</span>
+            <a href="mailto:me@imjaredz.com">Email</a>
+        </div>
+        <p class="locale">🇺🇸 New York, NY</p>
+
+        <div class="now">
+            <span class="now-title"><a href="https://cognition.ai">Cognition</a>, Builder in Residence</span>
+            <p>Building Devin — the first AI software engineer</p>
+        </div>
+
+        <h2 data-scramble>Formerly</h2>
+        <ul>
+            <li>
+                <span class="company">PromptLayer</span>, Founder &amp; CEO
+                <span class="desc">Built the first developer platform for prompt engineering
+                <a href="https://techcrunch.com/2025/02/07/promptlayer-is-building-tools-to-put-non-techies-in-the-drivers-seat-of-ai-app-development/" class="aside-link">(TechCrunch coverage)</a></span>
+            </li>
+            <li><span class="company">Tecton</span> (acquired by Databricks), Software Engineer</li>
+            <li><span class="company">Alsop Louie Partners</span>, Associate</li>
+            <li><span class="company">Facebook</span>, Software Engineering</li>
+            <li><span class="company">reddit</span>, Office of the CEO</li>
+        </ul>
+        <ul id="hidden-items" class="hidden">
+            <li><span class="company">IronNet Cybersecurity</span>, Cyber Research</li>
+            <li><span class="company">Google</span>, Software Engineering</li>
+            <li><span class="company">Implisit</span> (acquired by Salesforce), Software Engineer</li>
+            <li><span class="company">Major League Hacking</span>, Partnerships</li>
+            <li><span class="company">Warby Parker</span>, Software Engineering</li>
+            <li><span class="company">Newlio</span>, Software Engineering</li>
+        </ul>
+        <span id="more-button" class="more-button" onclick="toggleMore()">see more</span>
+
+        <h2 data-scramble>Education</h2>
+        <ul>
+            <li><span class="company">UC Berkeley</span>, B.S. in Electrical Engineering and Computer Science</li>
+        </ul>
+
+        <h2 data-scramble>Projects</h2>
+        <ul>
+            <li>
+                <span class="company">Montalvo Analytics</span>
+                <span class="desc">Data analytics for America's largest reform campaigns.</span>
+            </li>
+            <li>
+                <span class="company"><a href="https://www.p-jeans.com/">Presidio Jeans</a></span>
+                <span class="desc">Denim jeans brand made in the USA.</span>
+            </li>
+            <li>
+                <span class="company"><a href="https://hackernoon.com/introducing-startupsift-5571c74ed240">Startup Sift</a></span>
+                <span class="desc">Webapp to help engineers discover exciting startups to work for.</span>
+            </li>
+            <li>
+                <span class="company"><a href="https://hackbca.com">hackBCA</a></span>, Founder
+                <span class="desc">First ever high school hackathon hosting over 1,000 students.</span>
+            </li>
+            <li>
+                <span class="company">Hackathon Consulting</span>
+                <span class="desc">Helping companies like Intel better reach student developers.</span>
+            </li>
+            <li>
+                <span class="company">Learn to Drive</span>, TechCrunch Disrupt Hackathon Winner
+                <span class="desc">In-car app to teach new drivers. Featured and invited to speak.</span>
+            </li>
+        </ul>
+
+        <h2 data-scramble>Talks</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=RFKCzGlAU6Q">How Claude Code Works</a> (AI Engineer Conference)</li>
+            <li><a href="https://www.youtube.com/watch?v=sRk9c5NFGYc">The $5M Prompt Engineer</a> (The Jason Levin Show)</li>
+            <li><a href="https://www.youtube.com/watch?v=exzPO4hAD9s">How to Win With Prompt Engineering</a> (Dan Shipper Podcast)</li>
+            <li><a href="https://www.youtube.com/watch?v=xKV8_N1b5RI">Prompt Engineering and AI Constitutions with Stephen Wolfram</a></li>
+        </ul>
+
+        <footer>imjaredz.com · new york</footer>
+    </div>
+
+    <script>
+        function toggleMore() {
+            var hiddenItems = document.getElementById('hidden-items');
+            var moreButton = document.getElementById('more-button');
+            if (hiddenItems.classList.contains('hidden')) {
+                hiddenItems.classList.remove('hidden');
+                moreButton.textContent = 'see less';
+            } else {
+                hiddenItems.classList.add('hidden');
+                moreButton.textContent = 'see more';
+            }
+        }
+    </script>
+
+    <script>
+    // Hero name: canvas particle text that scatters away from the cursor.
+    (function () {
+        var canvas = document.getElementById('name-canvas');
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!canvas || !canvas.getContext || reduceMotion) {
+            document.body.classList.add('no-canvas');
+            return;
+        }
+        var ctx = canvas.getContext('2d');
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var particles = [];
+        var mouse = { x: -9999, y: -9999 };
+        var REPEL = 42;
+        var GAP = 2;
+
+        function build() {
+            var rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            var w = rect.width, h = rect.height;
+            var off = document.createElement('canvas');
+            off.width = w; off.height = h;
+            var octx = off.getContext('2d', { willReadFrequently: true });
+            var size = 20;
+            octx.font = '700 ' + size + 'px monospace';
+            octx.textBaseline = 'middle';
+            octx.fillStyle = '#000';
+            octx.fillText("# Hi, I'm Jared Zoneraich", 0, h / 2);
+
+            var data = octx.getImageData(0, 0, w, h).data;
+            particles = [];
+            for (var y = 0; y < h; y += GAP) {
+                for (var x = 0; x < w; x += GAP) {
+                    if (data[(y * w + x) * 4 + 3] > 128) {
+                        particles.push({ x: x, y: y, ox: x, oy: y, vx: 0, vy: 0 });
+                    }
+                }
+            }
+        }
+
+        function frame() {
+            var rect = canvas.getBoundingClientRect();
+            ctx.clearRect(0, 0, rect.width, rect.height);
+            ctx.fillStyle = '#000';
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
+                var dx = p.x - mouse.x, dy = p.y - mouse.y;
+                var d2 = dx * dx + dy * dy;
+                if (d2 < REPEL * REPEL) {
+                    var d = Math.sqrt(d2) || 1;
+                    var f = (REPEL - d) / REPEL;
+                    p.vx += (dx / d) * f * 3.2;
+                    p.vy += (dy / d) * f * 3.2;
+                }
+                p.vx += (p.ox - p.x) * 0.06;
+                p.vy += (p.oy - p.y) * 0.06;
+                p.vx *= 0.86;
+                p.vy *= 0.86;
+                p.x += p.vx;
+                p.y += p.vy;
+                ctx.fillRect(p.x, p.y, 1.2, 1.2);
+            }
+            requestAnimationFrame(frame);
+        }
+
+        canvas.addEventListener('mousemove', function (e) {
+            var r = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - r.left;
+            mouse.y = e.clientY - r.top;
+        });
+        canvas.addEventListener('mouseleave', function () {
+            mouse.x = -9999; mouse.y = -9999;
+        });
+        window.addEventListener('resize', build);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+        build();
+        requestAnimationFrame(frame);
+    })();
+    </script>
+
+    <script>
+    // Section headings: brief character scramble on hover.
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ*#+';
+        document.querySelectorAll('[data-scramble]').forEach(function (el) {
+            var original = el.textContent;
+            var timer = null;
+            el.addEventListener('mouseenter', function () {
+                var i = 0;
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    el.textContent = original.split('').map(function (ch, idx) {
+                        if (ch === ' ' || idx < i) return ch;
+                        return CHARS.charAt((Math.random() * CHARS.length) | 0);
+                    }).join('');
+                    if (i++ >= original.length) {
+                        clearInterval(timer);
+                        el.textContent = original;
+                    }
+                }, 28);
+            });
+            el.addEventListener('mouseleave', function () {
+                clearInterval(timer);
+                el.textContent = original;
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
