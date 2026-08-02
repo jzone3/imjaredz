@@ -508,7 +508,7 @@
                 c.life -= 0.02;
                 if (c.life <= 0) { delete cells[key]; continue; }
                 alive = true;
-                ctx.fillStyle = 'rgba(0, 0, 0, ' + (c.life * 0.22).toFixed(3) + ')';
+                ctx.fillStyle = 'rgba(0, 0, 0, ' + (c.life * 0.1).toFixed(3) + ')';
                 ctx.fillText(c.ch, c.x, c.y);
             }
             raf = alive ? requestAnimationFrame(frame) : null;
@@ -524,8 +524,9 @@
             var cx = Math.floor(e.clientX / CELL), cy = Math.floor(e.clientY / CELL);
             for (var i = -1; i <= 1; i++) {
                 for (var j = -1; j <= 1; j++) {
-                    if (Math.random() > 0.5) continue;
                     var key = (cx + i) + ',' + (cy + j);
+                    if (cells[key]) { cells[key].life = Math.max(cells[key].life, 1); continue; }
+                    if (Math.random() > 0.5) continue;
                     cells[key] = {
                         x: (cx + i) * CELL, y: (cy + j) * CELL + 10,
                         ch: CHARS.charAt((Math.random() * CHARS.length) | 0),
