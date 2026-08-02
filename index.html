@@ -3,31 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 
     <title>Jared Zoneraich</title>
-    <meta content="Jared Zoneraich: Founder & CEO of PromptLayer" name="description">
+    <meta content="Jared Zoneraich: Builder in Residence at Cognition" name="description">
     <link rel="canonical" href="https://imjaredz.com/">
 
-
-    <!-- 3. Open Graph (Facebook, LinkedIn, etc.) -->
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://imjaredz.com/">
     <meta property="og:title"       content="Jared Zoneraich">
-    <meta property="og:description" content="Founder & CEO of PromptLayer.">
+    <meta property="og:description" content="Builder in Residence at Cognition.">
 
-
-    <!-- 4. Twitter card -->
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:site"        content="@imjaredz">
     <meta name="twitter:title"       content="Jared Zoneraich">
-    <meta name="twitter:description" content="Founder & CEO of PromptLayer.">
+    <meta name="twitter:description" content="Builder in Residence at Cognition.">
 
-    
-    <!-- 5. Robots (optional; default is index/follow) -->
     <meta name="robots" content="index,follow">
 
-    <!-- 6. Optional: Person structured data for richer results -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,7 +30,7 @@
         "https://x.com/imjaredz",
         "https://linkedin.com/in/imjaredz"
       ],
-      "jobTitle": "Founder & CEO, PromptLayer",
+      "jobTitle": "Builder in Residence, Cognition",
       "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" }
     }
     </script>
@@ -46,356 +38,250 @@
     <meta property="og:site_name" content="imjaredz.com">
     <meta name="author" content="Jared Zoneraich">
 
-    <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-36906134-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-
-    <!-- Favicons -->
     <link href="assets/img/coffe_favicon.png" rel="icon">
     <link href="assets/img/coffe_favicon.png" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap" rel="stylesheet">
-
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    
     <style>
+        @font-face {
+            font-family: "NB International Pro";
+            src: url("assets/fonts/NBInternationalPro-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "STK Bureau Serif";
+            src: url("assets/fonts/STKBureauSerif-Book.woff2") format("woff2");
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "STK Bureau Serif";
+            src: url("assets/fonts/STKBureauSerif-Medium.woff2") format("woff2");
+            font-weight: 500;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Geist Mono";
+            src: url("assets/fonts/GeistMono-Variable.woff2") format("woff2");
+            font-weight: 100 900;
+            font-display: swap;
+        }
+
+        :root {
+            --ink: #000;
+            --faint: #6b6b6b;
+            --hairline: #e5e5e5;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            background-color: white;
-            color: #666;
+            font-family: "NB International Pro", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+            background: #fff;
+            color: var(--ink);
             margin: 0;
             padding: 0;
+            font-size: 15px;
             line-height: 1.6;
         }
-        
-        .header {
-            background-color: #f9f9f9;
-            padding: 40px 20px 30px;
-            border-bottom: 1px solid #eee;
-        }
-        
+
         .container {
-            max-width: 700px;
+            max-width: 640px;
             margin: 0 auto;
-            text-align: left;
-            padding: 0 20px;
+            padding: 72px 24px 96px;
         }
-        
-        .content {
-            padding: 40px 20px;
-        }
-        
-        h1, h2, h3 {
-            font-weight: normal;
-            color: #333;
-        }
-        
+
         h1 {
-            margin-bottom: 15px;
-            font-size: 2em;
-            white-space: nowrap;
+            font-family: "STK Bureau Serif", Georgia, serif;
+            font-weight: 500;
+            font-size: 34px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin: 0 0 10px;
+            position: relative;
         }
-        
+
         h2 {
-            margin-top: 50px;
-            margin-bottom: 20px;
-            font-size: 1.4em;
-            font-weight: 600;
-            color: #333;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            padding-left: 0;
+            font-family: "Geist Mono", Menlo, monospace;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin: 56px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--hairline);
         }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        .project {
-            margin-bottom: 25px;
-        }
-        
-        .project-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        
-        .project-description {
-            margin-top: 0;
-        }
-        
-        ul {
-            padding-left: 20px;
-            margin: 15px 0;
-            list-style-type: square;
-        }
-        
-        li {
-            margin-bottom: 10px;
-            padding-right: 20px;
-        }
-        
+        h2::before { content: "## "; color: var(--faint); }
+
+        p { margin: 0 0 12px; }
+
         a {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-bottom: 1px solid #000;
-            padding-bottom: 1px;
-            transition: color 0.2s ease;
-        }
-        
-        a:hover {
-            color: #4169E1;
-            border-bottom-color: #4169E1;
-        }
-        
-        .company {
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .section-divider {
-            border-top: 1px solid #eee;
-            margin: 40px 0;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        #hidden-items li {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-        
-        .more-button {
-            display: inline-block;
-            margin-top: 10px;
-            cursor: pointer;
-            color: #999;
-            font-weight: normal;
-            border-bottom: 1px solid #999;
-            padding-bottom: 1px;
-        }
-        
-        .more-button:hover {
+            color: var(--ink);
             text-decoration: underline;
-            color: #4169E1;
-            border-bottom-color: #4169E1;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            text-decoration-color: #bbb;
         }
-        
-        .more-button::after {
-            content: "›";
-            display: inline-block;
-            margin-left: 5px;
-            transform: rotate(90deg);
+        a:hover { text-decoration-color: var(--ink); }
+
+        b, strong, .company { font-weight: 600; }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
-        .techcrunch {
-            display: inline-block;
-            font-size: 0.9em;
-            color: #999;
-            margin-top: 2px;
-            margin-left: 0;
-            border-bottom: 1px solid #999;
+        li {
+            margin: 0 0 14px;
+            padding-left: 18px;
+            position: relative;
         }
-        
-        .techcrunch:hover {
-            color: #4169E1;
-            border-bottom-color: #4169E1;
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: var(--faint);
         }
-        
-        .top-project {
-            margin-bottom: 30px;
+        li .desc {
+            display: block;
+            color: var(--faint);
+            margin-top: 1px;
         }
-        
-        .top-project-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #333;
-            font-size: 1.1em;
-        }
-        
-        .top-project-description {
-            margin-top: 0;
-            margin-bottom: 2px;
-            color: #666;
-        }
-        
+
         .social-links {
-            margin-top: 10px;
-            margin-bottom: 15px;
+            font-family: "Geist Mono", Menlo, monospace;
+            font-size: 13px;
+            margin: 4px 0 6px;
         }
-        
-        .social-links a {
-            font-weight: bold;
-            margin-right: 3px;
+        .social-links .dot { color: var(--faint); margin: 0 6px; }
+
+        .locale { color: var(--faint); margin-bottom: 0; }
+
+        .now {
+            margin-top: 48px;
+            padding: 16px 18px;
+            border: 1px solid var(--ink);
         }
-        
-        .dot {
+        .now .now-title { font-weight: 600; }
+        .now p { margin: 2px 0 0; color: var(--faint); }
+
+        .aside-link { color: var(--faint); font-size: 0.92em; }
+
+        .hidden { display: none; }
+
+        .more-button {
+            font-family: "Geist Mono", Menlo, monospace;
+            font-size: 12px;
+            color: var(--faint);
+            cursor: pointer;
             display: inline-block;
-            margin: 0 3px;
-            color: #666;
+            margin-top: 2px;
+            border-bottom: 1px dashed #bbb;
         }
-        
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 30px;
-            }
-            
-            .header {
-                padding: 40px 20px 30px;
-                text-align: center;
-            }
-            
-            .header .container {
-                text-align: center;
-            }
-            
-            .content {
-                padding: 30px 20px;
-            }
-            
-            ul {
-                padding-left: 15px;
-            }
-            
-            h1 {
-                font-size: 1.8em;
-                white-space: nowrap;
-            }
-            
-            .greeting {
-                display: none;
-            }
+        .more-button:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+        footer {
+            margin-top: 72px;
+            padding-top: 16px;
+            border-top: 1px solid var(--hairline);
+            font-family: "Geist Mono", Menlo, monospace;
+            font-size: 11px;
+            color: var(--faint);
+        }
+
+        /* hero canvas (particle name) */
+        #name-canvas {
+            display: block;
+            width: 100%;
+            height: 96px;
+            margin: 0 0 6px;
+            cursor: default;
+        }
+        h1.fallback { display: none; }
+        .no-canvas h1.fallback { display: block; }
+        .no-canvas #name-canvas { display: none; }
+
+        @media (max-width: 640px) {
+            .container { padding: 48px 20px 72px; }
         }
     </style>
-    <script>
-        function toggleMore() {
-            var hiddenItems = document.getElementById('hidden-items');
-            var moreButton = document.getElementById('more-button');
-            var items = hiddenItems.querySelectorAll('li');
-            
-            if (hiddenItems.classList.contains('hidden')) {
-                hiddenItems.classList.remove('hidden');
-                moreButton.textContent = 'See less';
-                moreButton.style.transform = 'rotate(180deg)';
-                moreButton.style.transition = 'transform 0.5s ease, color 0.3s ease';
-                
-                // Animate each item appearing with a slight delay between each
-                items.forEach(function(item, index) {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(10px)';
-                    item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                    setTimeout(function() {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 100 * index);
-                });
-            } else {
-                hiddenItems.classList.add('hidden');
-                moreButton.textContent = 'See more';
-                moreButton.style.transform = 'rotate(0deg)';
-                moreButton.style.transition = 'transform 0.5s ease, color 0.3s ease';
-            }
-        }
-    </script>
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <h1><span class="greeting">Hi, </span>I'm Jared Zoneraich</h1>
-            <div class="social-links">
-                <a href="https://x.com/imjaredz">X</a>
-                <span class="dot">•</span>
-                <a href="https://linkedin.com/in/imjaredz">LinkedIn</a>
-                <span class="dot">•</span>
-                <a href="mailto:me@imjaredz.com">Email</a>
-            </div>
-            <p>🇺🇸 New York, NY</p>
+    <div class="container">
+
+        <canvas id="name-canvas" aria-hidden="true"></canvas>
+        <h1 class="fallback">Hi, I'm Jared Zoneraich</h1>
+
+        <div class="social-links">
+            <a href="https://x.com/imjaredz">X</a>
+            <span class="dot">·</span>
+            <a href="https://linkedin.com/in/imjaredz">LinkedIn</a>
+            <span class="dot">·</span>
+            <a href="mailto:me@imjaredz.com">Email</a>
         </div>
-    </div>
-    
-    <div class="container content">
-        <div class="top-project">
-            <div class="top-project-title"><a href="https://cognition.ai">Cognition</a>, Builder in Residence</div>
-            <p class="top-project-description">Building Devin - the first AI software engineer</p>
+        <p class="locale">🇺🇸 New York, NY</p>
+
+        <div class="now">
+            <span class="now-title"><a href="https://cognition.ai">Cognition</a>, Builder in Residence</span>
+            <p>Building Devin — the first AI software engineer</p>
         </div>
-        
-        <h2>FORMERLY</h2>
+
+        <h2 data-scramble>Formerly</h2>
         <ul>
             <li>
-                <span class="company">PromptLayer</span>, Founder & CEO
-                <p class="project-description" style="margin-top: 2px; margin-bottom: 0; line-height: 1.6; font-size: 0.95em;">Built the first developer platform for prompt engineering</p>
-                <a href="https://techcrunch.com/2025/02/07/promptlayer-is-building-tools-to-put-non-techies-in-the-drivers-seat-of-ai-app-development/" class="techcrunch" style="margin-top: 0; line-height: 1.6;">(TechCrunch coverage)</a>
+                <span class="company">PromptLayer</span>, Founder &amp; CEO
+                <span class="desc">Built the first developer platform for prompt engineering
+                <a href="https://techcrunch.com/2025/02/07/promptlayer-is-building-tools-to-put-non-techies-in-the-drivers-seat-of-ai-app-development/" class="aside-link">(TechCrunch coverage)</a></span>
             </li>
             <li><span class="company">Tecton</span> (acquired by Databricks), Software Engineer</li>
             <li><span class="company">Alsop Louie Partners</span>, Associate</li>
             <li><span class="company">Facebook</span>, Software Engineering</li>
             <li><span class="company">reddit</span>, Office of the CEO</li>
-            <div id="hidden-items" class="hidden">
-                <li><span class="company">IronNet Cybersecurity</span>, Cyber Research</li>
-                <li><span class="company">Google</span>, Software Engineering</li>
-                <li><span class="company">Implisit</span> (acquired by Salesforce), Software Engineer</li>
-                <li><span class="company">Major League Hacking</span>, Partnerships</li>
-                <li><span class="company">Warby Parker</span>, Software Engineering</li>
-                <li><span class="company">Newlio</span>, Software Engineering</li>
-            </div>
         </ul>
-        <div id="more-button" class="more-button" onclick="toggleMore()">See more</div>
-        
-        <h2>EDUCATION</h2>
+        <ul id="hidden-items" class="hidden">
+            <li><span class="company">IronNet Cybersecurity</span>, Cyber Research</li>
+            <li><span class="company">Google</span>, Software Engineering</li>
+            <li><span class="company">Implisit</span> (acquired by Salesforce), Software Engineer</li>
+            <li><span class="company">Major League Hacking</span>, Partnerships</li>
+            <li><span class="company">Warby Parker</span>, Software Engineering</li>
+            <li><span class="company">Newlio</span>, Software Engineering</li>
+        </ul>
+        <span id="more-button" class="more-button" onclick="toggleMore()">see more</span>
+
+        <h2 data-scramble>Education</h2>
         <ul>
             <li><span class="company">UC Berkeley</span>, B.S. in Electrical Engineering and Computer Science</li>
         </ul>
-        
-        <h2>PROJECTS</h2>
+
+        <h2 data-scramble>Projects</h2>
         <ul>
             <li>
-                <div class="project-title">Montalvo Analytics</div>
-                <p class="project-description">Data analytics for America's largest reform campaigns.</p>
+                <span class="company">Montalvo Analytics</span>
+                <span class="desc">Data analytics for America's largest reform campaigns.</span>
             </li>
-            
             <li>
-                <div class="project-title"><a href="https://www.p-jeans.com/">Presidio Jeans</a></div>
-                <p class="project-description">Denim jeans brand made in the USA.</p>
+                <span class="company"><a href="https://www.p-jeans.com/">Presidio Jeans</a></span>
+                <span class="desc">Denim jeans brand made in the USA.</span>
             </li>
-            
             <li>
-                <div class="project-title"><a href="https://hackernoon.com/introducing-startupsift-5571c74ed240">Startup Sift</a></div>
-                <p class="project-description">Webapp to help engineers discover exciting startups to work for.</p>
+                <span class="company"><a href="https://hackernoon.com/introducing-startupsift-5571c74ed240">Startup Sift</a></span>
+                <span class="desc">Webapp to help engineers discover exciting startups to work for.</span>
             </li>
-            
             <li>
-                <div class="project-title"><a href="https://hackbca.com">hackBCA</a>, Founder</div>
-                <p class="project-description">First ever high school hackathon hosting over 1,000 students.</p>
+                <span class="company"><a href="https://hackbca.com">hackBCA</a></span>, Founder
+                <span class="desc">First ever high school hackathon hosting over 1,000 students.</span>
             </li>
-            
             <li>
-                <div class="project-title">Hackathon Consulting</div>
-                <p class="project-description">Helping companies like Intel better reach student developers.</p>
+                <span class="company">Hackathon Consulting</span>
+                <span class="desc">Helping companies like Intel better reach student developers.</span>
             </li>
-            
             <li>
-                <div class="project-title">Learn to Drive, TechCrunch Disrupt Hackathon Winner</div>
-                <p class="project-description">In-car app to teach new drivers. Featured and invited to speak.</p>
+                <span class="company">Learn to Drive</span>, TechCrunch Disrupt Hackathon Winner
+                <span class="desc">In-car app to teach new drivers. Featured and invited to speak.</span>
             </li>
         </ul>
-        
-        <h2>TALKS</h2>
+
+        <h2 data-scramble>Talks</h2>
         <ul>
             <li><a href="https://www.youtube.com/watch?v=RFKCzGlAU6Q">How Claude Code Works</a> (AI Engineer Conference)</li>
             <li><a href="https://www.youtube.com/watch?v=sRk9c5NFGYc">The $5M Prompt Engineer</a> (The Jason Levin Show)</li>
@@ -403,12 +289,134 @@
             <li><a href="https://www.youtube.com/watch?v=xKV8_N1b5RI">Prompt Engineering and AI Constitutions with Stephen Wolfram</a></li>
         </ul>
 
-        <!--
-        <h2>WRITINGS</h2>
-        <ul>
-            <li><a href="assets/pdf/miracles_and_decay.pdf">Let's Believe in Miracles Again</a></li>
-        </ul>
-        -->
+        <footer>imjaredz.com · new york</footer>
     </div>
+
+    <script>
+        function toggleMore() {
+            var hiddenItems = document.getElementById('hidden-items');
+            var moreButton = document.getElementById('more-button');
+            if (hiddenItems.classList.contains('hidden')) {
+                hiddenItems.classList.remove('hidden');
+                moreButton.textContent = 'see less';
+            } else {
+                hiddenItems.classList.add('hidden');
+                moreButton.textContent = 'see more';
+            }
+        }
+    </script>
+
+    <script>
+    // Hero name: canvas particle text that scatters away from the cursor.
+    (function () {
+        var canvas = document.getElementById('name-canvas');
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!canvas || !canvas.getContext || reduceMotion) {
+            document.body.classList.add('no-canvas');
+            return;
+        }
+        var ctx = canvas.getContext('2d');
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var particles = [];
+        var mouse = { x: -9999, y: -9999 };
+        var REPEL = 42;
+        var GAP = 2;
+
+        function build() {
+            var rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            var w = rect.width, h = rect.height;
+            var off = document.createElement('canvas');
+            off.width = w; off.height = h;
+            var octx = off.getContext('2d', { willReadFrequently: true });
+            var size = Math.min(38, Math.max(24, w / 12));
+            octx.font = '500 ' + size + 'px "STK Bureau Serif", Georgia, serif';
+            octx.textBaseline = 'middle';
+            octx.fillStyle = '#000';
+            octx.fillText("Hi, I'm Jared Zoneraich", 0, h / 2);
+
+            var data = octx.getImageData(0, 0, w, h).data;
+            particles = [];
+            for (var y = 0; y < h; y += GAP) {
+                for (var x = 0; x < w; x += GAP) {
+                    if (data[(y * w + x) * 4 + 3] > 128) {
+                        particles.push({ x: x, y: y, ox: x, oy: y, vx: 0, vy: 0 });
+                    }
+                }
+            }
+        }
+
+        function frame() {
+            var rect = canvas.getBoundingClientRect();
+            ctx.clearRect(0, 0, rect.width, rect.height);
+            ctx.fillStyle = '#000';
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
+                var dx = p.x - mouse.x, dy = p.y - mouse.y;
+                var d2 = dx * dx + dy * dy;
+                if (d2 < REPEL * REPEL) {
+                    var d = Math.sqrt(d2) || 1;
+                    var f = (REPEL - d) / REPEL;
+                    p.vx += (dx / d) * f * 3.2;
+                    p.vy += (dy / d) * f * 3.2;
+                }
+                p.vx += (p.ox - p.x) * 0.06;
+                p.vy += (p.oy - p.y) * 0.06;
+                p.vx *= 0.86;
+                p.vy *= 0.86;
+                p.x += p.vx;
+                p.y += p.vy;
+                ctx.fillRect(p.x, p.y, 1.2, 1.2);
+            }
+            requestAnimationFrame(frame);
+        }
+
+        canvas.addEventListener('mousemove', function (e) {
+            var r = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - r.left;
+            mouse.y = e.clientY - r.top;
+        });
+        canvas.addEventListener('mouseleave', function () {
+            mouse.x = -9999; mouse.y = -9999;
+        });
+        window.addEventListener('resize', build);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+        build();
+        requestAnimationFrame(frame);
+    })();
+    </script>
+
+    <script>
+    // Section headings: brief character scramble on hover.
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ*#+';
+        document.querySelectorAll('[data-scramble]').forEach(function (el) {
+            var original = el.textContent;
+            var timer = null;
+            el.addEventListener('mouseenter', function () {
+                var i = 0;
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    el.textContent = original.split('').map(function (ch, idx) {
+                        if (ch === ' ' || idx < i) return ch;
+                        return CHARS.charAt((Math.random() * CHARS.length) | 0);
+                    }).join('');
+                    if (i++ >= original.length) {
+                        clearInterval(timer);
+                        el.textContent = original;
+                    }
+                }, 28);
+            });
+            el.addEventListener('mouseleave', function () {
+                clearInterval(timer);
+                el.textContent = original;
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
