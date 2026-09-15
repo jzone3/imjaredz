@@ -165,18 +165,6 @@ Then save and make sure the automation is **enabled**.
 
 When everything works, summarize what was set up, where each setting lives, and how to turn it off.
 
-## Three things we learned running this
-
-**1. Devins need shared memory.** If you use an alerting product, you get tons of duplicate alerts, because things keep going off. Your agent needs the full context of its previous runs. Honestly, solving this is not that hard: we just gave it a Markdown file with read and write access. Same way humans share a runbook or a postmortem. Models are good enough now that the agents figure out the rest.
-
-**2. Don't force code changes.** Once this was running, we found most investigations shouldn't end in a code change at all. So we tweaked the agent: you don't have to push code at the end. Sometimes an investigation is a no-op, or just a learning, or "this is a config problem, not a code problem." Not everything needs a PR.
-
-**3. Different agents for different tasks.** We have a triage Devin that's told *not* to investigate root causes, just triage, point to previous results, and hand off. And an investigation Devin whose job is the diagnosis, not the PR. It replies in the thread, and a human decides if anything should change. Agents are good at doing one thing specifically. It's the same Devin under the hood, just different prompts.
-
-## If you're not using Devin
-
-Of course I want you to use Devin, but this should be useful if you're building it yourself too. You need a dedicated alerts channel, an agent that gets kicked off per message, read access to your observability data (Datadog's MCP server works with any MCP client), a Markdown file it can read and write as memory, and an explicit instruction that it doesn't have to open a PR. Start with one low-severity monitor. You don't need to be a cutting-edge AI company to do this.
-
 ## Links
 
 - Devin auto-triage guide: https://docs.devin.ai/product-guides/auto-triage
