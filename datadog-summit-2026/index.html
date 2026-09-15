@@ -205,8 +205,9 @@
         <h1>Set up Devin as the first responder for your Datadog alerts</h1>
         <p class="meta">Jared Zoneraich &middot; Datadog Summit SF &middot; September 2026 &middot; <a href="https://devindatadog.com">devindatadog.com</a></p>
 
-        <p>This is the leave-behind from my talk, <em>Devin builds Devin</em>. It's the setup we run at Cognition: Datadog alerts land in a Slack channel, Devin picks each one up, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause. Humans review. Code changes only happen when the evidence says so.</p>
-        <p><strong>The rest of this page is written for Devin to read.</strong> Hand it the URL and it will guide you through the setup step by step. You can also follow it yourself.</p>
+        <p>This is the leave-behind from my Datadog Summit talk, <em>Devin builds Devin</em>. Quick version: our team is a little under 3x the size it was in November 2025, we're shipping 40x more PRs, and agents write basically all of our code now. More code means more alerts, and our Datadog alerts were through the roof. Humans can't even get through that backlog. So we made Devin the first responder to every single alert.</p>
+        <p>Every alert gets piped into Slack. Devin picks it up, pulls whatever it needs from Datadog, git, and Slack, and replies in the thread with what it thinks happened. From there we work with it like a teammate. Code changes only happen when the evidence says so, and honestly that's rare.</p>
+        <p><strong>The rest of this page is written for Devin, not for you.</strong> Hand it the URL and it'll walk you through the setup step by step. Or read it yourself. None of this is hard.</p>
 
         <div class="cta">
             <p><a class="btn" href="https://app.devin.ai/?prompt=I%20just%20saw%20Jared%20Zoneraich%27s%20Datadog%20Summit%20talk%20on%20using%20Devin%20as%20the%20first%20responder%20for%20Datadog%20alerts%2C%20and%20I%20want%20the%20same%20setup%20for%20my%20team%3A%20Datadog%20alerts%20post%20to%20a%20Slack%20channel%2C%20a%20Devin%20automation%20picks%20up%20each%20alert%2C%20investigates%20it%20with%20the%20Datadog%20MCP%20and%20our%20repos%2C%20and%20replies%20in%20the%20thread%20with%20a%20root%20cause%20%28a%20PR%20only%20if%20the%20evidence%20warrants%20one%29.%0A%0ARead%20https%3A%2F%2Fimjaredz.com%2Fdatadog-summit-2026%2F%20first.%20Then%20guide%20me%20through%20the%20setup%20one%20step%20at%20a%20time%3A%20tell%20me%20exactly%20what%20to%20click%20in%20Slack%2C%20Datadog%2C%20and%20the%20Devin%20app%2C%20do%20the%20parts%20you%20can%20do%20yourself%2C%20and%20wait%20for%20me%20to%20confirm%20each%20step%20before%20moving%20on.&amp;utm_source=imjaredz&amp;utm_medium=web&amp;utm_campaign=datadog-summit-2026">Open in Devin</a></p>
@@ -234,6 +235,8 @@ Investigation Devin (one per alert) ──────────────�
     • git log, recent deploys, the code
     • prior investigations
     • ~98% end in a diagnosis, &lt;2% in a PR</pre>
+
+        <p>That's the whole thing. One real investigation on our side: 45 Datadog calls, 7 code searches, 4 file reads, 7 git commands, 32 Slack messages read, and then one message back in the thread. The hard part isn't the wiring. It's letting the agent find the signal in the noise, and letting it learn from how it triaged last time.</p>
 
         <h2>Instructions for Devin</h2>
 
@@ -333,12 +336,12 @@ Pull only the data you need. Don't dump every log and metric into the thread.</c
         <p>When everything works, summarize what was set up, where each setting lives, and how to turn it off.</p>
 
         <h2>Three things we learned running this</h2>
-        <p><strong>1. Give the agents a shared scratchpad.</strong> Alerting products produce duplicate alerts. Every Devin in the loop reads and writes one shared Markdown file, the same way humans share a runbook or a postmortem. That's how a new session knows this alert is the one from last week, and what was found then.</p>
-        <p><strong>2. Don't force code changes.</strong> Our alert investigations went up 75% in the first six weeks, and under 2% of them resulted in (or should have resulted in) a code change. We told the agent it doesn't have to push code at the end. Sometimes an investigation is a no-op or a learning. That saved a lot of time and money.</p>
-        <p><strong>3. Different agents for different tasks.</strong> A triage Devin that is told <em>not</em> to investigate root causes, just to classify and route. An investigation Devin that digs in. A separate Devin, with its own prompt and its own access, if code needs to change. Different jobs, different prompts, different permissions.</p>
+        <p><strong>1. Devins need shared memory.</strong> If you use an alerting product, you get tons of duplicate alerts, because things keep going off. Your agent needs the full context of its previous runs. Honestly, solving this is not that hard: we just gave it a Markdown file with read and write access. Same way humans share a runbook or a postmortem. Models are good enough now that the agents figure out the rest.</p>
+        <p><strong>2. Don't force code changes.</strong> Our alert volume was up 75% in the first six weeks, and less than 2% of the investigations actually resulted in a code change, or should have. So we tweaked the agent: you don't have to push code at the end. Sometimes an investigation is a no-op, or just a learning. Not everything needs a PR. That saved a lot of money and a lot of time.</p>
+        <p><strong>3. Different agents for different tasks.</strong> We have a triage Devin that's told <em>not</em> to investigate root causes, just triage, point to previous results, and hand off. An investigation Devin whose job is the diagnosis, not the PR. And a separate Devin with write access for when code actually needs to change. Agents are good at doing one thing specifically. It's the same Devin under the hood, just different prompts and different permissions.</p>
 
         <h2>If you're not using Devin</h2>
-        <p>The pattern still holds. You need: a dedicated alerts channel, an agent that is triggered per message, read access to your observability data (Datadog's MCP server works with any MCP client), a shared file it can use as memory, and an explicit instruction not to open PRs by default. Start with one low-severity monitor and grow from there.</p>
+        <p>Of course I want you to use Devin, but this should be useful if you're building it yourself too. You need a dedicated alerts channel, an agent that gets kicked off per message, read access to your observability data (Datadog's MCP server works with any MCP client), a Markdown file it can read and write as memory, and an explicit instruction that it doesn't have to open a PR. Start with one low-severity monitor. You don't need to be a cutting-edge AI company to do this.</p>
 
         <h2>Links</h2>
         <ul>
