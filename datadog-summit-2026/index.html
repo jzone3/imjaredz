@@ -222,28 +222,13 @@ Read https://imjaredz.com/datadog-summit-2026/ first. Then guide me through the 
 <pre class="diagram">Datadog monitor
     │  @slack-alerts
     ▼
-Slack #alerts  ◀─────────────────────────────────────┐
-    │  new message                                   │
-    │  (condition: text contains @slack-alerts)      │
-    ▼                                                │
-┌─ one automation: the Triage Devin template ──────┐ │
-│                                                  │ │
-│ Triage Devin (persistent)                        │ │
-│   • noise → ignore                               │ │
-│   • duplicate → link to the existing thread ─────┼─┤
-│   • shared scratchpad = memory across alerts     │ │
-│   • actionable → spawns an investigation Devin   │ │
-│     (not a second automation)                    │ │
-│                                                  │ │
-│ Investigation Devin (one per actionable alert)   │ │
-│   • Datadog MCP: logs, metrics, traces, monitors │ │
-│   • git log, recent deploys, the code            │ │
-│   • prior findings in the scratchpad             │ │
-│   • reply in thread: what happened, when it ─────┼─┘
-│     started, root cause, confidence, next        │
-│     step, @owner                                 │
-│   • PR only if a human asks                      │
-└──────────────────────────────────────────────────┘</pre>
+Slack #alerts  ◀────────────────────────┐
+    │  new alert message                │  reply in the thread:
+    ▼                                   │  what happened, root cause,
+Triage Devin (one automation)           │  confidence, next step, @owner,
+    • filters noise, groups duplicates  │  PR only if a human asks
+    • investigates with Datadog MCP,    │
+      git, the code, past alerts ───────┘</pre>
 
         <p>That's the whole thing. In a real investigation, Devin is making dozens of Datadog calls, searching the repo, running git commands, and reading the Slack history, and then sending one message back in the thread. The hard part isn't the wiring. It's letting the agent find the signal in the noise, and letting it learn from how it triaged last time.</p>
 
