@@ -139,6 +139,7 @@
             position: relative;
         }
         pre.diagram { font-size: 12px; }
+        pre.prompt { white-space: pre-wrap; overflow-wrap: anywhere; padding-right: 64px; }
         .copy-btn {
             position: absolute;
             top: 6px;
@@ -208,9 +209,11 @@
         <p><strong>The rest of this page is written for Devin to read.</strong> Hand it the URL and it will guide you through the setup step by step. You can also follow it yourself.</p>
 
         <div class="cta">
-            <p><a class="btn" href="https://app.devin.ai/?prompt=Can%20we%20set%20up%20Jared%27s%20talk%20from%20Datadog%20Summit%3F%20Read%20https%3A%2F%2Fimjaredz.com%2Fdatadog-summit-2026%2F%20first%2C%20then%20guide%20me%20step%20by%20step%20through%20setting%20up%20Devin%20as%20the%20first%20responder%20for%20the%20Datadog%20alerts%20in%20my%20Slack%20channel.&amp;utm_source=imjaredz&amp;utm_medium=web&amp;utm_campaign=datadog-summit-2026">Open in Devin</a></p>
-            <p><span class="or">or paste this into any Devin session (or @Devin in Slack):</span></p>
-<pre><code>Can we set up Jared's talk? devindatadog.com</code></pre>
+            <p><a class="btn" href="https://app.devin.ai/?prompt=I%20just%20saw%20Jared%20Zoneraich%27s%20Datadog%20Summit%20talk%20on%20using%20Devin%20as%20the%20first%20responder%20for%20Datadog%20alerts%2C%20and%20I%20want%20the%20same%20setup%20for%20my%20team%3A%20Datadog%20alerts%20post%20to%20a%20Slack%20channel%2C%20a%20Devin%20automation%20picks%20up%20each%20alert%2C%20investigates%20it%20with%20the%20Datadog%20MCP%20and%20our%20repos%2C%20and%20replies%20in%20the%20thread%20with%20a%20root%20cause%20%28a%20PR%20only%20if%20the%20evidence%20warrants%20one%29.%0A%0ARead%20https%3A%2F%2Fimjaredz.com%2Fdatadog-summit-2026%2F%20first.%20Then%20guide%20me%20through%20the%20setup%20one%20step%20at%20a%20time%3A%20tell%20me%20exactly%20what%20to%20click%20in%20Slack%2C%20Datadog%2C%20and%20the%20Devin%20app%2C%20do%20the%20parts%20you%20can%20do%20yourself%2C%20and%20wait%20for%20me%20to%20confirm%20each%20step%20before%20moving%20on.&amp;utm_source=imjaredz&amp;utm_medium=web&amp;utm_campaign=datadog-summit-2026">Open in Devin</a></p>
+            <p><span class="or">or paste this prompt into any Devin session (or @Devin in Slack):</span></p>
+<pre class="prompt"><code>I just saw Jared Zoneraich&#x27;s Datadog Summit talk on using Devin as the first responder for Datadog alerts, and I want the same setup for my team: Datadog alerts post to a Slack channel, a Devin automation picks up each alert, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause (a PR only if the evidence warrants one).
+
+Read https://imjaredz.com/datadog-summit-2026/ first. Then guide me through the setup one step at a time: tell me exactly what to click in Slack, Datadog, and the Devin app, do the parts you can do yourself, and wait for me to confirm each step before moving on.</code></pre>
             <p class="note">No Devin account yet? The button walks you through signup first, then opens a session with the prompt already filled in.</p>
         </div>
 

@@ -7,9 +7,11 @@ This is the leave-behind from my talk, *Devin builds Devin*. It's the setup we r
 
 **The rest of this page is written for Devin to read.** Hand it the URL and it will guide you through the setup step by step. You can also follow it yourself.
 
-To start: open https://app.devin.ai and say
+To start: open https://app.devin.ai (or @Devin in Slack) and paste
 
-    Can we set up Jared's talk? devindatadog.com
+    I just saw Jared Zoneraich's Datadog Summit talk on using Devin as the first responder for Datadog alerts, and I want the same setup for my team: Datadog alerts post to a Slack channel, a Devin automation picks up each alert, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause (a PR only if the evidence warrants one).
+
+    Read https://imjaredz.com/datadog-summit-2026/ first. Then guide me through the setup one step at a time: tell me exactly what to click in Slack, Datadog, and the Devin app, do the parts you can do yourself, and wait for me to confirm each step before moving on.
 
 ## What you end up with
 
