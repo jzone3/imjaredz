@@ -205,14 +205,14 @@
         <h1>Set up Devin as the first responder for your Datadog alerts</h1>
         <p class="meta">Jared Zoneraich &middot; Datadog Summit SF &middot; September 2026 &middot; <a href="https://devindatadog.com">devindatadog.com</a></p>
 
-        <p>This is the leave-behind from my Datadog Summit talk, <em>Devin builds Devin</em>. Quick version: our team is a little under 3x the size it was in November 2025, we're shipping 40x more PRs, and agents write basically all of our code now. More code means more alerts, and our Datadog alerts were through the roof. Humans can't even get through that backlog. So we made Devin the first responder to every single alert.</p>
-        <p>Every alert gets piped into Slack. Devin picks it up, pulls whatever it needs from Datadog, git, and Slack, and replies in the thread with what it thinks happened. From there we work with it like a teammate. Code changes only happen when the evidence says so, and honestly that's rare.</p>
+        <p>This is the leave-behind from my Datadog Summit talk, <em>Devin builds Devin</em>. Quick version: agents write basically all of our code now, and our team isn't growing anywhere near as fast as the code is. More code means more alerts, and our Datadog alerts were through the roof. Humans can't even get through that backlog. So we made Devin the first responder to every single alert.</p>
+        <p>Every alert gets piped into Slack. Devin picks it up, pulls whatever it needs from Datadog, git, and Slack, and replies in the thread with what it thinks happened. From there we work with it like a teammate. Code changes only happen when a human asks for them.</p>
         <p><strong>The rest of this page is written for Devin, not for you.</strong> Hand it the URL and it'll walk you through the setup step by step. Or read it yourself. None of this is hard.</p>
 
         <div class="cta">
-            <p><a class="btn" href="https://app.devin.ai/?prompt=I%20just%20saw%20Jared%20Zoneraich%27s%20Datadog%20Summit%20talk%20on%20using%20Devin%20as%20the%20first%20responder%20for%20Datadog%20alerts%2C%20and%20I%20want%20the%20same%20setup%20for%20my%20team%3A%20Datadog%20alerts%20post%20to%20a%20Slack%20channel%2C%20a%20Devin%20automation%20picks%20up%20each%20alert%2C%20investigates%20it%20with%20the%20Datadog%20MCP%20and%20our%20repos%2C%20and%20replies%20in%20the%20thread%20with%20a%20root%20cause%20%28a%20PR%20only%20if%20the%20evidence%20warrants%20one%29.%0A%0ARead%20https%3A%2F%2Fimjaredz.com%2Fdatadog-summit-2026%2F%20first.%20Then%20guide%20me%20through%20the%20setup%20one%20step%20at%20a%20time%3A%20tell%20me%20exactly%20what%20to%20click%20in%20Slack%2C%20Datadog%2C%20and%20the%20Devin%20app%2C%20do%20the%20parts%20you%20can%20do%20yourself%2C%20and%20wait%20for%20me%20to%20confirm%20each%20step%20before%20moving%20on.&amp;utm_source=imjaredz&amp;utm_medium=web&amp;utm_campaign=datadog-summit-2026">Open in Devin</a></p>
+            <p><a class="btn" href="https://app.devin.ai/?prompt=I%20just%20saw%20Jared%20Zoneraich%27s%20Datadog%20Summit%20talk%20on%20using%20Devin%20as%20the%20first%20responder%20for%20Datadog%20alerts%2C%20and%20I%20want%20the%20same%20setup%20for%20my%20team%3A%20Datadog%20alerts%20post%20to%20a%20Slack%20channel%2C%20a%20Devin%20automation%20picks%20up%20each%20alert%2C%20investigates%20it%20with%20the%20Datadog%20MCP%20and%20our%20repos%2C%20and%20replies%20in%20the%20thread%20with%20a%20root%20cause%20%28a%20PR%20only%20when%20a%20human%20asks%20for%20one%29.%0A%0ARead%20https%3A%2F%2Fimjaredz.com%2Fdatadog-summit-2026%2F%20first.%20Then%20guide%20me%20through%20the%20setup%20one%20step%20at%20a%20time%3A%20tell%20me%20exactly%20what%20to%20click%20in%20Slack%2C%20Datadog%2C%20and%20the%20Devin%20app%2C%20do%20the%20parts%20you%20can%20do%20yourself%2C%20and%20wait%20for%20me%20to%20confirm%20each%20step%20before%20moving%20on.&amp;utm_source=imjaredz&amp;utm_medium=web&amp;utm_campaign=datadog-summit-2026">Open in Devin</a></p>
             <p><span class="or">or paste this prompt into any Devin session (or @Devin in Slack):</span></p>
-<pre class="prompt"><code>I just saw Jared Zoneraich&#x27;s Datadog Summit talk on using Devin as the first responder for Datadog alerts, and I want the same setup for my team: Datadog alerts post to a Slack channel, a Devin automation picks up each alert, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause (a PR only if the evidence warrants one).
+<pre class="prompt"><code>I just saw Jared Zoneraich&#x27;s Datadog Summit talk on using Devin as the first responder for Datadog alerts, and I want the same setup for my team: Datadog alerts post to a Slack channel, a Devin automation picks up each alert, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause (a PR only when a human asks for one).
 
 Read https://imjaredz.com/datadog-summit-2026/ first. Then guide me through the setup one step at a time: tell me exactly what to click in Slack, Datadog, and the Devin app, do the parts you can do yourself, and wait for me to confirm each step before moving on.</code></pre>
             <p class="note">No Devin account yet? The button walks you through signup first, then opens a session with the prompt already filled in.</p>
@@ -226,17 +226,16 @@ Slack #alerts  ◀────────────────────�
     │  new message                                │ reply in thread:
     ▼                                             │ root cause, confidence,
 Triage Devin (always on)                          │ next step, @owner,
-    • noise? duplicate? → link to existing thread │ PR link only if warranted
+    • noise? duplicate? → link to existing thread │ PR only if a human asks   
     • shared scratchpad = memory across alerts    │
     • actionable → spawn a child                  │
     ▼                                             │
 Investigation Devin (one per alert) ──────────────┘
     • Datadog MCP: logs, metrics, traces, monitors
     • git log, recent deploys, the code
-    • prior investigations
-    • ~98% end in a diagnosis, &lt;2% in a PR</pre>
+    • prior investigations</pre>
 
-        <p>That's the whole thing. One real investigation on our side: 45 Datadog calls, 7 code searches, 4 file reads, 7 git commands, 32 Slack messages read, and then one message back in the thread. The hard part isn't the wiring. It's letting the agent find the signal in the noise, and letting it learn from how it triaged last time.</p>
+        <p>That's the whole thing. In a real investigation, Devin is making dozens of Datadog calls, searching the repo, running git commands, and reading the Slack history, and then sending one message back in the thread. The hard part isn't the wiring. It's letting the agent find the signal in the noise, and letting it learn from how it triaged last time.</p>
 
         <h2>Instructions for Devin</h2>
 
@@ -281,38 +280,57 @@ Investigation Devin (one per alert) ──────────────�
         <p>In Slack, in the alerts channel: <code>/invite @Devin</code>. Devin must be a member of the channel for the automation to see messages.</p>
 
         <h3>Step 5 — Create the automation</h3>
-        <p>In the Devin app, go to <strong>Automations</strong>. Two ways to do it:</p>
+        <p>In the Devin app, go to <strong>Automations</strong>. Create <strong>one</strong> automation. Pick one of these, not both:</p>
         <ul>
-            <li><strong>Template (recommended):</strong> click <em>View all examples</em> and pick <strong>Triage Bug Reports</strong>. This uses the <em>Triage Devin</em> action type: one persistent Devin watches the channel, dedupes, and spawns a child Devin per actionable alert. It has a shared scratchpad for memory. This is the architecture from the talk.</li>
-            <li><strong>Simpler alternative:</strong> the <strong>Investigate Alerts Triggered</strong> template. Trigger = Slack message in the channel, action = start a new session that uses the Datadog MCP and replies in the thread. No persistent monitor, no memory, but fewer moving parts.</li>
+            <li><strong>Recommended: the <em>Triage Bug Reports</em> template.</strong> Click <em>View all examples</em> and choose <strong>Triage Bug Reports</strong> (the docs call it "Triage bug reports on Slack"; the template list shows "Triage Bug Reports"). It uses the <em>Triage Devin</em> action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the talk.</li>
+            <li><strong>Simpler alternative: the <em>Investigate Alerts Triggered</em> template.</strong> Trigger = Slack message in the channel, action = start one session per alert that uses the Datadog MCP and replies in the thread. No persistent triage Devin, no shared memory, fewer moving parts.</li>
         </ul>
-        <p>Select the alerts channel, then paste the setup prompt below into the prompt/instructions field. Adapt the service names, channel name, and owners to what they told you in Step 0.</p>
+        <p>Then, in the automation editor:</p>
+        <ol>
+            <li>Select the alerts channel as the trigger.</li>
+            <li>Add a <strong>condition</strong> on the message so only Datadog alert posts fire it, not people chatting in the channel. For example: message text contains the Datadog notification handle they use, like <code>@slack-alerts</code>, or the message is from the Datadog app.</li>
+            <li>Paste the setup prompt below into the prompt field. Fill in the service → owner → repo table with what they told you in Step 0. (If they picked the alternative template, the same prompt works as the session prompt; skip the scratchpad line.)</li>
+        </ol>
 
-<pre><code>You are the first responder for Datadog alerts posted in #alerts.
+<pre><code>You are the triage Devin for Datadog alerts posted in #alerts.
+Investigation is handled by the child Devins you spawn; your job is to
+decide what deserves one and to give it the context it needs.
 
-For every new message:
-1. Decide: actionable, duplicate, or noise. If it's a repeat of an alert you have
-   already seen, reply with a link to the existing thread and stop. Track what you
-   have seen in your scratchpad.
-2. If actionable, investigate. Use the Datadog MCP to pull the relevant logs, metrics,
-   traces, and monitor history for the service in the alert. Check recent deploys and
-   commits in the related repo. Read prior investigations in your scratchpad first so
-   you don't repeat work.
-3. Reply in the alert's Slack thread with: what happened, when it started, the most
-   likely root cause, your confidence, and the recommended next step. Tag the likely
-   code owner. Keep it short.
-4. Do not force a code change. Most alerts end in a diagnosis, a no-op, or a
-   config/infra recommendation. Only open a PR when the fix is small and the evidence
-   is clear. Otherwise, hand off: say exactly what a follow-up session should do.
-5. Learn from corrections. If a human replies with a correction (wrong owner, wrong
-   service, known issue), update your scratchpad.
+Actionable vs. noise:
+- Actionable: a monitor moving to Alert or Warn on a service we own, an
+  error-rate or latency spike, a failed job, or a recovery that flapped
+  more than once in an hour.
+- Noise: a &quot;Recovered&quot; message on its own, a test or synthetic monitor,
+  or a repeat of an alert with an open thread. For repeats, reply with a
+  link to the existing thread.
 
-Pull only the data you need. Don't dump every log and metric into the thread.</code></pre>
+Service → owner → repo (edit this):
+- payments-api → @alice → org/payments
+- web-frontend → @bob → org/web
+- &lt;service&gt; → @&lt;owner&gt; → &lt;repo&gt;
+
+What the reply in the alert&#x27;s thread should include:
+- What happened, in one or two sentences.
+- When it started, and whether it lines up with a deploy or config
+  change.
+- The most likely root cause and how confident you are.
+- The recommended next step.
+- @mention the owner from the table above.
+Keep it short. Pull only the Datadog data you need; don&#x27;t dump logs into
+the thread.
+
+Code changes: do not open a PR on your own. Diagnose and reply. Only
+open a PR if a human asks for one in the thread, and let them decide
+the fix.
+
+Corrections: if a human replies with a correction (wrong owner, wrong
+service, known issue, not actionable), update your scratchpad so the
+next alert gets it right.</code></pre>
 
         <h3>Step 6 — Guardrails before saving</h3>
         <ul>
-            <li><strong>ACU limit</strong> per session, so one alert can't run away.</li>
-            <li><strong>Invocation limit</strong>, e.g. 10 per hour, so an alert storm can't spawn dozens of sessions.</li>
+            <li><strong>ACU limit</strong> per session, so one alert can't run away. This is the main cost control.</li>
+            <li><strong>Invocation limit</strong>: set a moderate cap, not a tiny one. The triage Devin already handles duplicates, so a very low hourly limit mostly just drops messages during an alert storm.</li>
             <li><strong>Network policy</strong> on, since Slack messages are untrusted input.</li>
             <li>Confirm the automation only has Slack access to the alerts channel unless they want more.</li>
         </ul>
@@ -329,7 +347,7 @@ Pull only the data you need. Don't dump every log and metric into the thread.</c
         <ul>
             <li>Add <strong>Knowledge</strong> in Devin describing their services, normal thresholds, and runbooks. Investigation quality jumps.</li>
             <li>Route more monitors to the channel, low severity first.</li>
-            <li>Split roles: keep the triage Devin narrow (Slack + Datadog, read-only), and give a separate implementation Devin repo write access with its own prompt. Different jobs, different prompts, different permissions.</li>
+            <li>Keep the loop human-led: the investigation Devin diagnoses and replies in the thread. When someone wants a fix, they ask for a PR in the thread and decide what the fix should be.</li>
             <li>No Slack in the loop? Automations also have a <strong>webhook trigger</strong> Datadog can post to directly, and there's an API pattern at <a href="https://docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation">docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation</a>.</li>
         </ul>
 
@@ -337,8 +355,8 @@ Pull only the data you need. Don't dump every log and metric into the thread.</c
 
         <h2>Three things we learned running this</h2>
         <p><strong>1. Devins need shared memory.</strong> If you use an alerting product, you get tons of duplicate alerts, because things keep going off. Your agent needs the full context of its previous runs. Honestly, solving this is not that hard: we just gave it a Markdown file with read and write access. Same way humans share a runbook or a postmortem. Models are good enough now that the agents figure out the rest.</p>
-        <p><strong>2. Don't force code changes.</strong> Our alert volume was up 75% in the first six weeks, and less than 2% of the investigations actually resulted in a code change, or should have. So we tweaked the agent: you don't have to push code at the end. Sometimes an investigation is a no-op, or just a learning. Not everything needs a PR. That saved a lot of money and a lot of time.</p>
-        <p><strong>3. Different agents for different tasks.</strong> We have a triage Devin that's told <em>not</em> to investigate root causes, just triage, point to previous results, and hand off. An investigation Devin whose job is the diagnosis, not the PR. And a separate Devin with write access for when code actually needs to change. Agents are good at doing one thing specifically. It's the same Devin under the hood, just different prompts and different permissions.</p>
+        <p><strong>2. Don't force code changes.</strong> Once this was running, we found most investigations shouldn't end in a code change at all. So we tweaked the agent: you don't have to push code at the end. Sometimes an investigation is a no-op, or just a learning, or "this is a config problem, not a code problem." Not everything needs a PR.</p>
+        <p><strong>3. Different agents for different tasks.</strong> We have a triage Devin that's told <em>not</em> to investigate root causes, just triage, point to previous results, and hand off. And an investigation Devin whose job is the diagnosis, not the PR. It replies in the thread, and a human decides if anything should change. Agents are good at doing one thing specifically. It's the same Devin under the hood, just different prompts.</p>
 
         <h2>If you're not using Devin</h2>
         <p>Of course I want you to use Devin, but this should be useful if you're building it yourself too. You need a dedicated alerts channel, an agent that gets kicked off per message, read access to your observability data (Datadog's MCP server works with any MCP client), a Markdown file it can read and write as memory, and an explicit instruction that it doesn't have to open a PR. Start with one low-severity monitor. You don't need to be a cutting-edge AI company to do this.</p>
