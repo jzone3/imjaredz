@@ -65,8 +65,8 @@ They do this in the Devin app: **Settings → Connections → Slack**. The Devin
 
 They do this in the Devin app: **Settings → Connections → MCPs** (the MCP Marketplace). Docs: https://docs.devin.ai/enterprise/integrations/datadog
 
-1. Find **Datadog**. There are two entries: *Datadog (OAuth)*, which just asks them to authorize, and *Datadog (API key)*, which needs a `DD-API-KEY` and `DD-APPLICATION-KEY` from Datadog → Organization Settings → API Keys / Application Keys. OAuth is simpler if it's offered for their site.
-2. Select their Datadog site/region (e.g. `datadoghq.com`, `datadoghq.eu`).
+1. Find **Datadog** and click **Enable**.
+2. Select their Datadog site/region (e.g. `datadoghq.com`, `datadoghq.eu`), then enter a `DD-API-KEY` and `DD-APPLICATION-KEY`. They create those in Datadog → Organization Settings → API Keys / Application Keys. (API keys are the only auth the Datadog MCP supports today.)
 3. Click **Test listing tools**. It should list tools for logs, metrics, monitors, and traces.
 
 Once this is done, verify it yourself if you can: ask Datadog for the list of active monitors and confirm you get results.

@@ -142,7 +142,7 @@
             opacity: 0;
             transition: opacity 0.2s ease, color 0.2s ease;
         }
-        pre:hover .copy-btn { opacity: 1; }
+        pre:hover .copy-btn, .copy-btn:focus-visible { opacity: 1; }
         .copy-btn:hover { color: var(--ink); }
         @media (hover: none) { .copy-btn { opacity: 1; } }
         code { font-family: monospace; background: #f6f6f6; padding: 1px 4px; }
@@ -253,8 +253,8 @@ Investigation Devin (one per alert) ──────────────�
         <h3>Step 3 — Connect Datadog to Devin (MCP)</h3>
         <p>They do this in the Devin app: <strong>Settings → Connections → MCPs</strong> (the MCP Marketplace). Docs: <a href="https://docs.devin.ai/enterprise/integrations/datadog">docs.devin.ai/enterprise/integrations/datadog</a>.</p>
         <ol>
-            <li>Find <strong>Datadog</strong>. There are two entries: <em>Datadog (OAuth)</em>, which just asks them to authorize, and <em>Datadog (API key)</em>, which needs a <code>DD-API-KEY</code> and <code>DD-APPLICATION-KEY</code> from Datadog → Organization Settings → API Keys / Application Keys. OAuth is simpler if it's offered for their site.</li>
-            <li>Select their Datadog site/region (e.g. <code>datadoghq.com</code>, <code>datadoghq.eu</code>).</li>
+            <li>Find <strong>Datadog</strong> and click <strong>Enable</strong>.</li>
+            <li>Select their Datadog site/region (e.g. <code>datadoghq.com</code>, <code>datadoghq.eu</code>), then enter a <code>DD-API-KEY</code> and <code>DD-APPLICATION-KEY</code>. They create those in Datadog → Organization Settings → API Keys / Application Keys. (API keys are the only auth the Datadog MCP supports today.)</li>
             <li>Click <strong>Test listing tools</strong>. It should list tools for logs, metrics, monitors, and traces.</li>
         </ol>
         <p>Once this is done, verify it yourself if you can: ask Datadog for the list of active monitors and confirm you get results.</p>
