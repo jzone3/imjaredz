@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Set up Devin as the first responder for your Datadog alerts</title>
+    <meta content="A step-by-step guide (written for Devin) to wire Datadog alerts into Slack and have Devin investigate them automatically. From Jared Zoneraich's Datadog Summit SF 2026 talk." name="description">
+    <link rel="canonical" href="https://imjaredz.com/datadog-summit-2026/">
+
+    <meta property="og:type"        content="article">
+    <meta property="og:url"         content="https://imjaredz.com/datadog-summit-2026/">
+    <meta property="og:title"       content="Set up Devin as the first responder for your Datadog alerts">
+    <meta property="og:description" content="Datadog alert → Slack → Devin investigates. A step-by-step guide you can hand to Devin. From the Datadog Summit SF 2026 talk.">
+    <meta property="og:image"       content="https://imjaredz.com/assets/img/og.png">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@imjaredz">
+    <meta name="twitter:creator"     content="@imjaredz">
+    <meta name="twitter:title"       content="Set up Devin as the first responder for your Datadog alerts">
+    <meta name="twitter:description" content="Datadog alert → Slack → Devin investigates. A step-by-step guide you can hand to Devin.">
+    <meta name="twitter:image"       content="https://imjaredz.com/assets/img/og.png">
+
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="imjaredz.com">
+    <meta name="author" content="Jared Zoneraich">
+
+    <link href="../assets/img/favicon-32.png" rel="icon" sizes="32x32">
+    <link href="../assets/img/favicon.png" rel="icon" sizes="180x180">
+    <link href="../assets/img/favicon.png" rel="apple-touch-icon">
+
+    <style>
+        :root {
+            --ink: #000;
+            --faint: #6b6b6b;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: monospace;
+            background: #fff;
+            color: var(--ink);
+            margin: 8px;
+            padding: 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 72px 24px 96px;
+        }
+
+        .back {
+            display: inline-block;
+            color: var(--faint);
+            text-decoration: none;
+            margin-bottom: 36px;
+        }
+        .back::before { content: "\2190\00a0"; }
+        .back:hover { color: var(--ink); }
+
+        h1 {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.3;
+            margin: 0 0 6px;
+            position: relative;
+        }
+        h1::before { content: "#"; font-weight: 400; color: var(--faint); position: absolute; right: 100%; margin-right: 0.6ch; }
+
+        .meta {
+            color: var(--faint);
+            margin: 0 0 32px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 13px;
+            color: var(--faint);
+            margin: 40px 0 14px;
+            position: relative;
+        }
+        h2::before { content: "##"; position: absolute; right: 100%; margin-right: 1ch; }
+
+        h3 {
+            font-weight: 700;
+            font-size: 13px;
+            margin: 28px 0 10px;
+        }
+
+        p { margin: 0 0 14px; }
+
+        a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            text-decoration-color: #bbb;
+        }
+        a:hover { text-decoration-color: var(--ink); }
+
+        b, strong { font-weight: 700; }
+
+        ol { padding: 0 0 0 2ch; margin: 0 0 14px; }
+        ul { list-style: none; padding: 0; margin: 0 0 14px; }
+        ul li { margin: 0 0 8px; position: relative; }
+        ul li::before { content: "-"; position: absolute; left: -2ch; }
+        ol li { margin: 0 0 8px; }
+
+        blockquote {
+            margin: 0 0 14px -17px;
+            border-left: 3px solid #d4d4d4;
+            padding-left: 14px;
+            color: var(--faint);
+        }
+        blockquote p { margin: 0; }
+
+        pre {
+            background: #f6f6f6;
+            padding: 12px 14px;
+            overflow-x: auto;
+            margin: 20px 0;
+            position: relative;
+            line-height: 1.45;
+        }
+        pre.diagram { font-size: 12px; }
+        .copy-btn {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            color: var(--faint);
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            padding: 2px 8px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.2s ease, color 0.2s ease;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { color: var(--ink); }
+        @media (hover: none) { .copy-btn { opacity: 1; } }
+        code { font-family: monospace; background: #f6f6f6; padding: 1px 4px; }
+        pre code { padding: 0; background: none; }
+
+        .cta {
+            margin: 28px 0 8px;
+            padding: 18px 16px;
+            border: 1px solid #000;
+        }
+        .cta p { margin: 0 0 10px; }
+        .cta p:last-child { margin: 0; }
+        .btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 16px;
+            font-weight: 700;
+            font-size: 14px;
+            margin: 4px 0 8px;
+        }
+        .btn:hover { background: #333; }
+        .btn::after { content: "\00a0\2192"; }
+        .or { color: var(--faint); }
+
+        .note {
+            color: var(--faint);
+            font-size: 12px;
+        }
+
+        table { border-collapse: collapse; margin: 0 0 14px; width: 100%; }
+        th, td { text-align: left; vertical-align: top; padding: 6px 8px 6px 0; border-bottom: 1px solid #e5e5e5; }
+        th { font-weight: 400; color: var(--faint); }
+
+        footer {
+            margin-top: 72px;
+            font-size: 13px;
+            color: var(--faint);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="/">back</a>
+
+        <h1>Set up Devin as the first responder for your Datadog alerts</h1>
+        <p class="meta">Jared Zoneraich &middot; Datadog Summit SF &middot; September 2026 &middot; <a href="https://devindatadog.com">devindatadog.com</a></p>
+
+        <p>This is the leave-behind from my talk, <em>Devin builds Devin</em>. It's the setup we run at Cognition: Datadog alerts land in a Slack channel, Devin picks each one up, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause. Humans review. Code changes only happen when the evidence says so.</p>
+        <p><strong>The rest of this page is written for Devin to read.</strong> Hand it the URL and it will guide you through the setup step by step. You can also follow it yourself.</p>
+
+        <div class="cta">
+            <p><a class="btn" href="https://app.devin.ai/?prompt=Can%20we%20set%20up%20Jared%27s%20talk%20from%20Datadog%20Summit%3F%20Read%20https%3A%2F%2Fimjaredz.com%2Fdatadog-summit-2026%2F%20first%2C%20then%20guide%20me%20step%20by%20step%20through%20setting%20up%20Devin%20as%20the%20first%20responder%20for%20the%20Datadog%20alerts%20in%20my%20Slack%20channel.&amp;utm_source=imjaredz&amp;utm_medium=web&amp;utm_campaign=datadog-summit-2026">Open in Devin</a></p>
+            <p><span class="or">or paste this into any Devin session (or @Devin in Slack):</span></p>
+<pre><code>Can we set up Jared's talk? devindatadog.com</code></pre>
+            <p class="note">No Devin account yet? The button walks you through signup first, then opens a session with the prompt already filled in.</p>
+        </div>
+
+        <h2>What you end up with</h2>
+<pre class="diagram">Datadog monitor
+    │  @slack-alerts
+    ▼
+Slack #alerts  ◀──────────────────────────────────┐
+    │  new message                                │ reply in thread:
+    ▼                                             │ root cause, confidence,
+Triage Devin (always on)                          │ next step, @owner,
+    • noise? duplicate? → link to existing thread │ PR link only if warranted
+    • shared scratchpad = memory across alerts    │
+    • actionable → spawn a child                  │
+    ▼                                             │
+Investigation Devin (one per alert) ──────────────┘
+    • Datadog MCP: logs, metrics, traces, monitors
+    • git log, recent deploys, the code
+    • prior investigations
+    • ~98% end in a diagnosis, &lt;2% in a PR</pre>
+
+        <h2>Instructions for Devin</h2>
+
+        <p>Devin: the person you're talking to just saw a talk about how Cognition uses you as the first responder for its own Datadog alerts. They want the same setup for their team. Your job is to <strong>guide them through it step by step</strong>, in order, one step at a time.</p>
+
+        <p>Ground rules:</p>
+        <ul>
+            <li>Some steps are clicks in Slack, Datadog, or the Devin app that only they can do. For those, give exact instructions, then <strong>wait for them to confirm</strong> before moving on.</li>
+            <li>Do the parts you can do yourself: draft the setup prompt, create the automation if you have the tools to, run the test.</li>
+            <li>Read <a href="https://docs.devin.ai/product-guides/auto-triage">docs.devin.ai/product-guides/auto-triage</a> and <a href="https://docs.devin.ai/product-guides/automations">docs.devin.ai/product-guides/automations</a> before you begin so your instructions match the current UI. If the docs and this page disagree, trust the docs.</li>
+            <li>Never ask them to paste API keys, application keys, or tokens into the chat. Keys go into the Devin app's connection settings only.</li>
+        </ul>
+
+        <h3>Step 0 — Ask three questions</h3>
+        <ol>
+            <li>Which Slack channel do (or should) Datadog alerts post to? Recommend a <strong>dedicated</strong> channel like <code>#alerts</code> or <code>#incidents</code>, not a general engineering channel.</li>
+            <li>Which repos and services are behind those alerts? Confirm those repos are connected to Devin.</li>
+            <li>Is Datadog already posting into Slack? If yes, skip Step 1.</li>
+        </ol>
+
+        <h3>Step 1 — Datadog → Slack</h3>
+        <p>They do this in Datadog and Slack. Docs: <a href="https://docs.datadoghq.com/integrations/slack/">docs.datadoghq.com/integrations/slack</a>.</p>
+        <ol>
+            <li>In Datadog, install the Slack integration (Integrations → Slack) and authorize the workspace.</li>
+            <li>In Slack, run <code>/invite @Datadog</code> in the alerts channel.</li>
+            <li>In each monitor they want triaged, add <code>@slack-&lt;channel-name&gt;</code> to the notification message. Start with <strong>one warning-level monitor</strong>, not everything.</li>
+        </ol>
+
+        <h3>Step 2 — Connect Slack to Devin</h3>
+        <p>They do this in the Devin app: <strong>Settings → Connections → Slack</strong>. The Devin Slack app needs to be installed in the workspace, and their <strong>personal</strong> Slack account needs to be connected. Automations that watch Slack won't work without the personal connection.</p>
+
+        <h3>Step 3 — Connect Datadog to Devin (MCP)</h3>
+        <p>They do this in the Devin app: <strong>Settings → Connections → MCPs</strong> (the MCP Marketplace). Docs: <a href="https://docs.devin.ai/enterprise/integrations/datadog">docs.devin.ai/enterprise/integrations/datadog</a>.</p>
+        <ol>
+            <li>Find <strong>Datadog</strong>. There are two entries: <em>Datadog (OAuth)</em>, which just asks them to authorize, and <em>Datadog (API key)</em>, which needs a <code>DD-API-KEY</code> and <code>DD-APPLICATION-KEY</code> from Datadog → Organization Settings → API Keys / Application Keys. OAuth is simpler if it's offered for their site.</li>
+            <li>Select their Datadog site/region (e.g. <code>datadoghq.com</code>, <code>datadoghq.eu</code>).</li>
+            <li>Click <strong>Test listing tools</strong>. It should list tools for logs, metrics, monitors, and traces.</li>
+        </ol>
+        <p>Once this is done, verify it yourself if you can: ask Datadog for the list of active monitors and confirm you get results.</p>
+
+        <h3>Step 4 — Invite Devin to the channel</h3>
+        <p>In Slack, in the alerts channel: <code>/invite @Devin</code>. Devin must be a member of the channel for the automation to see messages.</p>
+
+        <h3>Step 5 — Create the automation</h3>
+        <p>In the Devin app, go to <strong>Automations</strong>. Two ways to do it:</p>
+        <ul>
+            <li><strong>Template (recommended):</strong> click <em>View all examples</em> and pick <strong>Triage Bug Reports</strong>. This uses the <em>Triage Devin</em> action type: one persistent Devin watches the channel, dedupes, and spawns a child Devin per actionable alert. It has a shared scratchpad for memory. This is the architecture from the talk.</li>
+            <li><strong>Simpler alternative:</strong> the <strong>Investigate Alerts Triggered</strong> template. Trigger = Slack message in the channel, action = start a new session that uses the Datadog MCP and replies in the thread. No persistent monitor, no memory, but fewer moving parts.</li>
+        </ul>
+        <p>Select the alerts channel, then paste the setup prompt below into the prompt/instructions field. Adapt the service names, channel name, and owners to what they told you in Step 0.</p>
+
+<pre><code>You are the first responder for Datadog alerts posted in #alerts.
+
+For every new message:
+1. Decide: actionable, duplicate, or noise. If it's a repeat of an alert you have
+   already seen, reply with a link to the existing thread and stop. Track what you
+   have seen in your scratchpad.
+2. If actionable, investigate. Use the Datadog MCP to pull the relevant logs, metrics,
+   traces, and monitor history for the service in the alert. Check recent deploys and
+   commits in the related repo. Read prior investigations in your scratchpad first so
+   you don't repeat work.
+3. Reply in the alert's Slack thread with: what happened, when it started, the most
+   likely root cause, your confidence, and the recommended next step. Tag the likely
+   code owner. Keep it short.
+4. Do not force a code change. Most alerts end in a diagnosis, a no-op, or a
+   config/infra recommendation. Only open a PR when the fix is small and the evidence
+   is clear. Otherwise, hand off: say exactly what a follow-up session should do.
+5. Learn from corrections. If a human replies with a correction (wrong owner, wrong
+   service, known issue), update your scratchpad.
+
+Pull only the data you need. Don't dump every log and metric into the thread.</code></pre>
+
+        <h3>Step 6 — Guardrails before saving</h3>
+        <ul>
+            <li><strong>ACU limit</strong> per session, so one alert can't run away.</li>
+            <li><strong>Invocation limit</strong>, e.g. 10 per hour, so an alert storm can't spawn dozens of sessions.</li>
+            <li><strong>Network policy</strong> on, since Slack messages are untrusted input.</li>
+            <li>Confirm the automation only has Slack access to the alerts channel unless they want more.</li>
+        </ul>
+        <p>Then save and make sure the automation is <strong>enabled</strong>.</p>
+
+        <h3>Step 7 — Test it</h3>
+        <ol>
+            <li>Have them trigger the warning-level monitor from Step 1 (or temporarily lower its threshold), or post a realistic fake alert in the channel.</li>
+            <li>Confirm Devin replies in the thread within a few minutes. If it doesn't, check in order: Devin is in the channel (Step 4), personal Slack connection (Step 2), the automation is enabled and pointed at the right channel (Step 5), invocation history on the Automations page.</li>
+            <li>Read the reply together. If it tagged the wrong person or misread the alert, reply in the thread with the correction. The Triage Devin updates its scratchpad and gets it right next time.</li>
+        </ol>
+
+        <h3>Step 8 — Level up (later, not today)</h3>
+        <ul>
+            <li>Add <strong>Knowledge</strong> in Devin describing their services, normal thresholds, and runbooks. Investigation quality jumps.</li>
+            <li>Route more monitors to the channel, low severity first.</li>
+            <li>Split roles: keep the triage Devin narrow (Slack + Datadog, read-only), and give a separate implementation Devin repo write access with its own prompt. Different jobs, different prompts, different permissions.</li>
+            <li>No Slack in the loop? Automations also have a <strong>webhook trigger</strong> Datadog can post to directly, and there's an API pattern at <a href="https://docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation">docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation</a>.</li>
+        </ul>
+
+        <p>When everything works, summarize what was set up, where each setting lives, and how to turn it off.</p>
+
+        <h2>Three things we learned running this</h2>
+        <p><strong>1. Give the agents a shared scratchpad.</strong> Alerting products produce duplicate alerts. Every Devin in the loop reads and writes one shared Markdown file, the same way humans share a runbook or a postmortem. That's how a new session knows this alert is the one from last week, and what was found then.</p>
+        <p><strong>2. Don't force code changes.</strong> Our alert investigations went up 75% in the first six weeks, and under 2% of them resulted in (or should have resulted in) a code change. We told the agent it doesn't have to push code at the end. Sometimes an investigation is a no-op or a learning. That saved a lot of time and money.</p>
+        <p><strong>3. Different agents for different tasks.</strong> A triage Devin that is told <em>not</em> to investigate root causes, just to classify and route. An investigation Devin that digs in. A separate Devin, with its own prompt and its own access, if code needs to change. Different jobs, different prompts, different permissions.</p>
+
+        <h2>If you're not using Devin</h2>
+        <p>The pattern still holds. You need: a dedicated alerts channel, an agent that is triggered per message, read access to your observability data (Datadog's MCP server works with any MCP client), a shared file it can use as memory, and an explicit instruction not to open PRs by default. Start with one low-severity monitor and grow from there.</p>
+
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://docs.devin.ai/product-guides/auto-triage">Devin auto-triage guide</a></li>
+            <li><a href="https://docs.devin.ai/product-guides/automations">Devin Automations</a> (templates, triggers, limits)</li>
+            <li><a href="https://docs.devin.ai/enterprise/integrations/datadog">Devin ↔ Datadog integration</a></li>
+            <li><a href="https://docs.datadoghq.com/integrations/slack/">Datadog Slack integration</a></li>
+            <li><a href="https://devin.ai/auto-triage">devin.ai/auto-triage</a></li>
+            <li><a href="./prompt.md">This page as Markdown</a></li>
+            <li>Questions: <a href="https://x.com/imjaredz">@imjaredz</a></li>
+        </ul>
+
+        <footer>made in usa 🇺🇸 new york, new york</footer>
+    </div>
+
+    <script>
+    document.querySelectorAll('pre > code').forEach(function (code) {
+        var pre = code.parentNode;
+        var btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.type = 'button';
+        btn.textContent = 'copy';
+        btn.addEventListener('click', function () {
+            navigator.clipboard.writeText(code.textContent).then(function () {
+                btn.textContent = 'copied';
+                setTimeout(function () { btn.textContent = 'copy'; }, 1500);
+            });
+        });
+        pre.appendChild(btn);
+    });
+    </script>
+</body>
+</html>
