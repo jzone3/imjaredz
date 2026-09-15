@@ -21,18 +21,28 @@ To start: open https://app.devin.ai (or @Devin in Slack) and paste
 Datadog monitor
     │  @slack-alerts
     ▼
-Slack #alerts  ◀──────────────────────────────────┐
-    │  new message                                │ reply in thread:
-    ▼                                             │ root cause, confidence,
-Triage Devin (always on)                          │ next step, @owner,
-    • noise? duplicate? → link to existing thread │ PR only if a human asks   
-    • shared scratchpad = memory across alerts    │
-    • actionable → spawn a child                  │
-    ▼                                             │
-Investigation Devin (one per alert) ──────────────┘
-    • Datadog MCP: logs, metrics, traces, monitors
-    • git log, recent deploys, the code
-    • prior investigations
+Slack #alerts  ◀─────────────────────────────────────┐
+    │  new message                                   │
+    │  (condition: text contains @slack-alerts)      │
+    ▼                                                │
+┌─ one automation: the Triage Devin template ──────┐ │
+│                                                  │ │
+│ Triage Devin (persistent)                        │ │
+│   • noise → ignore                               │ │
+│   • duplicate → link to the existing thread ─────┼─┤
+│   • shared scratchpad = memory across alerts     │ │
+│   • actionable → spawns an investigation Devin   │ │
+│     (not a second automation)                    │ │
+│                                                  │ │
+│ Investigation Devin (one per actionable alert)   │ │
+│   • Datadog MCP: logs, metrics, traces, monitors │ │
+│   • git log, recent deploys, the code            │ │
+│   • prior findings in the scratchpad             │ │
+│   • reply in thread: what happened, when it ─────┼─┘
+│     started, root cause, confidence, next        │
+│     step, @owner                                 │
+│   • PR only if a human asks                      │
+└──────────────────────────────────────────────────┘
 ```
 
 That's the whole thing. In a real investigation, Devin is making dozens of Datadog calls, searching the repo, running git commands, and reading the Slack history, and then sending one message back in the thread. The hard part isn't the wiring. It's letting the agent find the signal in the noise, and letting it learn from how it triaged last time.
@@ -85,7 +95,7 @@ Once this is done, verify it yourself if you can: ask Datadog for the list of ac
 
 ### Step 4 — Invite Devin to the channel
 
-*Check first:* look up the alerts channel with your Slack tools. If you can read it, you're already a member; skip this step.
+*Check first:* try to read the alerts channel's recent history with your Slack tools. Finding the channel by name isn't enough (public channels show up either way); you need to actually get messages back. If you do, you're a member; skip this step. If lookup works but reading fails, you're not.
 
 In Slack, in the alerts channel: `/invite @Devin`. Devin must be a member of the channel for the automation to see messages.
 
