@@ -21,18 +21,28 @@ To start: open https://app.devin.ai (or @Devin in Slack) and paste
 Datadog monitor
     │  @slack-alerts
     ▼
-Slack #alerts  ◀──────────────────────────────────┐
-    │  new message                                │ reply in thread:
-    ▼                                             │ root cause, confidence,
-Triage Devin (always on)                          │ next step, @owner,
-    • noise? duplicate? → link to existing thread │ PR only if a human asks   
-    • shared scratchpad = memory across alerts    │
-    • actionable → spawn a child                  │
-    ▼                                             │
-Investigation Devin (one per alert) ──────────────┘
-    • Datadog MCP: logs, metrics, traces, monitors
-    • git log, recent deploys, the code
-    • prior investigations
+Slack #alerts  ◀─────────────────────────────────────┐
+    │  new message                                   │
+    │  (condition: text contains @slack-alerts)      │
+    ▼                                                │
+┌─ one automation: the Triage Devin template ──────┐ │
+│                                                  │ │
+│ Triage Devin (persistent)                        │ │
+│   • noise → ignore                               │ │
+│   • duplicate → link to the existing thread ─────┼─┤
+│   • shared scratchpad = memory across alerts     │ │
+│   • actionable → spawns an investigation Devin   │ │
+│     (not a second automation)                    │ │
+│                                                  │ │
+│ Investigation Devin (one per actionable alert)   │ │
+│   • Datadog MCP: logs, metrics, traces, monitors │ │
+│   • git log, recent deploys, the code            │ │
+│   • prior findings in the scratchpad             │ │
+│   • reply in thread: what happened, when it ─────┼─┘
+│     started, root cause, confidence, next        │
+│     step, @owner                                 │
+│   • PR only if a human asks                      │
+└──────────────────────────────────────────────────┘
 ```
 
 That's the whole thing. In a real investigation, Devin is making dozens of Datadog calls, searching the repo, running git commands, and reading the Slack history, and then sending one message back in the thread. The hard part isn't the wiring. It's letting the agent find the signal in the noise, and letting it learn from how it triaged last time.
@@ -45,16 +55,19 @@ Ground rules:
 
 - Some steps are clicks in Slack, Datadog, or the Devin app that only they can do. For those, give exact instructions, then **wait for them to confirm** before moving on.
 - Do the parts you can do yourself: draft the setup prompt, create the automation if you have the tools to, run the test.
+- **Check before you ask.** Most of these steps may already be done. At the start of each step, use your own tools to check (each step says how). If it's done, say so and skip it. Only ask them to do something you've confirmed isn't set up.
 - Read https://docs.devin.ai/product-guides/auto-triage and https://docs.devin.ai/product-guides/automations before you begin so your instructions match the current UI. If the docs and this page disagree, trust the docs.
 - Never ask them to paste API keys, application keys, or tokens into the chat. Keys go into the Devin app's connection settings only.
 
 ### Step 0 — Ask three questions
 
 1. Which Slack channel do (or should) Datadog alerts post to? Recommend a **dedicated** channel like `#alerts` or `#incidents`, not a general engineering channel.
-2. Which repos and services are behind those alerts? Confirm those repos are connected to Devin.
-3. Is Datadog already posting into Slack? If yes, skip Step 1.
+2. Which repos and services are behind those alerts? List the repos you have access to and confirm those are among them.
+3. Is Datadog already posting into Slack? If you can read the channel, check its recent history for Datadog messages yourself. If yes, skip Step 1.
 
 ### Step 1 — Datadog → Slack
+
+*Check first:* if the Datadog MCP is already connected (Step 3), list their monitors and look for `@slack-` handles in the notification messages. If the channel history already has Datadog alerts, skip this step.
 
 They do this in Datadog and Slack. Docs: https://docs.datadoghq.com/integrations/slack/
 
@@ -64,9 +77,13 @@ They do this in Datadog and Slack. Docs: https://docs.datadoghq.com/integrations
 
 ### Step 2 — Connect Slack to Devin
 
+*Check first:* do you have Slack tools in this session, and can you look up the alerts channel by name? If yes, the Devin Slack app is installed in the workspace. You can't see whether *their* personal account is connected, so ask them to confirm that one thing in **Settings → Connections → Slack** rather than walking them through the whole step.
+
 They do this in the Devin app: **Settings → Connections → Slack**. The Devin Slack app needs to be installed in the workspace, and their **personal** Slack account needs to be connected. Automations that watch Slack won't work without the personal connection.
 
 ### Step 3 — Connect Datadog to Devin (MCP)
+
+*Check first:* list your MCP servers. If Datadog is there, call it (list monitors) to confirm it works, and skip to Step 4.
 
 They do this in the Devin app: **Settings → Connections → MCPs** (the MCP Marketplace). Docs: https://docs.devin.ai/enterprise/integrations/datadog
 
@@ -78,13 +95,17 @@ Once this is done, verify it yourself if you can: ask Datadog for the list of ac
 
 ### Step 4 — Invite Devin to the channel
 
+*Check first:* try to read the alerts channel's recent history with your Slack tools. Finding the channel by name isn't enough (public channels show up either way); you need to actually get messages back. If you do, you're a member; skip this step. If lookup works but reading fails, you're not.
+
 In Slack, in the alerts channel: `/invite @Devin`. Devin must be a member of the channel for the automation to see messages.
 
 ### Step 5 — Create the automation
 
-In the Devin app, go to **Automations**. Create **one** automation. Pick one of these, not both:
+*Check first:* if you can list their automations, look for one already watching the alerts channel. If there is one, review its settings against this step instead of creating another.
 
-- **Recommended: the *Triage Bug Reports* template.** Click *View all examples* and choose **Triage Bug Reports** (the docs call it "Triage bug reports on Slack"; the template list shows "Triage Bug Reports"). It uses the *Triage Devin* action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the talk.
+In the Devin app, go to **Automations**. Create **one** automation, and **start from a template**, not from scratch. Pick one of these, not both:
+
+- **Recommended: the *Triage Devin* template.** Click *View all examples* and choose **Triage Devin**. Don't build a custom automation by hand; the template comes pre-configured with the *Triage Devin* action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the talk.
 - **Simpler alternative: the *Investigate Alerts Triggered* template.** Trigger = Slack message in the channel, action = start one session per alert that uses the Datadog MCP and replies in the thread. No persistent triage Devin, no shared memory, fewer moving parts.
 
 Then, in the automation editor:
@@ -153,18 +174,6 @@ Then save and make sure the automation is **enabled**.
 - No Slack in the loop? Automations also have a **webhook trigger** Datadog can post to directly, and there's an API pattern at https://docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation.
 
 When everything works, summarize what was set up, where each setting lives, and how to turn it off.
-
-## Three things we learned running this
-
-**1. Devins need shared memory.** If you use an alerting product, you get tons of duplicate alerts, because things keep going off. Your agent needs the full context of its previous runs. Honestly, solving this is not that hard: we just gave it a Markdown file with read and write access. Same way humans share a runbook or a postmortem. Models are good enough now that the agents figure out the rest.
-
-**2. Don't force code changes.** Once this was running, we found most investigations shouldn't end in a code change at all. So we tweaked the agent: you don't have to push code at the end. Sometimes an investigation is a no-op, or just a learning, or "this is a config problem, not a code problem." Not everything needs a PR.
-
-**3. Different agents for different tasks.** We have a triage Devin that's told *not* to investigate root causes, just triage, point to previous results, and hand off. And an investigation Devin whose job is the diagnosis, not the PR. It replies in the thread, and a human decides if anything should change. Agents are good at doing one thing specifically. It's the same Devin under the hood, just different prompts.
-
-## If you're not using Devin
-
-Of course I want you to use Devin, but this should be useful if you're building it yourself too. You need a dedicated alerts channel, an agent that gets kicked off per message, read access to your observability data (Datadog's MCP server works with any MCP client), a Markdown file it can read and write as memory, and an explicit instruction that it doesn't have to open a PR. Start with one low-severity monitor. You don't need to be a cutting-edge AI company to do this.
 
 ## Links
 
