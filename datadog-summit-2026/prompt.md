@@ -88,16 +88,13 @@ In Slack, in the alerts channel: `/invite @Devin`. Devin must be a member of the
 
 *Check first:* if you can list their automations, look for one already watching the alerts channel. If there is one, review its settings against this step instead of creating another.
 
-In the Devin app, go to **Automations**. Create **one** automation, and **start from a template**, not from scratch. Pick one of these, not both:
-
-- **Recommended: the *Triage Devin* template.** Click *View all examples* and choose **Triage Devin**. Don't build a custom automation by hand; the template comes pre-configured with the *Triage Devin* action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the keynote.
-- **Simpler alternative: the *Investigate Alerts Triggered* template.** Trigger = Slack message in the channel, action = start one session per alert that uses the Datadog MCP and replies in the thread. No persistent triage Devin, no shared memory, fewer moving parts.
+In the Devin app, go to **Automations**. Create **one** automation from the **Triage Devin** template: click *View all examples* and choose **Triage Devin**. Don't build a custom automation by hand, and don't use any other template. It comes pre-configured with the *Triage Devin* action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the keynote.
 
 Then, in the automation editor:
 
 1. Select the alerts channel as the trigger.
 2. Add a **condition** on the message so only Datadog alert posts fire it, not people chatting in the channel. For example: message text contains the Datadog notification handle they use, like `@slack-alerts`, or the message is from the Datadog app.
-3. Paste the setup prompt below into the prompt field. Fill in the service → owner → repo table with what they told you in Step 0. (If they picked the alternative template, the same prompt works as the session prompt; skip the scratchpad line.)
+3. Paste the setup prompt below into the prompt field. Fill in the service → owner → repo table with what they told you in Step 0.
 
 ```
 You are the triage Devin for Datadog alerts posted in #alerts.
