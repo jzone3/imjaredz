@@ -39,7 +39,7 @@ Devin: the person you're talking to just saw a keynote about how Cognition uses 
 Ground rules:
 
 - Some steps are clicks in Slack, Datadog, or the Devin app that only they can do. For those, give exact instructions, then **wait for them to confirm** before moving on.
-- Do the parts you can do yourself: draft the setup prompt, create the automation if you have the tools to, run the test.
+- **Do it yourself wherever you can.** You have tools for managing Devin itself (listing integrations and MCP servers, listing and creating automations, finding settings pages) plus your own knowledge of how Devin works. Use them to set things up programmatically instead of dictating clicks: draft the setup prompt, create the automation, run the test. Only fall back to step-by-step UI instructions for things you genuinely can't do from a session (Slack `/invite`, the Datadog UI, their personal Slack connection, entering API keys).
 - **Check before you ask.** Most of these steps may already be done. At the start of each step, use your own tools to check (each step says how). If it's done, say so and skip it. Only ask them to do something you've confirmed isn't set up.
 - Read https://docs.devin.ai/product-guides/auto-triage and https://docs.devin.ai/product-guides/automations before you begin so your instructions match the current UI. If the docs and this page disagree, trust the docs.
 - Never ask them to paste API keys, application keys, or tokens into the chat. Keys go into the Devin app's connection settings only.
@@ -62,13 +62,13 @@ They do this in Datadog and Slack. Docs: https://docs.datadoghq.com/integrations
 
 ### Step 2 — Connect Slack to Devin
 
-*Check first:* do you have Slack tools in this session, and can you look up the alerts channel by name? If yes, the Devin Slack app is installed in the workspace. You can't see whether *their* personal account is connected, so ask them to confirm that one thing in **Settings → Connections → Slack** rather than walking them through the whole step.
+*Check first:* if you can list the org's integrations, check whether Slack shows as connected. Otherwise: do you have Slack tools in this session, and can you look up the alerts channel by name? If yes, the Devin Slack app is installed in the workspace. You can't see whether *their* personal account is connected, so ask them to confirm that one thing in **Settings → Connections → Slack** rather than walking them through the whole step.
 
 They do this in the Devin app: **Settings → Connections → Slack**. The Devin Slack app needs to be installed in the workspace, and their **personal** Slack account needs to be connected. Automations that watch Slack won't work without the personal connection.
 
 ### Step 3 — Connect Datadog to Devin (MCP)
 
-*Check first:* list your MCP servers. If Datadog is there, call it (list monitors) to confirm it works, and skip to Step 4.
+*Check first:* list your MCP servers. If Datadog is there, call it (list monitors) to confirm it works, and skip to Step 4. If it isn't and you can install MCP servers from the marketplace, install Datadog yourself; the only part they have to do is enter the keys on the settings page.
 
 They do this in the Devin app: **Settings → Connections → MCPs** (the MCP Marketplace). Docs: https://docs.devin.ai/enterprise/integrations/datadog
 
@@ -88,13 +88,15 @@ In Slack, in the alerts channel: `/invite @Devin`. Devin must be a member of the
 
 *Check first:* if you can list their automations, look for one already watching the alerts channel. If there is one, review its settings against this step instead of creating another.
 
-In the Devin app, go to **Automations**. Create **one** automation from the **Triage Devin** template: click *View all examples* and choose **Triage Devin**. Don't build a custom automation by hand, and don't use any other template. It comes pre-configured with the *Triage Devin* action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the keynote.
+*Do it yourself if you can:* if you have the automation-management tool, don't send them to the UI. Read its schemas first, then create **one** automation: a Slack-message trigger on the alerts channel with the condition below, and the **Triage Devin** (auto-triage) action with the setup prompt below as its setup prompt. Put the Step 6 guardrails (ACU limit, invocation limit, network policy) in the same create call. Dry-run it with validate before creating; creating may need their approval, which is expected. Then show them the automation's URL and go to Step 7.
 
-Then, in the automation editor:
+*Otherwise, in the UI:* in the Devin app, go to **Automations**. Create **one** automation from the **Triage Devin** template: click *View all examples* and choose **Triage Devin**. Don't build a custom automation by hand, and don't use any other template. It comes pre-configured with the *Triage Devin* action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the keynote.
 
-1. Select the alerts channel as the trigger.
-2. Add a **condition** on the message so only Datadog alert posts fire it, not people chatting in the channel. For example: message text contains the Datadog notification handle they use, like `@slack-alerts`, or the message is from the Datadog app.
-3. Paste the setup prompt below into the prompt field. Fill in the service → owner → repo table with what they told you in Step 0.
+Either way, the automation needs:
+
+1. The alerts channel as the trigger.
+2. A **condition** on the message so only Datadog alert posts fire it, not people chatting in the channel. For example: message text contains the Datadog notification handle they use, like `@slack-alerts`, or the message is from the Datadog app.
+3. The setup prompt below as the prompt. Fill in the service → owner → repo table with what they told you in Step 0.
 
 ```
 You are the triage Devin for Datadog alerts posted in #alerts.
@@ -140,7 +142,7 @@ next alert gets it right.
 - **Network policy** on, since Slack messages are untrusted input.
 - Confirm the automation only has Slack access to the alerts channel unless they want more.
 
-Then save and make sure the automation is **enabled**.
+Then save and make sure the automation is **enabled**. If you created it yourself, check these with a *get* on the automation instead of asking.
 
 ### Step 7 — Test it
 
