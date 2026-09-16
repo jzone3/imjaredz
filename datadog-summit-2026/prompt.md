@@ -3,7 +3,7 @@
 Jared Zoneraich · Datadog Summit SF · September 2026 · https://devindatadog.com
 HTML version: https://imjaredz.com/datadog-summit-2026/
 
-This is the leave-behind from my Datadog Summit talk, *Devin builds Devin*. Quick version: agents write basically all of our code now, and our team isn't growing anywhere near as fast as the code is. More code means more alerts, and our Datadog alerts were through the roof. Humans can't even get through that backlog. So we made Devin the first responder to every single alert.
+This is the leave-behind from my Datadog Summit keynote, *Devin builds Devin*. Quick version: agents write basically all of our code now, and our team isn't growing anywhere near as fast as the code is. More code means more alerts, and our Datadog alerts were through the roof. Humans can't even get through that backlog. So we made Devin the first responder to every single alert.
 
 Every alert gets piped into Slack. Devin picks it up, pulls whatever it needs from Datadog, git, and Slack, and replies in the thread with what it thinks happened. From there we work with it like a teammate. Code changes only happen when a human asks for them.
 
@@ -11,7 +11,7 @@ Every alert gets piped into Slack. Devin picks it up, pulls whatever it needs fr
 
 To start: open https://app.devin.ai (or @Devin in Slack) and paste
 
-    I just saw Jared Zoneraich's Datadog Summit talk on using Devin as the first responder for Datadog alerts, and I want the same setup for my team: Datadog alerts post to a Slack channel, a Devin automation picks up each alert, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause (a PR only when a human asks for one).
+    I just saw Jared Zoneraich's Datadog Summit keynote on using Devin as the first responder for Datadog alerts, and I want the same setup for my team: Datadog alerts post to a Slack channel, a Devin automation picks up each alert, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause (a PR only when a human asks for one).
 
     Read https://imjaredz.com/datadog-summit-2026/ first. Then guide me through the setup one step at a time: tell me exactly what to click in Slack, Datadog, and the Devin app, do the parts you can do yourself, and wait for me to confirm each step before moving on.
 
@@ -34,7 +34,7 @@ That's the whole thing. In a real investigation, Devin is making dozens of Datad
 
 ## Instructions for Devin
 
-Devin: the person you're talking to just saw a talk about how Cognition uses you as the first responder for its own Datadog alerts. They want the same setup for their team. Your job is to **guide them through it step by step**, in order, one step at a time.
+Devin: the person you're talking to just saw a keynote about how Cognition uses you as the first responder for its own Datadog alerts. They want the same setup for their team. Your job is to **guide them through it step by step**, in order, one step at a time.
 
 Ground rules:
 
@@ -90,7 +90,7 @@ In Slack, in the alerts channel: `/invite @Devin`. Devin must be a member of the
 
 In the Devin app, go to **Automations**. Create **one** automation, and **start from a template**, not from scratch. Pick one of these, not both:
 
-- **Recommended: the *Triage Devin* template.** Click *View all examples* and choose **Triage Devin**. Don't build a custom automation by hand; the template comes pre-configured with the *Triage Devin* action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the talk.
+- **Recommended: the *Triage Devin* template.** Click *View all examples* and choose **Triage Devin**. Don't build a custom automation by hand; the template comes pre-configured with the *Triage Devin* action: one persistent Devin watches the alerts channel, groups duplicates, keeps a shared scratchpad, and starts a separate investigation Devin for each actionable alert on its own. The investigations are not a second automation; the triage Devin spawns them. This is the setup from the keynote.
 - **Simpler alternative: the *Investigate Alerts Triggered* template.** Trigger = Slack message in the channel, action = start one session per alert that uses the Datadog MCP and replies in the thread. No persistent triage Devin, no shared memory, fewer moving parts.
 
 Then, in the automation editor:
