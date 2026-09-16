@@ -197,6 +197,12 @@
             color: var(--faint);
         }
     </style>
+
+    <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    var PH_KEY = 'phc_DSou7Cw1e7u8L6cSst5OqCXqCfnDEovkGvbh34bvakr', PH_HOST = 'https://us.i.posthog.com';
+    posthog.init(PH_KEY, { api_host: PH_HOST, defaults: '2026-05-30' });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -210,7 +216,7 @@
         <p><strong>The rest of this page is written for Devin, not for you.</strong> Hand it the URL and it'll walk you through the setup step by step. Or read it yourself. None of this is hard.</p>
 
         <div class="cta">
-            <p><a class="btn" href="https://app.devin.ai/?prompt=I%20just%20saw%20Jared%20Zoneraich%27s%20Datadog%20Summit%20keynote%20on%20using%20Devin%20as%20the%20first%20responder%20for%20Datadog%20alerts%2C%20and%20I%20want%20the%20same%20setup%20for%20my%20team%3A%20Datadog%20alerts%20post%20to%20a%20Slack%20channel%2C%20a%20Devin%20automation%20picks%20up%20each%20alert%2C%20investigates%20it%20with%20the%20Datadog%20MCP%20and%20our%20repos%2C%20and%20replies%20in%20the%20thread%20with%20a%20root%20cause%20%28a%20PR%20only%20when%20a%20human%20asks%20for%20one%29.%0A%0ARead%20https%3A%2F%2Fimjaredz.com%2Fdatadog-summit-2026%2F%20first.%20Then%20guide%20me%20through%20the%20setup%20one%20step%20at%20a%20time%3A%20tell%20me%20exactly%20what%20to%20click%20in%20Slack%2C%20Datadog%2C%20and%20the%20Devin%20app%2C%20do%20the%20parts%20you%20can%20do%20yourself%2C%20and%20wait%20for%20me%20to%20confirm%20each%20step%20before%20moving%20on.&amp;utm_source=imjaredz&amp;utm_medium=web&amp;utm_campaign=datadog-summit-2026">Open in Devin</a></p>
+            <p><a class="btn" href="https://app.devin.ai/?prompt=I%20just%20saw%20Jared%20Zoneraich%27s%20Datadog%20Summit%20keynote%20on%20using%20Devin%20as%20the%20first%20responder%20for%20Datadog%20alerts%2C%20and%20I%20want%20the%20same%20setup%20for%20my%20team%3A%20Datadog%20alerts%20post%20to%20a%20Slack%20channel%2C%20a%20Devin%20automation%20picks%20up%20each%20alert%2C%20investigates%20it%20with%20the%20Datadog%20MCP%20and%20our%20repos%2C%20and%20replies%20in%20the%20thread%20with%20a%20root%20cause%20%28a%20PR%20only%20when%20a%20human%20asks%20for%20one%29.%0A%0ARead%20https%3A%2F%2Fimjaredz.com%2Fdatadog-summit-2026%2F%20first.%20Then%20guide%20me%20through%20the%20setup%20one%20step%20at%20a%20time%3A%20tell%20me%20exactly%20what%20to%20click%20in%20Slack%2C%20Datadog%2C%20and%20the%20Devin%20app%2C%20do%20the%20parts%20you%20can%20do%20yourself%2C%20and%20wait%20for%20me%20to%20confirm%20each%20step%20before%20moving%20on.&amp;utm_source=imjaredz&amp;utm_medium=web&amp;utm_campaign=datadog-summit-2026" id="open-in-devin">Open in Devin</a></p>
             <p><span class="or">or paste this prompt into any Devin session (or @Devin in Slack):</span></p>
 <pre class="prompt"><code>I just saw Jared Zoneraich&#x27;s Datadog Summit keynote on using Devin as the first responder for Datadog alerts, and I want the same setup for my team: Datadog alerts post to a Slack channel, a Devin automation picks up each alert, investigates it with the Datadog MCP and our repos, and replies in the thread with a root cause (a PR only when a human asks for one).
 
@@ -377,9 +383,25 @@ next alert gets it right.</code></pre>
             navigator.clipboard.writeText(code.textContent).then(function () {
                 btn.textContent = 'copied';
                 setTimeout(function () { btn.textContent = 'copy'; }, 1500);
+                posthog.capture(pre.classList.contains('prompt') ? 'prompt_copied' : 'code_copied', {
+                    block: code.textContent.split('\n')[0].slice(0, 80)
+                });
             });
         });
         pre.appendChild(btn);
+    });
+    document.getElementById('open-in-devin').addEventListener('click', function () {
+        if (posthog.__loaded) {
+            posthog.capture('open_in_devin_clicked', {}, { transport: 'sendBeacon' });
+            return;
+        }
+        // SDK still downloading: the stub only queues, and navigation would drop the queue.
+        navigator.sendBeacon(PH_HOST + '/e/?ip=1', JSON.stringify({
+            api_key: PH_KEY,
+            event: 'open_in_devin_clicked',
+            distinct_id: 'preload-' + Math.random().toString(36).slice(2),
+            properties: { $current_url: location.href, $referrer: document.referrer, $lib: 'beacon' }
+        }));
     });
     </script>
 </body>
