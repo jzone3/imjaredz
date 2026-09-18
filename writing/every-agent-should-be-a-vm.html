@@ -179,6 +179,42 @@
         code { font-family: monospace; background: #f6f6f6; padding: 1px 4px; }
         pre code { padding: 0; }
 
+        .container img { cursor: zoom-in; }
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.85);
+        }
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 92vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            margin: 0;
+            cursor: default;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-family: monospace;
+            font-size: 24px;
+            line-height: 1;
+            color: #fff;
+            background: none;
+            border: 0;
+            padding: 8px 10px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .lightbox-close:hover, .lightbox-close:focus { opacity: 1; }
+        body.lightbox-open { overflow: hidden; }
+
         footer {
             margin-top: 72px;
             font-size: 13px;
@@ -266,6 +302,39 @@
             });
         });
         pre.appendChild(btn);
+    });
+
+    document.querySelectorAll('.container img').forEach(function (img) {
+        img.tabIndex = -1;
+        img.addEventListener('click', function () {
+            var box = document.createElement('div');
+            box.className = 'lightbox';
+            box.setAttribute('role', 'dialog');
+            box.setAttribute('aria-modal', 'true');
+            var full = document.createElement('img');
+            full.src = img.currentSrc || img.src;
+            full.alt = img.alt;
+            var close = document.createElement('button');
+            close.className = 'lightbox-close';
+            close.type = 'button';
+            close.setAttribute('aria-label', 'Close');
+            close.textContent = '\u00d7';
+            function shut() {
+                document.removeEventListener('keydown', onKey);
+                document.body.classList.remove('lightbox-open');
+                box.remove();
+                img.focus();
+            }
+            function onKey(e) { if (e.key === 'Escape') shut(); }
+            close.addEventListener('click', shut);
+            box.addEventListener('click', function (e) { if (e.target !== full) shut(); });
+            document.addEventListener('keydown', onKey);
+            box.appendChild(full);
+            box.appendChild(close);
+            document.body.appendChild(box);
+            document.body.classList.add('lightbox-open');
+            close.focus();
+        });
     });
     </script>
 </body>
