@@ -157,9 +157,17 @@ Then save and make sure the automation is **enabled**. If you created it yoursel
 - Add **Knowledge** in Devin describing their services, normal thresholds, and runbooks. Investigation quality jumps.
 - Route more monitors to the channel, low severity first.
 - Keep the loop human-led: the investigation Devin diagnoses and replies in the thread. When someone wants a fix, they ask for a PR in the thread and decide what the fix should be.
-- No Slack in the loop? Automations also have a **webhook trigger** Datadog can post to directly, and there's an API pattern at https://docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation.
 
 When everything works, summarize what was set up, where each setting lives, and how to turn it off.
+
+### Appendix — Not using Slack?
+
+Plenty of teams don't route Datadog alerts through Slack at all. If that's them, the Slack steps above don't apply. The idea is the same: an alert fires, a Devin automation picks it up, Devin investigates with the Datadog MCP and their repos, and reports back. Only the trigger changes. Two options:
+
+- **Alerts go to PagerDuty.** Devin has a native **PagerDuty trigger** (incident triggered / acknowledged / resolved / updated). Connect PagerDuty under **Settings → Connections → PagerDuty**, then build the automation on the PagerDuty trigger instead of a Slack message. Devin can post its findings back as a note on the incident. Docs: https://docs.devin.ai/integrations/pagerduty
+- **Straight from Datadog.** Automations also have a generic **webhook trigger**. Create the automation with a webhook trigger, copy the URL and secret, and add them as a Datadog Webhooks integration (https://docs.datadoghq.com/integrations/webhooks/) that the monitors notify (`@webhook-devin`). The alert payload lands in the session prompt. There's also an API pattern at https://docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation
+
+Devin: in either case, skip Steps 1, 2, and 4, still do Step 3 (Datadog MCP), and use a *Start session* action in Step 5, since *Triage Devin* only watches Slack channels. Reuse the setup prompt, reworded for a PagerDuty note or a session summary instead of a thread reply. Keep the Step 6 guardrails. Work out the exact clicks from the linked docs; they're the source of truth.
 
 ## Links
 
