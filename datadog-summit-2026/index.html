@@ -353,10 +353,17 @@ next alert gets it right.</code></pre>
             <li>Add <strong>Knowledge</strong> in Devin describing their services, normal thresholds, and runbooks. Investigation quality jumps.</li>
             <li>Route more monitors to the channel, low severity first.</li>
             <li>Keep the loop human-led: the investigation Devin diagnoses and replies in the thread. When someone wants a fix, they ask for a PR in the thread and decide what the fix should be.</li>
-            <li>No Slack in the loop? Automations also have a <strong>webhook trigger</strong> Datadog can post to directly, and there's an API pattern at <a href="https://docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation">docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation</a>.</li>
         </ul>
 
         <p>When everything works, summarize what was set up, where each setting lives, and how to turn it off.</p>
+
+        <h3>Appendix — Not using Slack?</h3>
+        <p>Plenty of teams don't route Datadog alerts through Slack at all. If that's them, the Slack steps above don't apply. The idea is the same: an alert fires, a Devin automation picks it up, Devin investigates with the Datadog MCP and their repos, and reports back. Only the trigger changes. Two options:</p>
+        <ul>
+            <li><strong>Alerts go to PagerDuty.</strong> Devin has a native <strong>PagerDuty trigger</strong> (incident triggered / acknowledged / resolved / updated). Connect PagerDuty under <strong>Settings → Connections → PagerDuty</strong>, then build the automation on the PagerDuty trigger instead of a Slack message. Devin can post its findings back as a note on the incident. Docs: <a href="https://docs.devin.ai/integrations/pagerduty">docs.devin.ai/integrations/pagerduty</a>.</li>
+            <li><strong>Straight from Datadog.</strong> Automations also have a generic <strong>webhook trigger</strong>. Create the automation with a webhook trigger, copy the URL and secret, and add them as a <a href="https://docs.datadoghq.com/integrations/webhooks/">Datadog Webhooks integration</a> that the monitors notify (<code>@webhook-devin</code>). The alert payload lands in the session prompt. There's also an API pattern at <a href="https://docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation">docs.devin.ai/use-cases/gallery/api-datadog-alert-investigation</a>.</li>
+        </ul>
+        <p>Devin: in either case, skip Steps 1, 2, and 4, still do Step 3 (Datadog MCP), and use a <em>Start session</em> action in Step 5, since <em>Triage Devin</em> only watches Slack channels. Reuse the setup prompt, reworded for a PagerDuty note or a session summary instead of a thread reply. Keep the Step 6 guardrails. Work out the exact clicks from the linked docs; they're the source of truth.</p>
 
         <h2>Links</h2>
         <ul>
