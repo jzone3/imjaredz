@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Devin Debugging Devin by Jared Zoneraich</title>
+    <meta content="How Cognition's agents improve themselves using Datadog's observability — keynote from Datadog Summit San Francisco, September 23, 2026." name="description">
+    <link rel="canonical" href="https://imjaredz.com/writing/datadog-summit-sf-2026-keynote.html">
+
+    <meta property="og:type"        content="article">
+    <meta property="og:url"         content="https://imjaredz.com/writing/datadog-summit-sf-2026-keynote.html">
+    <meta property="og:title"       content="Devin Debugging Devin">
+    <meta property="og:description" content="How Cognition's agents improve themselves using Datadog's observability — keynote from Datadog Summit San Francisco, September 23, 2026.">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@imjaredz">
+    <meta name="twitter:title"       content="Devin Debugging Devin">
+
+    <meta property="og:image"       content="https://imjaredz.com/assets/img/og-datadog-summit-sf-2026-keynote.jpg">
+    <meta name="twitter:description" content="How Cognition's agents improve themselves using Datadog's observability — keynote from Datadog Summit San Francisco, September 23, 2026.">
+    <meta name="twitter:image"       content="https://imjaredz.com/assets/img/og-datadog-summit-sf-2026-keynote.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Devin Debugging Devin",
+      "url": "https://imjaredz.com/writing/datadog-summit-sf-2026-keynote.html",
+      "datePublished": "2026-09-23",
+      "author": { "@type": "Person", "name": "Jared Zoneraich", "url": "https://imjaredz.com/" },
+      "image": "https://imjaredz.com/assets/img/og-datadog-summit-sf-2026-keynote.jpg",
+      "video": {
+        "@type": "VideoObject",
+        "name": "Devin Debugging Devin — Datadog Summit San Francisco 2026 keynote",
+        "description": "How Cognition's agents improve themselves using Datadog's observability.",
+        "thumbnailUrl": "https://imjaredz.com/assets/img/og-datadog-summit-sf-2026-keynote.jpg",
+        "contentUrl": "https://imjaredz.com/assets/video/datadog-summit-sf-2026-keynote.mp4",
+        "uploadDate": "2026-09-23",
+        "duration": "PT15M20S"
+      }
+    }
+    </script>
+
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="imjaredz.com">
+    <meta name="author" content="Jared Zoneraich">
+
+    <link href="../assets/img/favicon-32.png" rel="icon" sizes="32x32">
+    <link href="../assets/img/favicon.png" rel="icon" sizes="180x180">
+    <link href="../assets/img/favicon.png" rel="apple-touch-icon">
+
+    <style>
+        :root {
+            --ink: #000;
+            --faint: #6b6b6b;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: monospace;
+            background: #fff;
+            color: var(--ink);
+            margin: 8px;
+            padding: 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 72px 24px 96px;
+        }
+
+        .back {
+            display: inline-block;
+            color: var(--faint);
+            text-decoration: none;
+            margin-bottom: 36px;
+        }
+        .back::before { content: "\2190\00a0"; }
+        .back:hover { color: var(--ink); }
+
+        h1 {
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.3;
+            margin: 0 0 6px;
+        }
+        h1 { position: relative; }
+        h1::before { content: "#"; font-weight: 400; color: var(--faint); position: absolute; right: 100%; margin-right: 0.6ch; }
+
+        .meta {
+            color: var(--faint);
+            margin: 0 0 32px;
+        }
+
+        p { margin: 0 0 14px; }
+
+        a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            text-decoration-color: #bbb;
+        }
+        a:hover { text-decoration-color: var(--ink); }
+
+        b, strong { font-weight: 700; }
+
+        ul { list-style: none; padding: 0; margin: 0 0 14px; }
+        ul li { margin: 0 0 8px; position: relative; }
+        ul li::before { content: "-"; position: absolute; left: -2ch; }
+
+        .faint { color: var(--faint); }
+        .faint a { color: var(--faint); }
+        .faint a:hover { color: var(--ink); }
+
+        video {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1920 / 932;
+            background: #000;
+            margin: 24px 0;
+        }
+
+        footer {
+            margin-top: 72px;
+            font-size: 13px;
+            color: var(--faint);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="/">back</a>
+
+        <h1>Devin Debugging Devin</h1>
+        <p class="meta">Jared Zoneraich &middot; September 2026 &middot; Datadog Summit San Francisco</p>
+
+<p><em>How Cognition's agents improve themselves using Datadog's observability.</em></p>
+<p>Keynote from Datadog Summit San Francisco, September 23, 2026. The setup from the talk &mdash; Devin as the first responder for your Datadog alerts &mdash; is written up as a guide <a href="../datadog-summit-2026/">here</a>.</p>
+
+<video controls preload="metadata" playsinline poster="../assets/img/og-datadog-summit-sf-2026-keynote.jpg">
+    <source src="../assets/video/datadog-summit-sf-2026-keynote.mp4" type="video/mp4">
+    Your browser doesn't support HTML5 video. <a href="../assets/video/datadog-summit-sf-2026-keynote.mp4">Download the MP4</a> instead.
+</video>
+
+<ul>
+<li><a href="../assets/video/datadog-summit-sf-2026-keynote.mp4">Video</a> <span class="faint">(<a href="https://www.youtube.com/watch?v=pLO-YL2Y1lI&amp;t=4022s">official Datadog livestream</a>)</span></li>
+<!-- TODO: slides PDF pending -->
+<li><a href="../assets/pdf/datadog-summit-sf-2026-keynote-slides.pdf">Slides</a></li>
+</ul>
+
+        <footer>made in usa 🇺🇸 new york, new york</footer>
+    </div>
+</body>
+</html>
