@@ -223,6 +223,7 @@
             height: 56px;
             margin: 0 0 8px;
             cursor: default;
+            touch-action: pan-y pinch-zoom;
         }
         h1.fallback { display: none; }
         .no-canvas h1.fallback { display: block; }
@@ -459,14 +460,35 @@
             requestAnimationFrame(frame);
         }
 
-        canvas.addEventListener('mousemove', function (e) {
+        function pointAt(e) {
             var r = canvas.getBoundingClientRect();
             mouse.x = e.clientX - r.left;
             mouse.y = e.clientY - r.top;
-        });
-        canvas.addEventListener('mouseleave', function () {
-            mouse.x = -9999; mouse.y = -9999;
-        });
+        }
+        function release() { mouse.x = -9999; mouse.y = -9999; }
+        if (window.PointerEvent) {
+            // Touch: follow the finger that went down on the name. Mouse: plain hover.
+            // Compatibility mouse events synthesized after a tap never reach here.
+            var touchId = null;
+            canvas.addEventListener('pointerdown', function (e) {
+                if (e.pointerType === 'mouse') return;
+                if (touchId === null) { touchId = e.pointerId; pointAt(e); }
+            });
+            canvas.addEventListener('pointermove', function (e) {
+                if (e.pointerType === 'mouse') { pointAt(e); return; }
+                if (e.pointerId === touchId) pointAt(e);
+            });
+            var endTouch = function (e) {
+                if (e.pointerType === 'mouse') { release(); return; }
+                if (e.pointerId === touchId) { touchId = null; release(); }
+            };
+            canvas.addEventListener('pointerup', endTouch);
+            canvas.addEventListener('pointercancel', endTouch);
+            canvas.addEventListener('pointerleave', endTouch);
+        } else {
+            canvas.addEventListener('mousemove', pointAt);
+            canvas.addEventListener('mouseleave', release);
+        }
         var lastW = window.innerWidth;
         window.addEventListener('resize', function () {
             if (window.innerWidth !== lastW) {
@@ -485,6 +507,7 @@
     // the mouse path and decaying exponentially, devin.ai/cli style.
     (function () {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
         var canvas = document.createElement('canvas');
         canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;';
         canvas.setAttribute('aria-hidden', 'true');
@@ -565,7 +588,8 @@
             raf = alive ? requestAnimationFrame(frame) : null;
         }
 
-        window.addEventListener('mousemove', function (e) {
+        window.addEventListener('pointermove', function (e) {
+            if (e.pointerType !== 'mouse') return;
             if (overText(e.clientX, e.clientY)) { prev = null; return; }
             var cx = e.clientX / CELL, cy = e.clientY / CELL;
             paint(prev ? prev.x : cx, prev ? prev.y : cy, cx, cy);
@@ -579,11 +603,13 @@
     // Section headings: brief character scramble on hover.
     (function () {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
         var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ*#+';
         document.querySelectorAll('[data-scramble]').forEach(function (el) {
             var original = el.textContent;
             var timer = null;
-            el.addEventListener('mouseenter', function () {
+            el.addEventListener('pointerenter', function (e) {
+                if (e.pointerType !== 'mouse') return;
                 var i = 0;
                 clearInterval(timer);
                 timer = setInterval(function () {
@@ -597,7 +623,7 @@
                     }
                 }, 28);
             });
-            el.addEventListener('mouseleave', function () {
+            el.addEventListener('pointerleave', function () {
                 clearInterval(timer);
                 el.textContent = original;
             });
