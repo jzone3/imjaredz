@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rampart Edge: On-device privacy filter, now 10x smaller</title>
+    <meta content="Rampart Edge is a new version of Rampart, the filter we released in June to help remove personal information before it leaves your browser. Rampart was already the smallest model of its kind. Edge is ten times smaller, at just 1.45MB, and blocks far fewer legitimate messages by mistake." name="description">
+    <link rel="canonical" href="https://ndstudio.gov/posts/introducing-rampart-edge">
+
+    <meta property="og:type"        content="article">
+    <meta property="og:url"         content="https://ndstudio.gov/posts/introducing-rampart-edge">
+    <meta property="og:title"       content="Rampart Edge: On-device privacy filter, now 10x smaller">
+    <meta property="og:description" content="Rampart Edge is a new version of Rampart, the filter we released in June to help remove personal information before it leaves your browser. Rampart was already the smallest model of its kind. Edge is ten times smaller, at just 1.45MB, and blocks far fewer legitimate messages by mistake.">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@imjaredz">
+    <meta name="twitter:title"       content="Rampart Edge: On-device privacy filter, now 10x smaller">
+
+    <meta property="og:image"       content="https://imjaredz.com/assets/img/og-rampart-edge.jpg">
+    <meta name="twitter:description" content="Rampart Edge is a new version of Rampart, the filter we released in June to help remove personal information before it leaves your browser. Rampart was already the smallest model of its kind. Edge is ten times smaller, at just 1.45MB, and blocks far fewer legitimate messages by mistake.">
+    <meta name="twitter:image"       content="https://imjaredz.com/assets/img/og-rampart-edge.jpg">
+
+    <meta name="robots" content="noindex,follow">
+    <meta property="og:site_name" content="imjaredz.com">
+    <meta name="author" content="Jared Zoneraich, Edward Coristine">
+
+    <link href="../assets/img/favicon-32.png" rel="icon" sizes="32x32">
+    <link href="../assets/img/favicon.png" rel="icon" sizes="180x180">
+    <link href="../assets/img/favicon.png" rel="apple-touch-icon">
+
+    <style>
+        :root {
+            --ink: #000;
+            --faint: #6b6b6b;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: monospace;
+            background: #fff;
+            color: var(--ink);
+            margin: 8px;
+            padding: 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 72px 24px 96px;
+        }
+
+        .back {
+            display: inline-block;
+            color: var(--faint);
+            text-decoration: none;
+            margin-bottom: 36px;
+        }
+        .back::before { content: "\2190\00a0"; }
+        .back:hover { color: var(--ink); }
+
+        h1 {
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.3;
+            margin: 0 0 6px;
+        }
+        h1 { position: relative; }
+        h1::before { content: "#"; font-weight: 400; color: var(--faint); position: absolute; right: 100%; margin-right: 0.6ch; }
+
+        .meta {
+            color: var(--faint);
+            margin: 0 0 32px;
+        }
+
+        p { margin: 0 0 14px; }
+
+        a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            text-decoration-color: #bbb;
+        }
+        a:hover { text-decoration-color: var(--ink); }
+
+        b, strong { font-weight: 700; }
+
+        ul { list-style: none; padding: 0; margin: 0 0 14px; }
+        ul li { margin: 0 0 8px; position: relative; }
+        ul li::before { content: "-"; position: absolute; left: -2ch; }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 24px 0;
+        }
+
+
+        h2 { font-size: 15px; font-weight: 700; margin: 28px 0 10px; position: relative; }
+        h2::before { content: "##"; font-weight: 400; color: var(--faint); position: absolute; right: 100%; margin-right: 0.6ch; }
+
+        ol { padding: 0 0 0 2.5ch; margin: 0 0 14px; }
+        ol li { margin: 0 0 8px; }
+
+        .tldr { border-left: 2px solid #ddd; padding: 2px 0 2px 14px; margin: 0 0 24px; color: var(--faint); }
+        .tldr span { display: block; font-weight: 700; margin-bottom: 4px; }
+        .tldr p { margin: 0; }
+
+        .fig { border: 1px solid #e3e3e3; padding: 14px 16px; margin: 20px 0; }
+        .fig h3 { font-size: 13px; font-weight: 700; margin: 0 0 10px; }
+        .fig table { border-collapse: collapse; width: 100%; margin: 0 0 8px; }
+        .fig td { padding: 3px 0; vertical-align: top; }
+        .fig td:last-child { text-align: right; white-space: nowrap; font-weight: 700; }
+        .fig .note { color: var(--faint); margin: 0; }
+        .fig .sub { color: var(--faint); }
+
+        pre { background: #f6f6f6; padding: 14px 16px; margin: 20px 0; overflow-x: auto; font-size: 12px; line-height: 1.5; }
+        code { font-family: monospace; }
+
+        .ex { margin: 0 0 12px; }
+        .ex .lab { color: var(--faint); }
+        .ex .lab b { color: var(--ink); float: right; }
+        .ex p { margin: 4px 0 0; }
+        mark { background: #eee; color: var(--ink); }
+
+        footer {
+            margin-top: 72px;
+            font-size: 13px;
+            color: var(--faint);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="/">back</a>
+
+        <h1>Rampart Edge: On-device privacy filter, now 10x smaller</h1>
+        <p class="meta">Jared Zoneraich &amp; Edward Coristine &middot; October 14, 2026 &middot; <a href="https://ndstudio.gov/posts/introducing-rampart-edge">ndstudio.gov</a></p>
+
+<img src="../assets/img/og-rampart-edge.jpg" alt="A grayscale illustration of a short, compact section of crenellated rampart wall in the foreground, with the full original fortress wall and its two towers faded in the background, rendered with a soft grain.">
+
+<div class="tldr"><span>TL;DR</span><p>Rampart Edge is a new version of <a href="https://ndstudio.gov/posts/say-hello-to-rampart">Rampart</a>, the filter we released in June to help remove personal information before it leaves your browser. Rampart was already the smallest model of its kind. Edge is ten times smaller, at just 1.45MB, and blocks far fewer legitimate messages by mistake.</p></div>
+
+<p>From first principles, the best way to protect your personal information is to never let it leave your device. Until now, that wasn’t practical. Privacy filters lived on a “trusted server” and were too big to run well in a browser, especially on a phone. Rampart Edge is the smallest privacy filter model, at 1.45MB, and it can be run on almost any device.</p>
+
+<h2>Design goals</h2>
+
+<p>Running <a href="https://ndstudio.gov/posts/say-hello-to-rampart">Rampart</a> in production gave us two goals for the next version:</p>
+
+<ol>
+<li><strong>Stop blocking ordinary questions.</strong> Rampart was cautious with anything that looked like a name, so questions about public figures, national parks or brands named after people were sometimes blocked by mistake.</li>
+<li><strong>Make it much smaller.</strong> Even though Rampart was already the smallest privacy filter of its kind, users on slower connections could still be left waiting to use America.gov while it downloaded.</li>
+</ol>
+
+<h2 id="false-positives">Reducing false positives</h2>
+
+<p>Rampart tagged spans of text with entity labels and redacted them. Any span that looked like a name was treated as one, so “Is Elizabeth, NJ in the flood program?” came back as “[GIVEN_NAME], NJ in the flood program?”, and questions about public figures, landmarks and person-named brands were blocked outright. With every PII-type enabled, Rampart blocks 11.8% of ordinary messages on our test set.</p>
+
+<p>To fix this, Rampart Edge approaches names in three ways. First, we wrote a label policy before generating any training data: a private individual’s full name is blocked, and listed public figures, bare first names, bare surnames and place names are allowed. Second, the corpus includes two hardening rounds built specifically from the categories users told us Rampart got wrong. Third, the block decision is made on the whole message, not on individual tokens, so “Lincoln” in “Does the Lincoln Memorial close at night?” is judged in context.</p>
+
+<div class="fig">
+<h3>Share of ordinary messages blocked</h3>
+<table>
+<tr><td>Rampart Edge <span class="sub">· Deterministic + model · 1.45 MB</span></td><td>3.2%</td></tr>
+<tr><td>Rampart <span class="sub">· Deterministic + model · 14.7 MB</span></td><td>93.5%</td></tr>
+</table>
+<p class="note">False positives drawn from internal testing of the original Rampart including public figures, park names, person-named brands, form numbers and hotline lookups. Lower is better.</p>
+</div>
+
+<p>On that regression set Rampart blocks 116 of 124 messages; Rampart Edge blocks 4, and still catches all 42 matching messages that do contain personal information.</p>
+
+<h2>Small by design</h2>
+
+<p>We set the training objective as the smallest browser download that reaches at least 95% catch at no more than 1% false blocks on the development set, with latency under 100 milliseconds as a hard constraint.</p>
+
+<div class="fig">
+<table>
+<tr><td>Model weights, 1.29MB gzipped with the vocabulary</td><td>1.45MB</td></tr>
+<tr><td>Smaller than the original Rampart model (14.7MB)</td><td>10x</td></tr>
+<tr><td>p50 runtime latency, in the browser (WASM)</td><td>25ms</td></tr>
+</table>
+</div>
+
+<p>We chose Microsoft’s public xtremedistil-l6-h256 encoder as a base model to begin with. It has six layers and a table of 30,522 words and is 50.74 MB. We were able to reduce the size by 35x.</p>
+
+<div class="fig">
+<h3>The steps we took to shrink the new base model.</h3>
+<table>
+<tr><td>XtremeDistil base model</td><td>50.74 MB</td></tr>
+<tr><td>Four layers, one stored set of weights</td><td>34.94 MB</td></tr>
+<tr><td>A smaller word table</td><td>8.33 MB</td></tr>
+<tr><td>4-bit weights</td><td>1.45 MB</td></tr>
+</table>
+</div>
+
+<p>We first truncated it from six layers to four and shared one set of layer weights across all four positions. The embedding table is factorized to rank 48, initialized from an SVD of the pretrained table, and pruned to the 23,910 word pieces that occur in training.</p>
+
+<p>A layer reads the whole message and learns what each word means from its context. Rampart Edge makes four passes instead of six, and uses the same layer every time.</p>
+
+<p>Weights are quantized to 4 bits with no measurable change in benchmark accuracy. 32 weights snap to the nearest of 16 levels.</p>
+
+<h2>Block or allow</h2>
+
+<p>Rampart Edge returns one decision per message, block or allow, together with the spans that caused it. When the model detects Personally Identifiable Information (PII), the user can be shown a warning with the offending PII marked using the returned span.</p>
+
+<p>Two components make that decision. Deterministic validators check structured identifiers with real checksums: Luhn algorithm for credit card numbers, area and group rules for Social Security numbers, ABA checksums for routing numbers, mod-97 for IBANs, and formats for Medicare, USCIS and seven non-US national identifiers, with allowlists for hotlines, agency mailboxes and landmarks. The model reads the message in 384-token windows with a stride of 96 and takes the maximum probability across windows. A message is blocked if a validator fires or the model’s probability reaches 0.418, the lowest threshold that kept false blocks at or below 1% on the development set.</p>
+
+<p>The same model call labels every token with one of nine span types: name, complete address, personal email, phone, government ID, financial ID, keyed date of birth, personal URL or handle, and other person-bound IDs. Validator hits keep their own type and are merged with the model’s spans, so the interface can point at exactly what to remove. The same spans work on pasted documents and PDFs, so a blocked document can also be redacted.</p>
+
+<h2 id="evaluation">Evaluation</h2>
+
+<p>Rampart Edge is tuned specifically for America.gov use-cases. Its benign questions cover 37 America topics in seven languages, written in 12 voices: plain, lowercase, typos, dictation, fragments, rambling, angry, elderly, teen, accessibility, follow-up replies and pasted notices. Personal information appears the way people share it in chat: a one-line answer to the assistant (“ok its …”), details about a parent or landlord, a quoted scam text, or a pasted letter, email thread or form. Many messages with personal information have a twin with it removed, so the model learns the identifier rather than the topic. Hard negatives cover where the original model failed: public figures, officials, place names, brands named after people, form numbers and checksum-failing digits. We also threw in a few off-topic posts, code and keyboard mashing for good measure.</p>
+
+<div class="fig">
+<h3>Share of messages with personal information blocked</h3>
+<table>
+<tr><td>Rampart Edge <span class="sub">· Deterministic + model · 1.45 MB</span></td><td>98.2%</td></tr>
+<tr><td>Rampart <span class="sub">· Deterministic + model · 14.7 MB</span></td><td>87.5%</td></tr>
+</table>
+<p class="note">Share of messages containing personal information that each filter blocks, on a frozen test set of 30,863 whole messages labeled against a written policy. Higher is better. <a href="https://huggingface.co/nationaldesignstudio/rampart-edge#evaluation">Benchmark</a></p>
+</div>
+
+<p>These numbers count whole messages, not individual words like the recall we reported for Rampart in June. That is the measure that matters in chat: a message with any personal information is not sent, so one missed identifier lets the whole message through, and one false flag stops an ordinary question.</p>
+
+<p>We also trained and tested on documents that agencies and courts redacted by hand before publishing them: the Clinton emails, FBI Vault scans, federal court filings, inspector general reports, ICE FOIA releases and CFPB complaints. We filled every black box with a synthetic value of the same kind, so the documents keep their real layout and wording without any real personal information. Three quarters went into training. On the held-out quarter, Rampart Edge catches 98.4% of messages with personal information.</p>
+
+<div class="fig">
+<h3>Creating synthetic training data</h3>
+<div class="ex"><div class="lab">As released <b>ALLOW</b></div><p>Case ID: 6177337970 &nbsp;Disputed amount: $375.00 &nbsp;Receiver info: XXXX XXXX &nbsp;Case status: Closed. The case was closed in your favor.</p></div>
+<div class="ex"><div class="lab">Box refilled with a synthetic value <b>BLOCK</b></div><p>Case ID: 6177337970 &nbsp;Disputed amount: $375.00 &nbsp;Receiver info: <mark>Emily Walsh</mark> &nbsp;Case status: Closed. The case was closed in your favor.</p></div>
+<p class="note">Example built from a CFPB public complaint. The CFPB replaces personal details with XXXX before publishing.</p>
+</div>
+
+<h2>Usage</h2>
+
+<p>Install @nationaldesignstudio/rampart-edge and onnxruntime-web, and host the model and vocabulary files yourself.</p>
+
+<pre><code>// gate.ts
+import { createGate } from "@nationaldesignstudio/rampart-edge";
+
+const gate = await createGate({ modelBaseUrl: "/models/rampart-edge/" });
+
+const landlord = await gate.check(
+  "My landlord Marcus Delgado won't return my security deposit.",
+);
+console.log(landlord.verdict); // "BLOCK"
+console.log(landlord.spans); // [{ start: 12, end: 26, type: "NAME", source: "model", ... }]
+
+const park = await gate.check(
+  "Is Shenandoah National Park open this weekend?",
+);
+console.log(park.verdict); // "ALLOW"
+
+const ssn = await gate.check("My SSN is 452-78-1934.");
+console.log(ssn.basis); // "validator-and-model"</code></pre>
+
+<h2>Limitations</h2>
+
+<p>The weakest areas of Rampart Edge are names and street addresses. We measured this on a 30,000-row slice of OpenPII, a public multilingual benchmark it was not trained on. When a full name is the only personal information in a message, Rampart Edge blocks 49.6% of those messages; when a street address is, it blocks 48.2%. Emails and phone numbers, which the deterministic validators also check, are blocked 100% and 94.3% of the time.</p>
+
+<p>Names and addresses are hard for a model this small because it cannot carry a dictionary of them. A list of first names, surnames, streets and cities broad enough to cover seven languages would be far larger than the model itself. Rampart Edge instead relies on the context around them, such as “my landlord”, “lives at” or “send it to”. A name or address with little context around it is the case it is most likely to miss.</p>
+
+<p>OpenPII is not a fully fair test of Rampart Edge, because it was built on different rules about what counts as personal information. It labels things our policy allows, such as non-US national ID numbers and number strings that only look like IDs, and it tags some full names as first names only.</p>
+
+<p>No chat logs or private conversations were used to train or evaluate it. Every identifier in the training data is synthetic or already public.</p>
+
+<h2>Get started</h2>
+
+<p>The model and the validators are available under CC0 1.0.</p>
+
+<p>Want to develop technology that is the future of how the government builds its user experiences? <a href="https://ndstudio.gov/jobs">Consider joining us</a> at National Design Studio.</p>
+
+<p><a href="https://huggingface.co/nationaldesignstudio/rampart-edge">Hugging Face</a> &middot; <a href="https://www.npmjs.com/package/@nationaldesignstudio/rampart-edge">NPM library</a></p>
+
+        <footer>made in usa 🇺🇸 new york, new york</footer>
+    </div>
+</body>
+</html>
