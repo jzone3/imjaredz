@@ -203,6 +203,8 @@
             transition: transform 0.5s ease, color 0.3s ease;
         }
         .more-button:hover { color: var(--ink); }
+        a.more-link { text-decoration: none; }
+        a.more-link::after { transform: none; }
         .more-button::after {
             content: "\203a";
             display: inline-block;
@@ -304,6 +306,7 @@
                 <span class="desc">In-car app to teach new drivers. Featured and invited to speak.</span>
             </li>
         </ul>
+        <a href="projects/" class="more-button more-link">see more</a>
 
         <h2 data-scramble>Writings &amp; Posts</h2>
         <ul>
