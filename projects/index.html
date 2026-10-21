@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Projects — Jared Zoneraich</title>
-    <meta content="Side projects by Jared Zoneraich: Mac apps, web toys and experiments, most of them built with Devin." name="description">
+    <title>Projects by Jared Zoneraich</title>
+    <meta content="Side projects by Jared Zoneraich." name="description">
     <link rel="canonical" href="https://imjaredz.com/projects/">
 
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://imjaredz.com/projects/">
-    <meta property="og:title"       content="Projects — Jared Zoneraich">
-    <meta property="og:description" content="Side projects: Mac apps, web toys and experiments, most of them built with Devin.">
+    <meta property="og:title"       content="Projects by Jared Zoneraich">
+    <meta property="og:description" content="Side projects by Jared Zoneraich.">
     <meta property="og:image"       content="https://imjaredz.com/assets/img/og.png">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:site"        content="@imjaredz">
     <meta name="twitter:creator"     content="@imjaredz">
-    <meta name="twitter:title"       content="Projects — Jared Zoneraich">
-    <meta name="twitter:description" content="Side projects: Mac apps, web toys and experiments, most of them built with Devin.">
+    <meta name="twitter:title"       content="Projects by Jared Zoneraich">
+    <meta name="twitter:description" content="Side projects by Jared Zoneraich.">
     <meta name="twitter:image"       content="https://imjaredz.com/assets/img/og.png">
 
     <meta name="robots" content="index,follow">
@@ -44,7 +44,7 @@
             margin: 8px;
             padding: 0;
             font-size: 13px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .container {
@@ -65,15 +65,14 @@
         h1 {
             font-family: monospace;
             font-weight: 700;
-            font-size: 26px;
+            font-size: 22px;
             line-height: 1.3;
-            margin: 0 0 16px;
+            margin: 0 0 32px;
             position: relative;
         }
-        h1::before { content: "# "; font-weight: 400; color: var(--faint); position: absolute; right: 100%; }
+        h1::before { content: "#"; font-weight: 400; color: var(--faint); position: absolute; right: 100%; margin-right: 0.6ch; }
 
         h2 {
-            font-family: inherit;
             font-weight: 400;
             font-size: 13px;
             color: var(--faint);
@@ -81,6 +80,7 @@
             position: relative;
         }
         h2::before { content: "##"; position: absolute; right: 100%; margin-right: 1ch; }
+        h2 a { color: var(--ink); font-weight: 700; }
 
         p { margin: 0 0 14px; }
 
@@ -93,37 +93,23 @@
         }
         a:hover { text-decoration-color: var(--ink); }
 
-        b, strong, .company { font-weight: 700; }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        li {
-            margin: 0 0 8px;
-            position: relative;
-        }
-        li::before {
-            content: "-";
-            position: absolute;
-            left: -2ch;
-        }
-        li .desc {
-            display: block;
-            color: var(--faint);
-        }
+        b, strong { font-weight: 700; }
 
         .aside-link { color: var(--faint); font-size: 0.92em; }
-        .year {
-            color: #c2c2c2;
-            opacity: 0;
-            transition: opacity 0.25s ease;
-            position: absolute;
-            right: 0;
-            top: 0;
+
+        figure {
+            margin: 24px 0 40px;
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            background: #fafafa;
         }
-        li:hover .year { opacity: 1; }
+        figure img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
 
         footer {
             margin-top: 72px;
@@ -137,73 +123,34 @@
         <a class="back" href="/">back</a>
 
         <h1>Projects</h1>
-        <p>Small things I made because I wanted them to exist. The recent ones were built with <a href="https://devin.ai">Devin</a>.</p>
 
-        <h2>Built with Devin</h2>
-        <ul>
-            <li>
-                <span class="company"><a href="https://buildyourownfont.com">Build Your Own Font</a></span> <span class="year">2026</span>
-                <span class="desc">Write a few letters, get a real font file in your handwriting.</span>
-            </li>
-            <li>
-                <span class="company"><a href="https://www.uselocalflow.app">Local Flow</a></span> <span class="year">2026</span>
-                <span class="desc">Private voice dictation for Mac. Open source, runs Whisper on your machine.
-                <a href="https://github.com/jzone3/local-flow" class="aside-link">(GitHub)</a></span>
-            </li>
-            <li>
-                <span class="company"><a href="https://newmediawriter.app">New Media Writer</a></span> <span class="year">2026</span>
-                <span class="desc">Markdown notepad for Mac that previews your post as it will look on X, LinkedIn, and Slack.
-                <a href="https://github.com/jzone3/new-media-writer" class="aside-link">(GitHub)</a></span>
-            </li>
-            <li>
-                <span class="company"><a href="https://benicechat.com">Nice Chat</a></span> <span class="year">2026</span>
-                <span class="desc">One chat room for the whole world. Only nice messages get through.
-                <a href="https://github.com/jzone3/nice-chat" class="aside-link">(GitHub)</a></span>
-            </li>
-            <li>
-                <span class="company"><a href="https://incognito-tracking.vercel.app">Incognito Tracking</a></span> <span class="year">2026</span>
-                <span class="desc">A page that still knows who you are in incognito. No cookies, no login, no permission prompt.
-                <a href="https://github.com/jzone3/incognito-tracking" class="aside-link">(GitHub)</a></span>
-            </li>
-            <li>
-                <span class="company"><a href="https://walkmaxxing.vercel.app">walkmaxxing</a></span> <span class="year">2026</span>
-                <span class="desc">NYC subway directions with a slider for how much you want to walk.
-                <a href="https://github.com/jzone3/walkandsubway" class="aside-link">(GitHub)</a></span>
-            </li>
-            <li>
-                <span class="company"><a href="https://quicklookmd.com">Markdown QuickLook</a></span> <span class="year">2026</span>
-                <span class="desc">Press spacebar on a .md file in Finder and see it rendered.
-                <a href="https://github.com/jzone3/markdown-quicklook" class="aside-link">(GitHub)</a></span>
-            </li>
-        </ul>
+        <h2><a href="https://buildyourownfont.com">Build Your Own Font</a></h2>
+        <p>Write a few letters, get a real font file in your handwriting.</p>
+        <figure><a href="https://buildyourownfont.com"><img alt="Build Your Own Font" src="../assets/img/projects/build-your-own-font.jpg"></a></figure>
 
-        <h2>Earlier</h2>
-        <ul>
-            <li>
-                <span class="company">Montalvo Analytics</span> <span class="year">2020</span>
-                <span class="desc">Data analytics for America's largest reform campaigns.</span>
-            </li>
-            <li>
-                <span class="company">Presidio Jeans</span> <span class="year">2019</span>
-                <span class="desc">Denim jeans brand made in the USA.</span>
-            </li>
-            <li>
-                <span class="company">Startup Sift</span> <span class="year">2017</span>
-                <span class="desc">Webapp to help engineers discover exciting startups to work for.</span>
-            </li>
-            <li>
-                <span class="company">hackBCA</span>, Founder <span class="year">2015</span>
-                <span class="desc">First ever high school hackathon hosting over 1,000 students.</span>
-            </li>
-            <li>
-                <span class="company">Hackathon Consulting</span> <span class="year">2014</span>
-                <span class="desc">Helping companies like Intel better reach student developers.</span>
-            </li>
-            <li>
-                <span class="company">Learn to Drive</span>, TechCrunch Disrupt Hackathon Winner <span class="year">2013</span>
-                <span class="desc">In-car app to teach new drivers. Featured and invited to speak.</span>
-            </li>
-        </ul>
+        <h2><a href="https://www.uselocalflow.app">Local Flow</a></h2>
+        <p>Private voice dictation for Mac. Open source, runs Whisper on your machine. <a href="https://github.com/jzone3/local-flow" class="aside-link">(GitHub)</a></p>
+        <figure><a href="https://www.uselocalflow.app"><img alt="Local Flow" src="../assets/img/projects/local-flow.jpg"></a></figure>
+
+        <h2><a href="https://newmediawriter.app">New Media Writer</a></h2>
+        <p>Markdown notepad for Mac that previews your post as it will look on X, LinkedIn, and Slack. <a href="https://github.com/jzone3/new-media-writer" class="aside-link">(GitHub)</a></p>
+        <figure><a href="https://newmediawriter.app"><img alt="New Media Writer" src="../assets/img/projects/new-media-writer.jpg"></a></figure>
+
+        <h2><a href="https://benicechat.com">Nice Chat</a></h2>
+        <p>One chat room for the whole world. Only nice messages get through. <a href="https://github.com/jzone3/nice-chat" class="aside-link">(GitHub)</a></p>
+        <figure><a href="https://benicechat.com"><img alt="Nice Chat" src="../assets/img/projects/nice-chat.jpg"></a></figure>
+
+        <h2><a href="https://incognito-tracking.vercel.app">Incognito Tracking</a></h2>
+        <p>A page that still knows who you are in incognito. No cookies, no login, no permission prompt. <a href="https://github.com/jzone3/incognito-tracking" class="aside-link">(GitHub)</a></p>
+        <figure><a href="https://incognito-tracking.vercel.app"><img alt="Incognito Tracking" src="../assets/img/projects/incognito-tracking.jpg"></a></figure>
+
+        <h2><a href="https://walkandsubway.com">walkmaxxing</a></h2>
+        <p>NYC subway directions with a slider for how much you want to walk. <a href="https://github.com/jzone3/walkandsubway" class="aside-link">(GitHub)</a></p>
+        <figure><a href="https://walkandsubway.com"><img alt="walkmaxxing" src="../assets/img/projects/walkmaxxing.jpg"></a></figure>
+
+        <h2><a href="https://quicklookmd.com">Markdown QuickLook</a></h2>
+        <p>Press spacebar on a .md file in Finder and see it rendered. <a href="https://github.com/jzone3/markdown-quicklook" class="aside-link">(GitHub)</a></p>
+        <figure><a href="https://quicklookmd.com"><img alt="Markdown QuickLook" src="../assets/img/projects/markdown-quicklook.jpg"></a></figure>
 
         <footer>made in usa 🇺🇸 new york, new york</footer>
     </div>
